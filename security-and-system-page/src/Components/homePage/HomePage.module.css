@@ -1,0 +1,149 @@
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("./../../Fonts/Euclid\ Circular\ A\ SemiBold.ttf") format("woff2"),
+    url("./../../Fonts/Euclid\ Circular\ A\ SemiBold.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.homePage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 270px 0px;
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgb(17, 17, 17) 0px,
+      rgb(17, 17, 17) 1px,
+      transparent 1px,
+      transparent 70px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(17, 17, 17) 0px,
+      rgb(17, 17, 17) 1px,
+      transparent 1px,
+      transparent 70px
+    ),
+    linear-gradient(90deg, rgb(1, 1, 1), rgb(1, 1, 1));
+  mask-image: radial-gradient(
+    at center,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0) 80%
+  );
+}
+
+.containerTitle {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePage .containerTitle h1 {
+  font-family: "EuclidCircularA", sans-serif;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  font-size: 7.5vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150px;
+  letter-spacing: -7px;
+  color: #d8d8d7;
+}
+
+.span {
+  background-image: linear-gradient(
+    90deg,
+    rgb(251, 114, 182),
+    rgb(105, 26, 164)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.containerText {
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  color: grey;
+}
+
+.containerButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.containerButton button {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 1px solid #151515;
+  background: #000;
+  padding: 18px 30px;
+  border-radius: 30px;
+  color: rgb(229, 229, 229);
+}
+
+@media (max-width: 1500px) {
+  .homePage .containerTitle h1 {
+    line-height: 130px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .homePage {
+    gap: 20px;
+  }
+  .homePage .containerTitle h1 {
+    font-size: 7.5vw;
+    letter-spacing: -0.02em;
+    line-height: normal;
+  }
+
+  .containerText {
+    width: 90%;
+    max-width: 500px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 750px) {
+  .homePage .containerTitle h1 {
+    font-size: 9vw;
+  }
+
+  .containerButton {
+    padding: 10px;
+  }
+
+  .containerButton button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .homePage {
+    padding: 200px 0px;
+  }
+  .homePage .containerTitle h1 {
+    font-size: 45px;
+    letter-spacing: -1px;
+  }
+}

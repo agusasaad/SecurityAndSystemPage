@@ -1,0 +1,153 @@
+.containerNav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    rgb(2, 2, 2) 0%,
+    rgba(2, 2, 2, 0.992) 11.7896%,
+    rgba(2, 2, 2, 0.97) 21.3837%,
+    rgba(2, 2, 2, 0.93) 29.12%,
+    rgba(2, 2, 2, 0.88) 35.3363%,
+    rgba(2, 2, 2, 0.82) 40.3704%,
+    rgba(2, 2, 2, 0.75) 44.56%,
+    rgba(2, 2, 2, 0.67) 48.243%,
+    rgba(2, 2, 2, 0.59) 51.757%,
+    rgba(2, 2, 2, 0.5) 55.44%,
+    rgba(2, 2, 2, 0.416) 59.6296%,
+    rgba(2, 2, 2, 0.325) 64.6637%,
+    rgba(2, 2, 2, 0.24) 70.88%,
+    rgba(2, 2, 2, 0.153) 78.6163%,
+    rgba(2, 2, 2, 0.075) 88.2104%,
+    rgba(2, 2, 2, 0) 100%
+  );
+}
+
+.nav {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  padding: 40px 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@keyframes shadowPulse {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(195, 195, 195, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.75rem rgb(151, 151, 151));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 rgba(195, 195, 195, 0.403));
+  }
+}
+
+.LogoNav {
+  animation: shadowPulse 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.start {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(27, 27, 27);
+  background-color: #000000a1;
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  border-radius: 30px;
+}
+
+.center ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.center ul li {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.1%;
+  cursor: pointer;
+  color: grey;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.center ul li:hover {
+  color: white;
+}
+.end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end button {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.hamburguerButton {
+  display: none;
+}
+
+.hamburguerButton button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    top: 0;
+    height: auto;
+    padding: 20px 10px;
+  }
+  .hamburguerButton {
+    display: flex;
+  }
+
+  .center {
+    width: 100%;
+    order: 4;
+    padding: 40px;
+    display: none;
+    border-radius: 0px;
+    border: none;
+    margin-top: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(9px);
+  }
+
+  .center ul {
+    flex-direction: column;
+  }
+
+  .center.show {
+    display: flex;
+  }
+
+  .start {
+    width: min-content !important;
+  }
+}

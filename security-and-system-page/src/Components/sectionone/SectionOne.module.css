@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("./../../Fonts/Euclid\ Circular\ A\ SemiBold.ttf") format("woff2"),
+    url("./../../Fonts/Euclid\ Circular\ A\ SemiBold.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 100px;
+}
+
+.containerTitle {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.containerTitle h2 {
+  font-family: "EuclidCircularA", sans-serif;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -2.5px;
+  color: #d8d8d7;
+  line-height: 80px;
+}
+
+.span {
+  background-image: linear-gradient(
+    90deg,
+    rgb(251, 114, 182),
+    rgb(105, 26, 164)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.containerTitle p {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  color: grey;
+}
+
+@media (max-width: 1500px) {
+  .container {
+    padding: 0px 5px;
+  }
+  .container h2 {
+    font-size: 5vw;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    gap: 20px;
+  }
+  .containerTitle p {
+    width: 80%;
+    max-width: 400px;
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 750px) {
+  .container h2 {
+    font-size: 7vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .container h2 {
+    font-size: 8.5vw;
+    text-wrap: balance;
+    letter-spacing: -1px;
+  }
+}
