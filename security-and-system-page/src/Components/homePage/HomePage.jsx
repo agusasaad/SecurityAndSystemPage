@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import styles from "./HomePage.module.css";
-import { poppins } from "@/fonts/fonts";
+import { poppins } from "@/Fonts/fonts";
 import gsap from "gsap";
 
 const HomePage = () => {

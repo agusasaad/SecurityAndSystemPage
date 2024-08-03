@@ -4,7 +4,7 @@ import web1 from "./../../../public/imagesWEB/WEB1.webp";
 import web2 from "./../../../public/imagesWEB/WEB2.webp";
 import web3 from "./../../../public/imagesWEB/WEB3.webp";
 import Image from "next/image";
-import { poppins } from "../../fonts/fonts";
+import { poppins } from "@/Fonts/fonts";
 const SectionThree = () => {
   const imageCarrucel = [web1, web2, web3];
 

@@ -3,7 +3,7 @@ import styles from "./Cards.module.css";
 import DesarrolloWebImg from "./../../../../public/DesarrolloWeb.png";
 import AplicacionesMobiles from "./../../../../public/AplicacionesMobiles.jpg";
 import Image from "next/image";
-import { poppins } from "@/fonts/fonts";
+import { poppins } from "@/Fonts/fonts";
 
 const Cards = () => {
   return (

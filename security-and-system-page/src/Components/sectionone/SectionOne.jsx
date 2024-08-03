@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SectionOne.module.css";
 import Cards from "./cards/Cards";
-import { poppins } from "@/fonts/fonts";
+import { poppins } from "@/Fonts/fonts";
 
 const SectionOne = () => {
   return (

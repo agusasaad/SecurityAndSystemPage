@@ -4,7 +4,7 @@ import styles from "./NavBar.module.css";
 import Image from "next/image";
 import logoSAS from "../../../public/logoSAS.png";
 import { IoMenu } from "react-icons/io5";
-import { poppins } from "@/fonts/fonts";
+import { poppins } from "@/Fonts/fonts";
 import gsap from "gsap";
 
 const NavBar = () => {
