@@ -5,7 +5,7 @@
 }
 
 @font-face {
-  font-family: "EuclidCircularA";
+  font-family: "EuclidCircularASemiBold";
   src: url("./../Fonts/Euclid\ Circular\ A\ SemiBold.ttf") format("woff2"),
     url("./../Fonts/Euclid\ Circular\ A\ SemiBold.ttf") format("woff");
   font-weight: normal;
@@ -13,7 +13,7 @@
 }
 
 :root {
-  --font-Euclid: "EuclidCircularA", sans-serif;
+  --font-Euclid: "EuclidCircularASemiBold", sans-serif;
 }
 
 html,
