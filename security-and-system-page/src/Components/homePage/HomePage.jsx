@@ -6,44 +6,40 @@ import gsap from "gsap";
 
 const HomePage = () => {
   const title = useRef(null);
-  const titleTwo = useRef(null);
+  const subtitleRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
-    gsap.set([title.current, titleTwo.current], {
+    gsap.set([title.current, subtitleRef.current, buttonRef.current], {
       y: 100,
+      opacity: 0,
       visibility: "hidden",
     });
-    gsap.to([title.current, titleTwo.current], {
+    gsap.to([title.current, subtitleRef.current, buttonRef.current], {
       opacity: 1,
       y: 0,
       visibility: "visible",
-      ease: "power3",
-      duration: 1,
-      stagger: 0.1,
+      ease: "power3.out",
+      duration: 1.5,
+      stagger: 0.3,
+      delay: 0.5,
     });
   }, []);
+
   return (
     <div className={styles.homePage}>
       <div className={styles.containerTitle}>
-        <span className={`${poppins.className} ${styles.subtitle}`}>
-          Security and System
-        </span>
-        <div className={styles.containerH1}>
-          <h1 ref={title}>Construyendo</h1>
-        </div>
-        <div className={styles.containerH1}>
-          <h1 ref={titleTwo}>
-            un futuro <span className={styles.span}>digital.</span>
-          </h1>
+        <h1 ref={title}>
+          Construyendo un futuro <span className={styles.span}>digital.</span>
+        </h1>
+        <div className={styles.containerText}>
+          <p className={poppins.className} ref={subtitleRef}>
+            Creamos páginas web personalizadas que conectan con tu audiencia y
+            generan resultados impactantes.
+          </p>
         </div>
       </div>
-      <div className={styles.containerText}>
-        <p className={poppins.className}>
-          Creamos páginas web personalizadas que conectan con tu audiencia y
-          generan resultados impactantes.
-        </p>
-      </div>
-      <div className={styles.containerButton}>
+      <div className={styles.containerButton} ref={buttonRef}>
         <button className={`${poppins.className} ${styles.button}`}>
           <span>Contratar Servicios</span>
         </button>

@@ -17,30 +17,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0px;
+  gap: 30px;
 }
 
 .homePage .subtitle {
-  padding: 7px 15px;
   font-size: 14px;
   color: #c7c7c7;
-  backdrop-filter: blur(3px);
-  background: linear-gradient(
-    90.0879deg,
-    rgba(229, 156, 255, 0.24) 0.01%,
-    rgba(186, 156, 255, 0.24) 50.01%,
-    rgba(156, 178, 255, 0.24) 100%
-  );
-  border-radius: 30px;
-  box-shadow: 0px 0px 37px 4px rgba(255, 255, 255, 0.144);
-}
-.containerH1 {
-  overflow-y: hidden;
-  /* border: 1px solid white; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 7px;
 }
 
 .homePage .containerTitle h1 {
@@ -65,16 +47,17 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  padding: 0px 10px;
 }
 
 .containerText {
   width: 100%;
-  max-width: 550px;
+  max-width: 700px;
   text-align: center;
   line-height: 30px;
-  font-size: 18px;
-  font-weight: 400;
-  color: grey;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(235, 235, 235);
 }
 
 .containerButton {
@@ -136,10 +119,15 @@
 
 @media (max-width: 500px) {
   .homePage {
-    padding: 200px 0px;
+    padding: 170px 0px;
+    gap: 10px;
+  }
+
+  .homePage .containerTitle {
+    gap: 10px;
   }
   .homePage .containerTitle h1 {
     font-size: 45px;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
   }
 }
