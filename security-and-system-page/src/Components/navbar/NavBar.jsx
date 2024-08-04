@@ -3,7 +3,12 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
 import logoSAS from "../../../public/logoSAS.png";
-import { IoMenu } from "react-icons/io5";
+import { TbMenuDeep } from "react-icons/tb";
+import { IoClose } from "react-icons/io5";
+import { CiHome } from "react-icons/ci";
+import { GrServices } from "react-icons/gr";
+import { PiUsersThreeLight } from "react-icons/pi";
+import { GrProjects } from "react-icons/gr";
 import { poppins } from "@/Fonts/fonts";
 import gsap from "gsap";
 
@@ -42,11 +47,28 @@ const NavBar = () => {
           />
         </div>
         <div className={`${styles.center} ${showMenu ? styles.show : ""}`}>
+          <div className={styles.onClose}>
+            <button onClick={() => setShowMenu(false)}>
+              <IoClose />
+            </button>
+          </div>
           <ul className={poppins.className}>
-            <li>Inicio</li>
-            <li>Servicios</li>
-            <li>Sobre Nosotros</li>
-            <li>Nuestros Trabajos</li>
+            <li>
+              <CiHome className={styles.icon} />
+              Inicio
+            </li>
+            <li>
+              <GrServices className={styles.icon} />
+              Servicios
+            </li>
+            <li>
+              <PiUsersThreeLight className={styles.icon} />
+              Sobre Nosotros
+            </li>
+            <li>
+              <GrProjects className={styles.icon} />
+              Nuestros Trabajos
+            </li>
           </ul>
         </div>
         <div className={styles.end}>
@@ -56,7 +78,7 @@ const NavBar = () => {
         </div>
         <div className={styles.hamburguerButton}>
           <button onClick={() => setShowMenu(!showMenu)}>
-            <IoMenu />
+            <TbMenuDeep />
           </button>
         </div>
       </div>
