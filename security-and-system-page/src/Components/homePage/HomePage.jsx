@@ -1,10 +1,12 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./HomePage.module.css";
 import { poppins } from "@/Fonts/fonts";
+import { FiExternalLink } from "react-icons/fi";
 import gsap from "gsap";
 
 const HomePage = () => {
+  const background = useRef(null);
   const title = useRef(null);
   const subtitleRef = useRef(null);
   const buttonRef = useRef(null);
@@ -27,10 +29,10 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className={styles.homePage}>
+    <div className={styles.homePage} ref={background}>
       <div className={styles.containerTitle}>
-        <h1 ref={title}>
-          Construyendo un futuro <span className={styles.span}>digital.</span>
+        <h1 ref={title} className={poppins.className}>
+          Construyendo<span className={styles.span}> un Futuro Digital.</span>
         </h1>
         <div className={styles.containerText}>
           <p className={poppins.className} ref={subtitleRef}>
@@ -42,6 +44,7 @@ const HomePage = () => {
       <div className={styles.containerButton} ref={buttonRef}>
         <button className={`${poppins.className} ${styles.button}`}>
           <span>Contratar Servicios</span>
+          <FiExternalLink className={styles.icon} />
         </button>
       </div>
     </div>
