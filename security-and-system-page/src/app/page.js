@@ -2,7 +2,6 @@ import SectionOne from "@/Components/sectionone/SectionOne";
 import HomePage from "./../Components/homePage/HomePage";
 import NavBar from "./../Components/navbar/NavBar";
 import styles from "./page.module.css";
-import SectionTwo from "@/Components/sectiontwo/SectionTwo";
 import SectionThree from "@/Components/sectionthree/SectionThree";
 import ContactUs from "@/Components/contactus/ContactUs";
 
@@ -15,9 +14,8 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <SectionOne />
-        {/* <SectionTwo /> */}
         <SectionThree />
-        <ContactUs />
+        {/* <ContactUs /> */}
       </main>
     </div>
   );
