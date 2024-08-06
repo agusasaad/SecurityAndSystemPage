@@ -7,7 +7,7 @@ import styles from "./Cards.module.css";
 import { poppins } from "@/Fonts/fonts";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
-import DesarrolloWebImg from "./../../../../public/DesarrolloWeb.svg";
+import DesarrolloWebImg from "./../../../../public/desarrolloWeb.svg";
 import AplicacionesMobiles from "./../../../../public/AplicacionesMobiles.svg";
 import solucionesCloud from "./../../../../public/cloudGif.gif";
 
