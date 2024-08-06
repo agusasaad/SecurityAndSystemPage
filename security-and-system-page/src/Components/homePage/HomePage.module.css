@@ -6,12 +6,33 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 270px 0px;
+  padding: 250px 0px;
+  /* background-image: repeating-linear-gradient(
+      0deg,
+      rgb(17, 17, 17) 0px,
+      rgb(17, 17, 17) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(17, 17, 17) 0px,
+      rgb(17, 17, 17) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    linear-gradient(90deg, rgb(1, 1, 1), rgb(1, 1, 1));
+  mask-image: radial-gradient(
+    at center,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0) 80%
+  ); */
 }
 
 .containerTitle {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1500px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -26,16 +47,15 @@
 }
 
 .homePage .containerTitle h1 {
-  font-family: var(--font-Euclid);
   text-align: center;
   text-wrap: balance;
   overflow-wrap: break-word;
   font-size: 7.5vw;
-  font-style: normal;
   font-weight: 600;
-  line-height: 130px;
-  letter-spacing: -7px;
+  line-height: 160px;
+  letter-spacing: -6px;
   color: #d8d8d7;
+  /* border: 1px solid white; */
 }
 
 .span {
@@ -56,28 +76,29 @@
   text-align: center;
   line-height: 30px;
   font-size: 20px;
-  font-weight: 300;
-  color: rgb(235, 235, 235);
-}
-
-.containerButton {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+  font-weight: 400;
+  color: grey;
 }
 
 .containerButton button {
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
   cursor: pointer;
   border: 1px solid white;
   background: #000;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 10px;
   color: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 23px;
 }
 
 @media (max-width: 1500px) {
