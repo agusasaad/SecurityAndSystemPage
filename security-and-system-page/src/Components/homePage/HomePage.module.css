@@ -7,27 +7,8 @@
   align-items: center;
   gap: 20px;
   padding: 250px 0px;
-  /* background-image: repeating-linear-gradient(
-      0deg,
-      rgb(17, 17, 17) 0px,
-      rgb(17, 17, 17) 1px,
-      transparent 1px,
-      transparent 80px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgb(17, 17, 17) 0px,
-      rgb(17, 17, 17) 1px,
-      transparent 1px,
-      transparent 80px
-    ),
-    linear-gradient(90deg, rgb(1, 1, 1), rgb(1, 1, 1));
-  mask-image: radial-gradient(
-    at center,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 30%,
-    rgba(0, 0, 0, 0) 80%
-  ); */
+  background-color: #00000000;
+  backdrop-filter: blur(100px);
 }
 
 .containerTitle {
@@ -41,33 +22,25 @@
   gap: 30px;
 }
 
-.homePage .subtitle {
-  font-size: 14px;
-  color: #c7c7c7;
+.homePage .banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 7px 15px;
+  border-radius: 30px;
 }
 
 .homePage .containerTitle h1 {
   text-align: center;
   text-wrap: balance;
-  overflow-wrap: break-word;
   font-size: 7.5vw;
   font-weight: 600;
   line-height: 160px;
   letter-spacing: -6px;
-  color: #d8d8d7;
-  /* border: 1px solid white; */
-}
-
-.span {
-  background-image: linear-gradient(
-    90deg,
-    rgb(251, 114, 182),
-    rgb(105, 26, 164)
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  padding: 0px 10px;
+  color: white;
+  opacity: 90%;
 }
 
 .containerText {
@@ -77,16 +50,24 @@
   line-height: 30px;
   font-size: 20px;
   font-weight: 400;
-  color: grey;
+  color: #ffffffd7;
+}
+
+.containerButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .containerButton button {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
   cursor: pointer;
-  border: 1px solid white;
   background: #000;
   padding: 10px 20px;
   border-radius: 10px;
@@ -95,6 +76,10 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+.containerButton .buttonFolow {
+  background: #125ff9a2;
 }
 
 .icon {
@@ -109,7 +94,11 @@
 
 @media (max-width: 1200px) {
   .homePage {
-    gap: 20px;
+    gap: 10px;
+  }
+
+  .containerTitle {
+    gap: 1px;
   }
   .homePage .containerTitle h1 {
     font-size: 7.5vw;
@@ -138,7 +127,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 510px) {
   .homePage {
     padding: 170px 0px;
     gap: 10px;
@@ -150,5 +139,9 @@
   .homePage .containerTitle h1 {
     font-size: 45px;
     letter-spacing: -1.5px;
+  }
+
+  .containerButton button {
+    margin-top: 5px;
   }
 }

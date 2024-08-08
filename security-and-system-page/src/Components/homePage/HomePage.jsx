@@ -22,7 +22,7 @@ const HomePage = () => {
       y: 0,
       visibility: "visible",
       ease: "power3.out",
-      duration: 1.5,
+      duration: 0.8,
       stagger: 0.3,
       delay: 0.5,
     });
@@ -32,7 +32,7 @@ const HomePage = () => {
     <div className={styles.homePage} ref={background}>
       <div className={styles.containerTitle}>
         <h1 ref={title} className={poppins.className}>
-          Construyendo<span className={styles.span}> un Futuro Digital.</span>
+          Construyendo un Futuro Digital.
         </h1>
         <div className={styles.containerText}>
           <p className={poppins.className} ref={subtitleRef}>
@@ -45,6 +45,9 @@ const HomePage = () => {
         <button className={`${poppins.className} ${styles.button}`}>
           <span>Contratar Servicios</span>
           <FiExternalLink className={styles.icon} />
+        </button>
+        <button className={`${poppins.className} ${styles.buttonFolow}`}>
+          Seguinos Nuestras Redes
         </button>
       </div>
     </div>
