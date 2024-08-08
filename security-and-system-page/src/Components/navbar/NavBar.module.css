@@ -6,24 +6,6 @@
   position: fixed;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(
-    rgb(2, 2, 2) 0%,
-    rgba(2, 2, 2, 0.992) 11.7896%,
-    rgba(2, 2, 2, 0.97) 21.3837%,
-    rgba(2, 2, 2, 0.93) 29.12%,
-    rgba(2, 2, 2, 0.88) 35.3363%,
-    rgba(2, 2, 2, 0.82) 40.3704%,
-    rgba(2, 2, 2, 0.75) 44.56%,
-    rgba(2, 2, 2, 0.67) 48.243%,
-    rgba(2, 2, 2, 0.59) 51.757%,
-    rgba(2, 2, 2, 0.5) 55.44%,
-    rgba(2, 2, 2, 0.416) 59.6296%,
-    rgba(2, 2, 2, 0.325) 64.6637%,
-    rgba(2, 2, 2, 0.24) 70.88%,
-    rgba(2, 2, 2, 0.153) 78.6163%,
-    rgba(2, 2, 2, 0.075) 88.2104%,
-    rgba(2, 2, 2, 0) 100%
-  );
 }
 
 .nav {
@@ -32,7 +14,7 @@
   display: flex;
   flex-direction: row;
   padding: 40px 20px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   position: relative;
@@ -55,6 +37,10 @@
   cursor: pointer;
 }
 
+.LogoNavMobile {
+  display: none;
+}
+
 .start {
   width: 100px;
   display: flex;
@@ -66,9 +52,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(27, 27, 27);
-  background-color: #05050598;
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  background-color: rgba(24, 24, 31, 0.7);
   padding: 14px 30px;
   border-radius: 30px;
 }
@@ -91,12 +77,8 @@
   font-weight: 400;
   letter-spacing: -0.1%;
   cursor: pointer;
-  color: grey;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.center ul li:hover {
   color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .center ul li .icon {
@@ -118,50 +100,11 @@
   letter-spacing: 0.2px;
   cursor: pointer;
   color: #fff;
-  width: 9em;
-  padding: 7px 5px;
+  padding: 13px 20px;
   text-align: center;
-  background: linear-gradient(180deg, rgb(251, 114, 182), rgb(105, 26, 164));
-  background-size: 400%;
+  background: #125ff9;
   border-radius: 30px;
   z-index: 1;
-}
-
-.end button:hover {
-  animation: showNav 8s linear infinite;
-  border: none;
-}
-
-@keyframes showNav {
-  0% {
-    background-position: 0%;
-  }
-
-  100% {
-    background-position: 400%;
-  }
-}
-
-.end button:before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -1;
-  background: linear-gradient(180deg, rgb(251, 114, 182), rgb(105, 26, 164));
-  background-size: 300%;
-  border-radius: 30px;
-  transition: 1s;
-}
-
-.end button:hover::before {
-  filter: blur(20px);
-}
-
-.end button:active {
-  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
 }
 
 .hamburguerButton {
@@ -181,16 +124,23 @@
 
 @media (max-width: 900px) {
   .containerNav {
-    background-color: rgba(0, 0, 0, 0.397);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(24px);
+    background-color: rgba(10, 10, 10, 0.5);
   }
   .nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     height: auto;
-    padding: 30px 20px;
+    padding: 20px 20px;
+    justify-content: space-between;
   }
 
   .LogoNav {
-    width: 25px;
+    display: none;
+  }
+
+  .LogoNavMobile {
+    display: flex;
+    width: 200px;
     height: auto;
   }
   .hamburguerButton {
@@ -268,5 +218,9 @@
   .center ul li .icon {
     font-size: 20px;
     display: flex;
+  }
+
+  .end {
+    display: none;
   }
 }

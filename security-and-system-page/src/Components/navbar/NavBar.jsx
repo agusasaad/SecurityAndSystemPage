@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
 import logoSAS from "../../../public/logoSAS.png";
+import logoSAS_Mobile from "../../../public/logo_mobile.png";
 import { TbMenuDeep } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
 import { CiHome } from "react-icons/ci";
@@ -20,14 +21,14 @@ const NavBar = () => {
   //Animaciones GSAP
   useEffect(() => {
     gsap.set(navBarAnimate.current, {
-      y: -50,
+      y: 100,
       opacity: 0,
       visibility: "hidden",
     });
     gsap.to(navBarAnimate.current, {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 0.9,
       ease: "back.inOut",
       stagger: 0.5,
       visibility: "visible",
@@ -43,6 +44,14 @@ const NavBar = () => {
             alt="Logo de la empresa Security And System"
             className={styles.LogoNav}
             width={30}
+            height={"auto"}
+          />
+
+          <Image
+            src={logoSAS_Mobile}
+            alt="Logo de la empresa Security And System"
+            className={styles.LogoNavMobile}
+            width={150}
             height={"auto"}
           />
         </div>
