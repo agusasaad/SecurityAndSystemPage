@@ -8,7 +8,7 @@
   gap: 20px;
   padding: 250px 0px;
   background-color: #00000000;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(150px);
 }
 
 .containerTitle {
@@ -67,9 +67,13 @@
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  cursor: pointer;
-  background: #000;
   padding: 10px 20px;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+  box-shadow: rgba(255, 255, 255, 0.062) 0px 1px 0px 0px inset,
+    rgba(61, 61, 61, 0.342) 0px 2px 8px 0px inset;
+  opacity: 1;
   border-radius: 10px;
   color: rgb(229, 229, 229);
   display: flex;
@@ -79,7 +83,17 @@
 }
 
 .containerButton .buttonFolow {
-  background: #125ff9a2;
+  border-bottom-width: 0px;
+  --border-color: rgba(0, 0, 0, 0);
+  --border-left-width: 0px;
+  --border-right-width: 0px;
+  --border-style: solid;
+  --border-top-width: 0px;
+  background-color: rgb(0, 75, 221);
+  height: 100%;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset,
+    rgba(0, 0, 0, 0.16) 0px 2px 8px 0px;
+  opacity: 1;
 }
 
 .icon {
@@ -114,6 +128,9 @@
 }
 
 @media (max-width: 750px) {
+  .homePage {
+    padding: 140px 0px;
+  }
   .homePage .containerTitle h1 {
     font-size: 9vw;
   }
@@ -131,6 +148,8 @@
   .homePage {
     padding: 170px 0px;
     gap: 10px;
+    mask-image: linear-gradient(black 90%, transparent);
+    backdrop-filter: blur(50px);
   }
 
   .homePage .containerTitle {

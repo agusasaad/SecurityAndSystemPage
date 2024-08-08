@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  gap: 50px;
 }
 
 .header {
@@ -16,8 +15,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 200px;
   position: relative;
+  gap: 200px;
 }
 
 .bg {
@@ -32,7 +31,30 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
+  /* 
+  width: 70%;
+  height: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 188, 230, 0.397) 60%,
+    rgba(41, 98, 255, 0.308) 30%,
+    rgba(212, 0, 249, 0.356) 0%
+  );
+  border-radius: 50%;
+  top: 27%;
+  left: 15%; */
+  /* transform: translate(-50%, -50%); */
+  /* animation: rotateBackground 10s linear infinite; */
 }
+
+/* @keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
 
 .main {
   width: 100%;
@@ -40,12 +62,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 150px;
+  /* gap: 100px; */
+  background-image: url("../../public/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40%;
 }
 
 @media (max-width: 1000px) {
   .bg {
     background-image: url("../../public/background_mobile.svg");
-    background-size: contain;
+    background-size: cover;
   }
 }
