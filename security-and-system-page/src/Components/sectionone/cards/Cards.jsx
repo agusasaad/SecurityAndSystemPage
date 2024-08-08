@@ -17,22 +17,62 @@ const Cards = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    cardsRef.current.forEach((card, index) => {
+    cardsRef.current.forEach(({ card, elements, image }, index) => {
+      if (window.innerWidth >= 1100) {
+        gsap.fromTo(
+          card,
+          {
+            scale: 1,
+          },
+          {
+            scale: 1.1,
+            ease: "power1.out",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              end: "top 20%",
+              scrub: true,
+              // markers: true,
+            },
+          }
+        );
+      }
       gsap.fromTo(
-        card,
+        elements,
         {
-          y: 200,
-          scale: 1.5,
+          opacity: 0,
+          x: 50,
         },
         {
-          y: -index * 0,
-          scale: 1,
-          ease: "power1",
+          opacity: 1,
+          x: 0,
+          ease: "power1.out",
+          stagger: 0.2,
           scrollTrigger: {
             trigger: card,
             start: "top 80%",
             end: "top 20%",
-            scrub: true,
+            // markers: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        image,
+        {
+          opacity: 0,
+          x: 50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          ease: "power1.out",
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            end: "top 20%",
             // markers: true,
           },
         }
@@ -57,7 +97,19 @@ const Cards = () => {
             width: "550",
             height: "auto",
           },
-
+          {
+            img: AplicacionesMobiles,
+            subtitle: "SERVICIO",
+            title: "Aplicaciones Móviles",
+            text: "Diseñamos y desarrollamos aplicaciones móviles personalizadas que permiten a tu empresa conectarse con una audiencia móvil en crecimiento.",
+            tips: [
+              "Apps personalizadas para tu negocio.",
+              "Diseños que capturan usuarios en movimiento.",
+              "Expande tu alcance con soluciones móviles efectivas.",
+            ],
+            width: "300",
+            height: "auto",
+          },
           {
             img: solucionesCloud,
             subtitle: "SERVICIO",
@@ -69,19 +121,6 @@ const Cards = () => {
               "Gestión experta para alta disponibilidad",
             ],
             width: "800",
-            height: "auto",
-          },
-          {
-            img: AplicacionesMobiles,
-            subtitle: "SERVICIO",
-            title: "Aplicaciones Móviles",
-            text: "Diseñamos y desarrollamos aplicaciones móviles personalizadas que permiten a tu empresa conectarse con una audiencia móvil en crecimiento.",
-            tips: [
-              "Apps personalizadas para tu negocio.",
-              "Diseños que capturan usuarios en movimiento.",
-              "Expande tu alcance con soluciones móviles efectivas.",
-            ],
-            width: "380",
             height: "auto",
           },
           {
@@ -98,7 +137,13 @@ const Cards = () => {
         ].map((card, index) => (
           <div
             className={styles.card}
-            ref={(el) => (cardsRef.current[index] = el)}
+            ref={(el) =>
+              (cardsRef.current[index] = {
+                card: el,
+                elements: el?.querySelectorAll("h5, h3, p"),
+                image: el?.querySelector("img"),
+              })
+            }
             key={index}
           >
             <div className={`${poppins.className} ${styles.containerText}`}>
@@ -109,7 +154,6 @@ const Cards = () => {
                 {card.tips?.map((tip, index) => (
                   <p className={poppins.className} key={index}>
                     <IoIosCheckmarkCircleOutline className={styles.icon} />
-                    {"  "}
                     {tip}
                   </p>
                 ))}
