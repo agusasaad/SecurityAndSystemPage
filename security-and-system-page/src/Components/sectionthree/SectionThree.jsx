@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import styles from "./SectionThree.module.css";
 import web1 from "./../../../public/imagesWEB/WEB1.webp";
 import web2 from "./../../../public/imagesWEB/WEB2.webp";
