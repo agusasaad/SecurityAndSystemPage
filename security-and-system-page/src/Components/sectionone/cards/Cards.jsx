@@ -7,9 +7,10 @@ import styles from "./Cards.module.css";
 import { poppins } from "@/Fonts/fonts";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
-import DesarrolloWebImg from "./../../../../public/desarrolloWeb.svg";
-import AplicacionesMobiles from "./../../../../public/AplicacionesMobiles.svg";
-import solucionesCloud from "./../../../../public/cloudGif.gif";
+import DesarrolloWebImg from "./../../../../public/desarrolloWeb_1.svg";
+import AplicacionesMobiles from "./../../../../public/desarrolloMobile.svg";
+import solucionesCloud from "./../../../../public/servidor.svg";
+import consultoriaIt from "./../../../../public/consultoria_It.svg";
 
 const Cards = () => {
   const cardsRef = useRef([]);
@@ -49,9 +50,10 @@ const Cards = () => {
           x: 0,
           ease: "power1.out",
           stagger: 0.2,
+          // delay: 0.2,
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
+            start: "top+=200 80%",
             end: "top 20%",
             // markers: true,
           },
@@ -68,10 +70,10 @@ const Cards = () => {
           opacity: 1,
           x: 0,
           ease: "power1.out",
-          delay: 0.5,
+          // delay: 0.2,
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
+            start: "top+=200 80%",
             end: "top 20%",
             // markers: true,
           },
@@ -94,8 +96,6 @@ const Cards = () => {
               "Interfaces intuitivas y atractivas.",
               "Aumenta la interacción con tus clientes.",
             ],
-            width: "550",
-            height: "auto",
           },
           {
             img: AplicacionesMobiles,
@@ -107,8 +107,6 @@ const Cards = () => {
               "Diseños que capturan usuarios en movimiento.",
               "Expande tu alcance con soluciones móviles efectivas.",
             ],
-            width: "300",
-            height: "auto",
           },
           {
             img: solucionesCloud,
@@ -120,11 +118,9 @@ const Cards = () => {
               "Escalabilidad y seguridad garantizadas.",
               "Gestión experta para alta disponibilidad",
             ],
-            width: "800",
-            height: "auto",
           },
           {
-            img: DesarrolloWebImg,
+            img: consultoriaIt,
             subtitle: "SERVICIO",
             title: "Consultoria IT",
             text: "Ofrecemos asesoramiento en mejores prácticas tecnológicas y transformación digital, colaborando con nuestros clientes para optimizar sus procesos mediante soluciones innovadoras.",
@@ -163,10 +159,10 @@ const Cards = () => {
               <Image
                 src={card.img}
                 alt={card.title}
-                width={card.width}
-                height={card.height}
+                width={"100%"}
+                height={"auto"}
               />
-              <div className={styles.gradient}></div>
+              {/* <div className={styles.gradient}></div> */}
             </div>
           </div>
         ))}

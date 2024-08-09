@@ -18,7 +18,7 @@
 }
 
 .card {
-  width: 1000px;
+  width: 1050px;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -35,9 +35,17 @@
 
 .containerImg {
   width: 100%;
-  height: 470px;
+  height: auto;
   overflow: hidden;
   position: relative;
+}
+
+.containerImg img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
 }
 
 /* Card numero 2 */
@@ -64,12 +72,26 @@
 
 .card:nth-child(3) .containerImg {
   display: flex;
-  justify-content: center;
   align-items: center;
-  opacity: 70%;
 }
 
-.gradient {
+.card:nth-child(3) .containerImg img {
+  width: 100%;
+  height: auto;
+}
+
+/* .card:nth-child(4) .containerImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:nth-child(4) .containerImg img {
+  width: 95%;
+  height: auto;
+} */
+
+/* .gradient {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -83,7 +105,7 @@
     ),
     linear-gradient(180deg, rgba(16, 16, 16, 0) 20%, rgb(16, 16, 16) 100%);
   z-index: 1;
-}
+} */
 
 .containerText {
   max-width: 400px;
