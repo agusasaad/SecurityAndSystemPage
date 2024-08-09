@@ -18,10 +18,10 @@ const MapboxMap = () => {
       onMove={(evt) => setViewState(evt.viewState)}
       style={{
         width: "100%",
-        height: "550px",
+        height: "600px",
       }}
-      // mapStyle="mapbox://styles/mapbox/dark-v11"
-      mapStyle="mapbox://styles/mapbox/outdoors-v11"
+      mapStyle="mapbox://styles/mapbox/dark-v11"
+      // mapStyle="mapbox://styles/mapbox/outdoors-v11"
       mapboxAccessToken="pk.eyJ1IjoiYWd1c2FzYWFkIiwiYSI6ImNsemgzNXUydzAwZDkybnExMW8zdW5iZW8ifQ.x5laM7Zzju6dInkN78mwhA" // Reemplaza con tu token de acceso
     >
       <Marker

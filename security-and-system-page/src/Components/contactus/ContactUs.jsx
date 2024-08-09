@@ -35,6 +35,7 @@ const ContactUs = () => {
           </div>
         </div>
         <div className={styles.mapContainer}>
+          <div className={styles.gradient}></div>
           <MapComponent />
         </div>
       </div>
