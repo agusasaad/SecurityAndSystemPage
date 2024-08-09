@@ -62,11 +62,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 100px; */
-  background-image: url("../../public/background.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 40%;
+  gap: 100px;
 }
 
 @media (max-width: 1000px) {
