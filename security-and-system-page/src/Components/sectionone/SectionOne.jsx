@@ -24,7 +24,7 @@ const SectionOne = () => {
         y: 0,
         visibility: "visible",
         ease: "power3.out",
-        duration: 1.5,
+        duration: 0.8,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 50%",

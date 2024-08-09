@@ -11,6 +11,9 @@ import DesarrolloWebImg from "./../../../../public/desarrolloWeb_1.svg";
 import AplicacionesMobiles from "./../../../../public/desarrolloMobile.svg";
 import solucionesCloud from "./../../../../public/servidor.svg";
 import consultoriaIt from "./../../../../public/consultoria_It.svg";
+import foto_1 from "./../../../../public/00_0000_Capa-2.png";
+import foto_2 from "./../../../../public/00_0001_Capa-3.png";
+import foto_3 from "./../../../../public/00_0002_Capa-4.png";
 
 const Cards = () => {
   const cardsRef = useRef([]);
@@ -18,7 +21,7 @@ const Cards = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    cardsRef.current.forEach(({ card, elements, image }, index) => {
+    cardsRef.current.forEach(({ card, elements, images }, index) => {
       if (window.innerWidth >= 1100) {
         gsap.fromTo(
           card,
@@ -34,11 +37,11 @@ const Cards = () => {
               start: "top 80%",
               end: "top 20%",
               scrub: true,
-              // markers: true,
             },
           }
         );
       }
+
       gsap.fromTo(
         elements,
         {
@@ -50,35 +53,55 @@ const Cards = () => {
           x: 0,
           ease: "power1.out",
           stagger: 0.2,
-          // delay: 0.2,
           scrollTrigger: {
             trigger: card,
             start: "top+=200 80%",
             end: "top 20%",
-            // markers: true,
           },
         }
       );
 
-      gsap.fromTo(
-        image,
-        {
-          opacity: 0,
-          x: 50,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          ease: "power1.out",
-          // delay: 0.2,
-          scrollTrigger: {
-            trigger: card,
-            start: "top+=200 80%",
-            end: "top 20%",
-            // markers: true,
+      // Animación de todas las imágenes con stagger si es un array
+      if (images.length > 1) {
+        gsap.fromTo(
+          images,
+          {
+            opacity: 0,
+            x: 100,
           },
-        }
-      );
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power1.out",
+            stagger: 0.2, // Aplicar stagger a las imágenes
+            scrollTrigger: {
+              trigger: card,
+              start: "top+=200 80%",
+              end: "top 20%",
+            },
+          }
+        );
+      } else {
+        gsap.fromTo(
+          images[0],
+          {
+            opacity: 0,
+            x: 100,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top+=200 80%",
+              end: "top 20%",
+            },
+          }
+        );
+      }
     });
   }, []);
 
@@ -98,7 +121,7 @@ const Cards = () => {
             ],
           },
           {
-            img: AplicacionesMobiles,
+            img: [foto_1, foto_2, foto_3],
             subtitle: "SERVICIO",
             title: "Aplicaciones Móviles",
             text: "Diseñamos y desarrollamos aplicaciones móviles personalizadas que permiten a tu empresa conectarse con una audiencia móvil en crecimiento.",
@@ -137,7 +160,9 @@ const Cards = () => {
               (cardsRef.current[index] = {
                 card: el,
                 elements: el?.querySelectorAll("h5, h3, p"),
-                image: el?.querySelector("img"),
+                images: Array.isArray(card.img)
+                  ? el?.querySelectorAll("img")
+                  : [el?.querySelector("img")],
               })
             }
             key={index}
@@ -156,13 +181,24 @@ const Cards = () => {
               </div>
             </div>
             <div className={styles.containerImg}>
-              <Image
-                src={card.img}
-                alt={card.title}
-                width={"100%"}
-                height={"auto"}
-              />
-              {/* <div className={styles.gradient}></div> */}
+              {Array.isArray(card.img) && card.img.length > 0 ? (
+                card.img.map((img, index) => (
+                  <Image
+                    key={index}
+                    src={img}
+                    alt={card.title}
+                    width={"100%"}
+                    height={"auto"}
+                  />
+                ))
+              ) : (
+                <Image
+                  src={card.img}
+                  alt={card.title}
+                  width={"100%"}
+                  height={"auto"}
+                />
+              )}
             </div>
           </div>
         ))}

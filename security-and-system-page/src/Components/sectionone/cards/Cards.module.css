@@ -19,7 +19,7 @@
 
 .card {
   width: 1050px;
-  height: auto;
+  height: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -30,19 +30,20 @@
   background: #101010;
   border: 1px solid rgb(22, 22, 22);
   padding: 50px;
-  /* box-shadow: -1px -1px 0px 2px rgba(54, 54, 54, 0.06); */
 }
 
 .containerImg {
   width: 100%;
   height: auto;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .containerImg img {
   width: 100%;
-  height: 450px;
+  height: auto;
   object-fit: cover;
   object-position: top;
   border-radius: 10px;
@@ -52,15 +53,17 @@
 
 .card:nth-child(2) .containerImg {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
+  gap: 20px;
+}
+
+.card:nth-child(2) .containerImg img {
+  width: 170px;
 }
 
 /* Card numero 3 */
-
-/* .card:nth-child(3) .containerText {
-  max-width: 450px;
-} */
 
 .card:nth-child(3) .containerText h3 {
   text-wrap: balance;
@@ -79,33 +82,6 @@
   width: 100%;
   height: auto;
 }
-
-/* .card:nth-child(4) .containerImg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card:nth-child(4) .containerImg img {
-  width: 95%;
-  height: auto;
-} */
-
-/* .gradient {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgb(16, 16, 16);
-  background: linear-gradient(
-      90deg,
-      rgba(16, 16, 16, 0) 20%,
-      rgb(16, 16, 16) 100%
-    ),
-    linear-gradient(180deg, rgba(16, 16, 16, 0) 20%, rgb(16, 16, 16) 100%);
-  z-index: 1;
-} */
 
 .containerText {
   max-width: 400px;
@@ -170,12 +146,17 @@
     position: relative;
     top: 0px;
   }
+
+  .card:nth-child(2) .containerImg img {
+    width: 100px;
+  }
 }
 
 @media (max-width: 900px) {
   .card {
     flex-wrap: wrap;
     border-radius: 20px;
+    height: auto;
   }
 
   .containerText {
@@ -183,11 +164,11 @@
   }
 
   .containerImg {
-    height: 300px;
+    height: auto;
   }
 
   .containerImg img {
-    width: 100%;
+    width: 90%;
     height: auto;
   }
 }
@@ -197,7 +178,11 @@
     padding: 30px;
   }
   .containerImg {
-    height: 200px;
+    height: auto;
+  }
+
+  .card:nth-child(2) .containerImg img {
+    width: 50px;
   }
   .containerText {
     padding: 0px;
