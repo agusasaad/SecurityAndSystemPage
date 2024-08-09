@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import SectionThree from "@/Components/sectionthree/SectionThree";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import ContactUs from "@/Components/contactus/ContactUs";
 
 export default function Home() {
   const bgRef = useRef(null);
@@ -33,6 +34,7 @@ export default function Home() {
       <main className={styles.main}>
         <SectionOne />
         <SectionThree />
+        <ContactUs />
       </main>
     </div>
   );
