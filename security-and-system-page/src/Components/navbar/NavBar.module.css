@@ -78,7 +78,6 @@
   letter-spacing: -0.1%;
   cursor: pointer;
   color: white;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .center ul li .icon {
@@ -163,7 +162,8 @@
     border-radius: 0px;
     border: none;
     position: relative;
-    background-color: black;
+    backdrop-filter: blur(100px);
+    background-color: rgba(24, 24, 31, 0.993);
   }
 
   .onClose {

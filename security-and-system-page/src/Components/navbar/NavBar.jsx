@@ -62,14 +62,18 @@ const NavBar = () => {
             </button>
           </div>
           <ul className={poppins.className}>
-            <li>
-              <CiHome className={styles.icon} />
-              Inicio
-            </li>
-            <li>
-              <GrServices className={styles.icon} />
-              Servicios
-            </li>
+            <a href="/">
+              <li>
+                <CiHome className={styles.icon} />
+                Inicio
+              </li>
+            </a>
+            <a href="/page_service">
+              <li>
+                <GrServices className={styles.icon} />
+                Servicios
+              </li>
+            </a>
             <li>
               <PiUsersThreeLight className={styles.icon} />
               Sobre Nosotros
