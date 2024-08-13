@@ -7,6 +7,7 @@ import SectionThree from "@/Components/sectionthree/SectionThree";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ContactUs from "@/Components/contactus/ContactUs";
+import Footer from "@/Components/footer/Footer";
 
 export default function Home() {
   const bgRef = useRef(null);
@@ -36,6 +37,7 @@ export default function Home() {
         <SectionThree />
         <ContactUs />
       </main>
+      <Footer />
     </div>
   );
 }
