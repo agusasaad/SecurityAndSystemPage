@@ -80,8 +80,6 @@ const HomePage = () => {
     tl.to(titleRef2.current, {
       borderRightColor: "transparent",
       duration: 0.4,
-      repeat: -1,
-      yoyo: true,
       ease: "power1.inOut",
     });
 
