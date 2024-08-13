@@ -1,0 +1,153 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.541);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(100px);
+  background-color: rgba(13, 13, 14, 0.7);
+  border-radius: 20px;
+  width: 90%;
+  height: auto;
+  max-width: 1100px;
+  padding: 100px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  overflow-y: hidden;
+}
+
+.content {
+  width: 100%;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  opacity: 0;
+}
+
+.content span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #a594fd;
+}
+
+.content h3 {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.content p {
+  font-size: 18px;
+  color: #888888;
+  max-width: 600px;
+  line-height: 25px;
+}
+
+.content ul {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.content ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.content ul li:first-child {
+  background-color: #449d5d25;
+  color: #449d5d;
+}
+
+.content ul li:nth-child(2) {
+  background-color: #3b88e925;
+  color: #3b88e9;
+}
+
+.content ul li:nth-child(3) {
+  background-color: #d1772425;
+  color: #d17724;
+}
+
+.content ul li:nth-child(4) {
+  background-color: #9162c025;
+  color: #9162c0;
+}
+
+.content ul li:hover {
+  transform: scale(1.1) !important;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .content h3 {
+    font-size: 50px;
+  }
+
+  .content p {
+    font-size: 16px;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 790px) {
+  .modal {
+    padding: 100px 30px;
+  }
+  .content span {
+    font-size: 14px;
+  }
+
+  .content h3 {
+    font-size: 40px;
+  }
+
+  .content p {
+    font-size: 15px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 550px) {
+  .modal {
+    padding: 50px 10px;
+  }
+
+  .content {
+    gap: 15px;
+  }
+  .content h3 {
+    font-size: 25px;
+    letter-spacing: -0.5px;
+  }
+
+  .content p {
+    font-size: 15px;
+    font-weight: 500;
+    /* text-wrap: balance; */
+  }
+}
