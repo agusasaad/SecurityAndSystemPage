@@ -9,30 +9,33 @@ import { useEffect, useRef } from "react";
 const SectionOne = () => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
-      titleRef.current,
-      {
-        y: 100,
-        opacity: 0,
-        visibility: "hidden",
-      },
-      {
-        opacity: 1,
-        y: 0,
-        visibility: "visible",
-        ease: "power3.out",
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 50%",
-          end: "top 20%",
-          // markers: true,
+    if (window.innerWidth > 700) {
+      gsap.fromTo(
+        titleRef.current,
+        {
+          x: 50,
+          opacity: 0,
+          visibility: "hidden",
         },
-      }
-    );
+        {
+          opacity: 1,
+          x: 0,
+          visibility: "visible",
+          ease: "power3.out",
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 50%",
+            end: "top 20%",
+            // markers: true,
+          },
+        }
+      );
+    }
   }, []);
 
   return (

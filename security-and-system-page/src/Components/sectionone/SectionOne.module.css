@@ -101,6 +101,9 @@
 }
 
 @media (max-width: 500px) {
+  .container {
+    padding: 0px;
+  }
   .container h2 {
     width: 95%;
     font-size: 28px;
