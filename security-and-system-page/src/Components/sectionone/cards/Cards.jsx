@@ -19,17 +19,17 @@ import foto_1 from "./../../../../public/00_0000_Capa-2.png";
 import foto_2 from "./../../../../public/00_0001_Capa-3.png";
 import foto_3 from "./../../../../public/00_0002_Capa-4.png";
 
-import foto_IT_1 from "./../../../../public/consultoriaIT/ELEMENTO_1.png";
-import foto_IT_3 from "./../../../../public/consultoriaIT/ELEMENTO_3.png";
-import foto_IT_4 from "./../../../../public/consultoriaIT/ELEMENTO_4.png";
-import foto_IT_5 from "./../../../../public/consultoriaIT/ELEMENTO_5.png";
-import foto_IT_6 from "./../../../../public/consultoriaIT/ELEMENTO_6.png";
-import foto_IT_7 from "./../../../../public/consultoriaIT/ELEMENTO_7.png";
-import foto_IT_8 from "./../../../../public/consultoriaIT/ELEMENTO_8.png";
-import foto_IT_2 from "./../../../../public/consultoriaIT/ELEMENTO_2.png";
-import foto_IT_10 from "./../../../../public/consultoriaIT/ELEMENTO_10.png";
-import foto_IT_9 from "./../../../../public/consultoriaIT/ELEMENTO_9.png";
-import foto_IT_11 from "./../../../../public/consultoriaIT/ELEMENTO_11.png";
+import foto_IT_1 from "./../../../../public/ConsultoriaIT/ELEMENTO_1.png";
+import foto_IT_3 from "./../../../../public/ConsultoriaIT/ELEMENTO_3.png";
+import foto_IT_4 from "./../../../../public/ConsultoriaIT/ELEMENTO_4.png";
+import foto_IT_5 from "./../../../../public/ConsultoriaIT/ELEMENTO_5.png";
+import foto_IT_6 from "./../../../../public/ConsultoriaIT/ELEMENTO_6.png";
+import foto_IT_7 from "./../../../../public/ConsultoriaIT/ELEMENTO_7.png";
+import foto_IT_8 from "./../../../../public/ConsultoriaIT/ELEMENTO_8.png";
+import foto_IT_2 from "./../../../../public/ConsultoriaIT/ELEMENTO_2.png";
+import foto_IT_10 from "./../../../../public/ConsultoriaIT/ELEMENTO_10.png";
+import foto_IT_9 from "./../../../../public/ConsultoriaIT/ELEMENTO_9.png";
+import foto_IT_11 from "./../../../../public/ConsultoriaIT/ELEMENTO_11.png";
 
 const Cards = () => {
   const cardsRef = useRef([]);
