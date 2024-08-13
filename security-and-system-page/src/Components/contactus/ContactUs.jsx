@@ -36,7 +36,7 @@ const ContactUs = () => {
         opacity: 1,
         x: 0,
         stagger: 0.2,
-        duration: 1.5,
+        duration: 0.5,
         ease: "power1.out",
         scrollTrigger: {
           trigger: containerRef.current,
