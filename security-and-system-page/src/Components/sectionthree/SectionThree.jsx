@@ -1,16 +1,16 @@
 "use client";
 import styles from "./SectionThree.module.css";
-import web1 from "./../../../public/imagesWEB/WEB1.webp";
-import web2 from "./../../../public/imagesWEB/WEB2.webp";
-import web3 from "./../../../public/imagesWEB/WEB3.webp";
+import web1 from "./../../../public/project_1.png";
+import web2 from "./../../../public/project_2.png";
+import web3 from "./../../../public/project_3.png";
+import web4 from "./../../../public/project_4.png";
+
 import Image from "next/image";
 import { poppins } from "@/Fonts/fonts";
 const SectionThree = () => {
-  const imageCarrucel = [web1, web2, web3];
+  const imageCarrucel = [web1, web2, web3, web4];
 
   const copyImageCarrucel = [
-    ...imageCarrucel,
-    ...imageCarrucel,
     ...imageCarrucel,
     ...imageCarrucel,
     ...imageCarrucel,
