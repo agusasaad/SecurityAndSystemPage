@@ -38,25 +38,25 @@ const Cards = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     cardsRef.current.forEach(({ card, elements, images }, index) => {
-      // if (window.innerWidth >= 1100) {
-      //   gsap.fromTo(
-      //     card,
-      //     {
-      //       scale: 1,
-      //     },
-      //     {
-      //       scale: 1.1,
-      //       ease: "power1.out",
-      //       stagger: 0.2,
-      //       scrollTrigger: {
-      //         trigger: card,
-      //         start: "top 80%",
-      //         end: "top 20%",
-      //         scrub: true,
-      //       },
-      //     }
-      //   );
-      // }
+      if (window.innerWidth >= 1100) {
+        gsap.fromTo(
+          card,
+          {
+            scale: 1,
+          },
+          {
+            scale: 1.1,
+            ease: "power1.out",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              end: "top 20%",
+              scrub: true,
+            },
+          }
+        );
+      }
 
       gsap.fromTo(
         elements,
