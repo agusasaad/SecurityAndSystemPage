@@ -21,7 +21,6 @@ import foto_3 from "./../../../../public/00_0002_Capa-4.png";
 
 import foto_IT_1 from "./../../../../public/ConsultoriaIT/ELEMENTO_1.png";
 import foto_IT_3 from "./../../../../public/ConsultoriaIT/ELEMENTO_3.png";
-import foto_IT_4 from "./../../../../public/ConsultoriaIT/ELEMENTO_4.png";
 import foto_IT_5 from "./../../../../public/ConsultoriaIT/ELEMENTO_5.png";
 import foto_IT_6 from "./../../../../public/ConsultoriaIT/ELEMENTO_6.png";
 import foto_IT_7 from "./../../../../public/ConsultoriaIT/ELEMENTO_7.png";
@@ -30,6 +29,7 @@ import foto_IT_2 from "./../../../../public/ConsultoriaIT/ELEMENTO_2.png";
 import foto_IT_10 from "./../../../../public/ConsultoriaIT/ELEMENTO_10.png";
 import foto_IT_9 from "./../../../../public/ConsultoriaIT/ELEMENTO_9.png";
 import foto_IT_11 from "./../../../../public/ConsultoriaIT/ELEMENTO_11.png";
+import foto_IT_4 from "./../../../../public/ConsultoriaIT/ELEMENTO_4.png";
 
 const Cards = () => {
   const cardsRef = useRef([]);
@@ -58,6 +58,52 @@ const Cards = () => {
           },
         }
       );
+
+      // Animación específica para la tercera imagen en la segunda tarjeta
+      if (index === 1 && images[2]) {
+        gsap.fromTo(
+          [images[0], images[1], images[2]],
+          {
+            translateY: -15,
+          },
+          {
+            translateY: 0,
+            duration: 1,
+            ease: "power1.inOut",
+            repeat: -1,
+            yoyo: true,
+          }
+        );
+      } else if (index === 2 && images[4]) {
+        gsap.fromTo(
+          images[4],
+          {
+            translateY: -15,
+          },
+          {
+            translateY: 0,
+            duration: 1,
+            ease: "power1.inOut",
+            repeat: -1,
+            yoyo: true,
+          }
+        );
+      } else if (index === 3 && images[0]) {
+        gsap.fromTo(
+          [images[1], images[3], images[7], images[5], images[10]],
+          {
+            translateY: -10,
+          },
+          {
+            translateY: 0,
+            duration: 1,
+            ease: "power1.inOut",
+            repeat: -1,
+            yoyo: true,
+            delay: 2,
+          }
+        );
+      }
     });
   }, []);
 
@@ -92,9 +138,9 @@ const Cards = () => {
               foto_SYC_01,
               foto_SYC_02,
               foto_SYC_03,
-              foto_SYC_04,
-              foto_SYC_05,
               foto_SYC_06,
+              // foto_SYC_05,
+              foto_SYC_04,
             ],
             subtitle: "SERVICIO",
             title: "Servidores y Soluciones Cloud",
