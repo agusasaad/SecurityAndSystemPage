@@ -38,86 +38,26 @@ const Cards = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     cardsRef.current.forEach(({ card, elements, images }, index) => {
-      if (window.innerWidth >= 1100) {
-        gsap.fromTo(
-          card,
-          {
-            scale: 1,
-          },
-          {
-            scale: 1.1,
-            ease: "power1.out",
-            stagger: 0.2,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              end: "top 20%",
-              scrub: true,
-            },
-          }
-        );
-      }
-
       gsap.fromTo(
-        elements,
+        [elements, images],
         {
           opacity: 0,
-          x: 50,
+          translateX: 100,
         },
         {
           opacity: 1,
-          x: 0,
+          translateX: 0,
+          duration: 1,
           ease: "power1.out",
+          stagger: 0.1,
           scrollTrigger: {
             trigger: card,
             start: "top+=200 80%",
             end: "top 20%",
+            once: true,
           },
         }
       );
-
-      // Animación de todas las imágenes con stagger si es un array
-      if (images.length > 1) {
-        gsap.fromTo(
-          images,
-          {
-            opacity: 0,
-            x: 100,
-          },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 1,
-            ease: "power1.out",
-            delay: 0.1,
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: card,
-              start: "top+=200 80%",
-              end: "top 20%",
-            },
-          }
-        );
-      } else {
-        gsap.fromTo(
-          images[0],
-          {
-            opacity: 0,
-            x: 100,
-          },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 1,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top+=200 80%",
-              end: "top 20%",
-            },
-          }
-        );
-      }
     });
   }, []);
 
