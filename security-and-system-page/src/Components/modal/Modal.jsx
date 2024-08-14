@@ -75,7 +75,7 @@ const Modal = ({ isModalOpen, setModalOpen }) => {
         <div className={styles.content} ref={content}>
           <span ref={titleRef1}>EMPECEMOS</span>
           <h3 ref={titleRef2}>
-            ¿Listo para llevar tu sitio web al siguiente nivel?
+            ¿Listo para llevar tu proyecto digital al siguiente nivel?
           </h3>
           <p ref={subtitleRef}>
             Estamos listos para dar vida a tus ideas, estas a un clic de
