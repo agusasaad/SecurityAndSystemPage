@@ -31,7 +31,7 @@ const Services = () => {
             {desarrolloWeb.map((element, index) => (
               <div key={index} className={styles.card}>
                 <Image
-                  src={desarrolloWeb_img.src}
+                  src={desarrolloWeb_img}
                   alt="imagen proyecto"
                   width={350}
                   height={350}
