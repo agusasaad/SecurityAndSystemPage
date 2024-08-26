@@ -62,19 +62,25 @@
 }
 .containerImg {
   width: 100%;
-  height: auto;
+  overflow: hidden;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow-x: hidden;
 }
 
-.containerImg img {
+.carousel {
+  display: flex;
   width: 100%;
+}
+
+.carouselImages {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 10000%; /* Asegúrate de que sea lo suficientemente grande para cubrir todas las imágenes */
+}
+
+.image {
+  width: 100%;
+  flex-shrink: 0;
   height: auto;
-  border-radius: 10px;
-  will-change: transform, opacity;
 }
 
 @media (max-width: 1100px) {
