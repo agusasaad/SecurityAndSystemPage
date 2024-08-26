@@ -64,6 +64,7 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+  border-radius: 10px;
 }
 
 .carousel {
@@ -81,6 +82,7 @@
   width: 100%;
   flex-shrink: 0;
   height: auto;
+  border-radius: 10px;
 }
 
 @media (max-width: 1100px) {
