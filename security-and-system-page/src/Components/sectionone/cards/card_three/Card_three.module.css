@@ -1,0 +1,119 @@
+.card {
+  width: 1050px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  position: sticky;
+  top: 250px;
+  border-radius: 30px;
+  background-color: rgb(24, 24, 31);
+  border: 1px solid rgba(112, 112, 112, 0.1);
+  padding: 50px;
+  overflow-x: hidden;
+}
+
+.containerText {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.containerText h5 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #a594fd;
+  will-change: transform, opacity;
+}
+
+.containerText h3 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  line-height: 55px;
+  will-change: transform, opacity;
+}
+
+.containerText p {
+  font-size: 17px;
+  font-weight: 400;
+  color: grey;
+  will-change: transform, opacity;
+}
+
+.tips {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tips p {
+  font-size: 15px;
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  will-change: transform, opacity;
+}
+.containerImg {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.containerImg img {
+  position: relative;
+  width: 80%;
+  height: auto;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 1100px) {
+  .card {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    position: relative;
+    top: 0px;
+  }
+
+  .containerText {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 550px) {
+  .card {
+    gap: 20px;
+    padding: 40px;
+    border-radius: 20px;
+  }
+  .containerText {
+    padding: 0px;
+    width: 100%;
+    max-width: 100%;
+    gap: 7px;
+  }
+  .containerText h3 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .containerText p {
+    font-size: 15px;
+  }
+
+  .tips {
+    display: none;
+  }
+}
