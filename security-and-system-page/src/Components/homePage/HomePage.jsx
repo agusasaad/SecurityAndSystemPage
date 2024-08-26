@@ -2,8 +2,8 @@
 import { useEffect, useRef } from "react";
 import styles from "./HomePage.module.css";
 import { poppins } from "@/Fonts/fonts";
-import { FiExternalLink } from "react-icons/fi";
 import gsap from "gsap";
+import Url from "@/svg/Url";
 
 const HomePage = () => {
   const titleRef1 = useRef(null);
@@ -119,7 +119,7 @@ const HomePage = () => {
       <div className={styles.containerButton} ref={buttonRef}>
         <button className={`${poppins.className} ${styles.button}`}>
           <span>Contratar Servicios</span>
-          <FiExternalLink className={styles.icon} />
+          <Url />
         </button>
         <button className={`${poppins.className} ${styles.buttonFolow}`}>
           Seguinos Nuestras Redes
