@@ -111,8 +111,8 @@ const HomePage = () => {
         </div>
         <div className={styles.containerText}>
           <p className={poppins.className} ref={subtitleRef}>
-            Creamos páginas web personalizadas que conectan con tu audiencia y
-            generan resultados impactantes.
+            Impulsamos tu negocio con soluciones digitales que conectan,
+            destacan y generan resultados en el mundo digital.
           </p>
         </div>
       </div>
