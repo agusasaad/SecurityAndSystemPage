@@ -8,7 +8,7 @@ const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
         className={poppins.className}
         onClick={() => setModalOpen(!isModalOpen)}
       >
-        empecemos
+        Empecemos
       </button>
     </div>
   );
