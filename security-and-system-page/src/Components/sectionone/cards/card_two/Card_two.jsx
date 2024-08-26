@@ -41,7 +41,7 @@ const Card_two = () => {
       {
         opacity: 1,
         x: 0,
-        duration: 1,
+        duration: 0.7,
         ease: "power1",
         stagger: 0.2,
         scrollTrigger: {

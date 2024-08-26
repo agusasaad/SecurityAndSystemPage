@@ -1,11 +1,19 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { poppins } from "@/Fonts/fonts";
 import styles from "./Card_one.module.css";
 import Checked from "@/svg/Checked";
-import DesarrolloWebImg from "./../../../../../public/desarrolloWeb_1.svg";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import DesarrolloWebImg_1 from "./../../../../../public/desarrolloWeb/desarrolloWeb_1.png";
+import DesarrolloWebImg_2 from "./../../../../../public/desarrolloWeb/desarrolloWeb_2.png";
+import DesarrolloWebImg_3 from "./../../../../../public/desarrolloWeb/desarrolloWeb_3.png";
+
+const images = [
+  DesarrolloWebImg_1.src,
+  DesarrolloWebImg_2.src,
+  DesarrolloWebImg_3.src,
+];
 
 const Card_one = () => {
   const containerRef = useRef(null);
@@ -15,7 +23,8 @@ const Card_one = () => {
   const tip_oneRef = useRef(null);
   const tip_twoRef = useRef(null);
   const tip_threeRef = useRef(null);
-  const imgRef = useRef(null);
+  const img_oneRef = useRef(null);
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +36,7 @@ const Card_one = () => {
         tip_oneRef.current,
         tip_twoRef.current,
         tip_threeRef.current,
-        imgRef.current,
+        img_oneRef.current,
       ],
       {
         opacity: 0,
@@ -36,7 +45,7 @@ const Card_one = () => {
       {
         opacity: 1,
         x: 0,
-        duration: 1,
+        duration: 0.7,
         ease: "power1",
         stagger: 0.2,
         scrollTrigger: {
@@ -46,6 +55,14 @@ const Card_one = () => {
         },
       }
     );
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -76,11 +93,22 @@ const Card_one = () => {
           </p>
         </div>
       </div>
-      <div className={styles.containerImg} ref={imgRef}>
-        <img
-          src={DesarrolloWebImg.src}
-          alt={"Desarrollo de aplicaciones Web"}
-        />
+      <div className={styles.containerImg} ref={img_oneRef}>
+        <div className={styles.carousel}>
+          <div
+            className={styles.carouselImages}
+            style={{ transform: `translateX(-${currentImage * 100}%)` }}
+          >
+            {images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Desarrollo de aplicaciones Web ${index + 1}`}
+                className={styles.image}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

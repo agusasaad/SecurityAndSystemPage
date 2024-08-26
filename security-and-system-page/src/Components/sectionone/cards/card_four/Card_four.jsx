@@ -66,7 +66,7 @@ const Card_four = () => {
       {
         opacity: 1,
         x: 0,
-        duration: 1,
+        duration: 0.7,
         ease: "power1",
         stagger: 0.2,
         scrollTrigger: {
@@ -78,7 +78,7 @@ const Card_four = () => {
     );
 
     gsap.fromTo(
-      img_fiveRef.current,
+      img_elevenRef.current,
       {
         translateY: -7,
       },
@@ -120,17 +120,17 @@ const Card_four = () => {
         </div>
       </div>
       <div className={styles.containerImg}>
-        <img src={foto_IT_10.src} alt={"Consultoria IT"} ref={img_oneRef} />
-        <img src={foto_IT_11.src} alt={"Consultoria IT"} ref={img_twoRef} />
-        <img src={foto_IT_7.src} alt={"Consultoria IT"} ref={img_threeRef} />
+        <img src={foto_IT_1.src} alt={"Consultoria IT"} ref={img_oneRef} />
+        <img src={foto_IT_2.src} alt={"Consultoria IT"} ref={img_twoRef} />
+        <img src={foto_IT_3.src} alt={"Consultoria IT"} ref={img_threeRef} />
         <img src={foto_IT_4.src} alt={"Consultoria IT"} ref={img_fourRef} />
-        <img src={foto_IT_1.src} alt={"Consultoria IT"} ref={img_fiveRef} />
+        <img src={foto_IT_5.src} alt={"Consultoria IT"} ref={img_fiveRef} />
         <img src={foto_IT_6.src} alt={"Consultoria IT"} ref={img_sixRef} />
-        <img src={foto_IT_5.src} alt={"Consultoria IT"} ref={img_nineRef} />
-        <img src={foto_IT_3.src} alt={"Consultoria IT"} ref={img_tenRef} />
-        <img src={foto_IT_2.src} alt={"Consultoria IT"} ref={img_elevenRef} />
-        <img src={foto_IT_8.src} alt={"Consultoria IT"} ref={img_sevenRef} />
-        <img src={foto_IT_9.src} alt={"Consultoria IT"} ref={img_eightRef} />
+        <img src={foto_IT_7.src} alt={"Consultoria IT"} ref={img_sevenRef} />
+        <img src={foto_IT_8.src} alt={"Consultoria IT"} ref={img_eightRef} />
+        <img src={foto_IT_9.src} alt={"Consultoria IT"} ref={img_nineRef} />
+        <img src={foto_IT_10.src} alt={"Consultoria IT"} ref={img_tenRef} />
+        <img src={foto_IT_11.src} alt={"Consultoria IT"} ref={img_elevenRef} />
       </div>
     </div>
   );
