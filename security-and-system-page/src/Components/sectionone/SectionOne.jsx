@@ -1,10 +1,13 @@
 "use client";
 import styles from "./SectionOne.module.css";
-import Cards from "./cards/Cards";
 import { poppins } from "@/Fonts/fonts";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import Card_one from "./cards/card_one/Card_one";
+import Card_two from "./cards/card_two/Card_two";
+import Card_three from "./cards/card_three/Card_three";
+import Card_four from "./cards/card_four/Card_four";
 
 const SectionOne = () => {
   const containerRef = useRef(null);
@@ -31,7 +34,6 @@ const SectionOne = () => {
             trigger: containerRef.current,
             start: "top 50%",
             end: "top 20%",
-            // markers: true,
           },
         }
       );
@@ -48,7 +50,10 @@ const SectionOne = () => {
           Encuentra la solución perfecta con nuestra variedad de servicios.
         </p>
       </div>
-      <Cards />
+      <Card_one />
+      <Card_two />
+      <Card_three />
+      <Card_four />
     </div>
   );
 };
