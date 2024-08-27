@@ -6,7 +6,6 @@ import { poppins } from "@/Fonts/fonts";
 import { useEffect, useRef } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlinePhone, MdOutlineEmail } from "react-icons/md";
-import Image from "next/image";
 import map from "./../../../public/map.png";
 import location from "./../../../public/location.gif";
 
@@ -104,10 +103,10 @@ const ContactUs = () => {
             rel="noopener noreferrer"
           >
             <span ref={locationRef}>
-              <Image src={location} alt="map" width={50} height={50} />
+              <img src={location} alt="map" width={50} height={50} />
             </span>
           </a>
-          <Image src={map} alt="map" width={500} height={500} />
+          <img src={map} alt="map" width={500} height={500} />
         </div>
       </div>
     </div>
