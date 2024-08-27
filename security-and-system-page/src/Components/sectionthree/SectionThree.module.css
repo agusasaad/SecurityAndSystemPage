@@ -88,6 +88,7 @@
   font-size: 50px;
   font-weight: 500;
   letter-spacing: -2px;
+  text-shadow: 1px 0px 18px rgba(0, 0, 0, 0.651);
 }
 
 .title p {
@@ -96,6 +97,7 @@
   max-width: 500px;
   text-align: center;
   color: rgb(187, 187, 187);
+  text-shadow: 1px 0px 18px rgba(0, 0, 0, 0.651);
 }
 
 .title button {
@@ -143,8 +145,11 @@
 }
 
 @media (max-width: 500px) {
+  .containerSectionThree {
+    align-items: flex-end;
+  }
   .containerSectionThree > :first-child {
-    animation: slideUp 10s infinite linear;
+    animation: slideUp 30s infinite linear;
   }
 
   @keyframes slideUp {
@@ -154,9 +159,9 @@
       transform: translateY(0%);
     }
     100% {
-      -moz-transform: translateY(30%);
-      -webkit-transform: translateY(30%);
-      transform: translateY(30%);
+      -moz-transform: translateY(80%);
+      -webkit-transform: translateY(80%);
+      transform: translateY(80%);
     }
   }
   .title {

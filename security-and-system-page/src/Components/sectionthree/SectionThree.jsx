@@ -1,14 +1,15 @@
 "use client";
 import styles from "./SectionThree.module.css";
-import web1 from "./../../../public/project_1.png";
-import web2 from "./../../../public/project_2.png";
-import web3 from "./../../../public/project_3.png";
-import web4 from "./../../../public/project_4.png";
+import web1 from "./../../../public/project_1.jpg";
+import web2 from "./../../../public/project_2.jpg";
+import web3 from "./../../../public/project_3.jpg";
+import web4 from "./../../../public/project_4.jpg";
+import web5 from "./../../../public/project_5.jpg";
 
 import Image from "next/image";
 import { poppins } from "@/Fonts/fonts";
 const SectionThree = () => {
-  const imageCarrucel = [web1, web2, web3, web4];
+  const imageCarrucel = [web1, web2, web3, web4, web5];
 
   const copyImageCarrucel = [
     ...imageCarrucel,
@@ -20,13 +21,13 @@ const SectionThree = () => {
     <div className={styles.containerSectionThree}>
       <div className={styles.containerCarrucel}>
         {copyImageCarrucel.map((image, index) => (
-          <Image
+          <img
             key={index}
-            src={image}
+            src={image.src}
             width={450}
             height={"auto"}
             alt="imagen proyecto"
-          ></Image>
+          ></img>
         ))}
       </div>
       <div
@@ -34,24 +35,24 @@ const SectionThree = () => {
         style={{ flexDirection: "column-reverse" }}
       >
         {copyImageCarrucel.map((image, index) => (
-          <Image
+          <img
             key={index}
-            src={image}
+            src={image.src}
             width={450}
             height={"auto"}
             alt="imagen proyecto"
-          ></Image>
+          ></img>
         ))}
       </div>
       <div className={styles.containerCarrucel}>
         {copyImageCarrucel.map((image, index) => (
-          <Image
+          <img
             key={index}
-            src={image}
+            src={image.src}
             width={450}
             height={"auto"}
             alt="imagen proyecto"
-          ></Image>
+          ></img>
         ))}
       </div>
       <div className={styles.containerText}>
