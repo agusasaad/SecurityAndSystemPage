@@ -1,0 +1,153 @@
+.service {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient {
+  background-image: url("../../../public/elipses/elipse_2.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: -35%;
+  z-index: -1;
+  animation: rotateAnimation 10s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.containerServices {
+  backdrop-filter: blur(100px);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 170px 0px;
+  gap: 100px;
+}
+
+.sectionOne {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  will-change: transform, opacity;
+}
+
+.sectionOne .title h2 {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.sectionOne .title p {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.personalizado {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  background-color: rgba(24, 24, 31, 0.7);
+  border-radius: 15px;
+  padding: 35px 30px;
+  will-change: translateY, opacity;
+}
+
+.personalizado span {
+  max-width: min-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.personalizado h2 {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.personalizado p {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(150, 150, 150);
+}
+
+@media (max-width: 850px) {
+  .gradient {
+    top: -20%;
+    background-size: cover;
+  }
+
+  .title {
+    width: 90%;
+  }
+
+  .sectionOne .title h2 {
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 450px) {
+  .containerServices {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+  .sectionOne .title h2 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-wrap: balance;
+  }
+
+  .sectionOne .title p {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    text-wrap: balance;
+  }
+}
