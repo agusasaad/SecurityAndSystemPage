@@ -8,11 +8,13 @@ import Checked from "@/svg/Checked";
 import DesarrolloWebImg_1 from "./../../../../../public/desarrolloWeb/desarrolloWeb_1.png";
 import DesarrolloWebImg_2 from "./../../../../../public/desarrolloWeb/desarrolloWeb_2.png";
 import DesarrolloWebImg_3 from "./../../../../../public/desarrolloWeb/desarrolloWeb_3.png";
+import DesarrolloWebImg_4 from "./../../../../../public/desarrolloWeb/desarrolloWeb_4.png";
 
 const images = [
   DesarrolloWebImg_1.src,
   DesarrolloWebImg_2.src,
   DesarrolloWebImg_3.src,
+  DesarrolloWebImg_4.src,
 ];
 
 const Card_one = () => {
@@ -66,7 +68,7 @@ const Card_one = () => {
   }, []);
 
   return (
-    <div className={styles.card} ref={containerRef}>
+    <a href="/desarrollo_web" className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <span className={poppins.className} ref={subtitleRef}>
           Servicio
@@ -110,7 +112,7 @@ const Card_one = () => {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

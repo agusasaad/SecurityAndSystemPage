@@ -74,7 +74,11 @@ const Card_three = () => {
     );
   }, []);
   return (
-    <div className={styles.card} ref={containerRef}>
+    <a
+      href="/servidores_soluciones_cloud"
+      className={styles.card}
+      ref={containerRef}
+    >
       <div className={`${poppins.className} ${styles.containerText}`}>
         <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
@@ -127,7 +131,7 @@ const Card_three = () => {
           ref={img_fiveRef}
         />
       </div>
-    </div>
+    </a>
   );
 };
 

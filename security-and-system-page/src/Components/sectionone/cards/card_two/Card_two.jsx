@@ -68,7 +68,7 @@ const Card_two = () => {
   }, []);
 
   return (
-    <div className={styles.card} ref={containerRef}>
+    <a href="/aplicaciones_moviles" className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
@@ -99,7 +99,7 @@ const Card_two = () => {
         <img src={foto_2.src} alt={"Aplicaciones Móviles"} ref={img_twoRef} />
         <img src={foto_3.src} alt={"Aplicaciones Móviles"} ref={img_threeRef} />
       </div>
-    </div>
+    </a>
   );
 };
 
