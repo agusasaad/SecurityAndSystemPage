@@ -72,18 +72,78 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.1%;
   cursor: pointer;
   color: white;
+  position: relative;
 }
 
 .center ul li .icon {
   font-size: 25px;
   display: none;
+  margin-right: 10px;
 }
+
+.menuServices {
+  display: flex;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  padding: 20px;
+  gap: 25px !important;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(24px);
+  background-color: rgb(24, 24, 31);
+  -webkit-animation: swing-in-top-fwd 0.5s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg) !important;
+  transition: transform 0.3s ease !important;
+}
+
 .end {
   display: flex;
   justify-content: center;
@@ -213,15 +273,25 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    gap: 15px;
   }
 
   .center.show ul li {
     color: white;
+    margin: 10px 0px;
   }
 
   .center ul li .icon {
     font-size: 20px;
     display: flex;
+  }
+
+  .menuServices {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0px !important;
+    gap: 15px !important;
   }
 
   .end {

@@ -17,6 +17,7 @@ const NavBar = () => {
   const navBarAnimate = useRef(null);
 
   const [showMenu, setShowMenu] = useState(false);
+  const [showMenuServices, setShowMenuServices] = useState(false);
 
   //Animaciones GSAP
   useEffect(() => {
@@ -39,21 +40,23 @@ const NavBar = () => {
     <div className={styles.containerNav} ref={navBarAnimate}>
       <div className={styles.nav}>
         <div className={styles.start}>
-          <Image
-            src={logoSAS}
-            alt="Logo de la empresa Security And System"
-            className={styles.LogoNav}
-            width={30}
-            height={"auto"}
-          />
+          <a href="/">
+            <Image
+              src={logoSAS}
+              alt="Logo de la empresa Security And System"
+              className={styles.LogoNav}
+              width={30}
+              height={"auto"}
+            />
 
-          <Image
-            src={logoSAS_Mobile}
-            alt="Logo de la empresa Security And System"
-            className={styles.LogoNavMobile}
-            width={150}
-            height={"auto"}
-          />
+            <Image
+              src={logoSAS_Mobile}
+              alt="Logo de la empresa Security And System"
+              className={styles.LogoNavMobile}
+              width={150}
+              height={"auto"}
+            />
+          </a>
         </div>
         <div className={`${styles.center} ${showMenu ? styles.show : ""}`}>
           <div className={styles.onClose}>
@@ -68,12 +71,48 @@ const NavBar = () => {
                 Inicio
               </li>
             </a>
-            <a href="/page_service">
-              <li>
-                <GrServices className={styles.icon} />
-                Servicios
-              </li>
-            </a>
+            <li onClick={() => setShowMenuServices(!showMenuServices)}>
+              <GrServices className={styles.icon} />
+              Servicios
+              <svg
+                className={showMenuServices ? styles.rotate : ""}
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                width={13}
+                height={13}
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill="white"
+                    d="M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8 316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496z"
+                  />
+                </g>
+              </svg>
+            </li>
+            {showMenuServices && (
+              <ul className={styles.menuServices}>
+                <a href="/desarrollo_web">
+                  <li>Desarrollo Web</li>
+                </a>
+                <a href="/aplicaciones_moviles">
+                  <li>Aplicaciones Móviles</li>
+                </a>
+                <a href="/servidores_soluciones_cloud">
+                  <li>Servidores y Soluciones Cloud</li>
+                </a>
+                <a href="/consultoria_it">
+                  <li>Consultoria IT</li>
+                </a>
+              </ul>
+            )}
+
             <li>
               <PiUsersThreeLight className={styles.icon} />
               Sobre Nosotros
