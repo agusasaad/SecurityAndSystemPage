@@ -54,7 +54,7 @@
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(24px);
-  background-color: rgba(24, 24, 31, 0.7);
+  background-color: rgba(24, 24, 31, 0.815);
   padding: 14px 30px;
   border-radius: 30px;
 }
@@ -103,7 +103,7 @@
   background-color: rgb(24, 24, 31);
   -webkit-animation: swing-in-top-fwd 0.5s
     cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 @-webkit-keyframes swing-in-top-fwd {

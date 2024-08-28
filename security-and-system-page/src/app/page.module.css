@@ -16,7 +16,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  gap: 200px;
 }
 
 .bg {
@@ -27,34 +26,11 @@
   top: 0;
   left: 0;
   z-index: -1;
-  background-image: url("../../public/background.svg");
-  background-size: contain;
+  background-image: url("../../public/elipses/elipse_1.svg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50%;
-  /* 
-  width: 70%;
-  height: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 188, 230, 0.397) 60%,
-    rgba(41, 98, 255, 0.308) 30%,
-    rgba(212, 0, 249, 0.356) 0%
-  );
-  border-radius: 50%;
-  top: 27%;
-  left: 15%; */
-  /* transform: translate(-50%, -50%); */
-  /* animation: rotateBackground 10s linear infinite; */
+  background-position: bottom;
 }
-
-/* @keyframes rotateBackground {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 .main {
   width: 100%;
@@ -67,7 +43,8 @@
 
 @media (max-width: 1000px) {
   .bg {
-    background-image: url("../../public/background_mobile.svg");
+    background-image: url("../../public/elipses/elipse_1.svg");
     background-size: cover;
+    background-position: center;
   }
 }
