@@ -58,7 +58,7 @@ const ServidoresSolucionesCloud = () => {
           <div className={styles.title} ref={titleRef}>
             <h2 className={poppins.className}>Servidores & Soluciones Cloud</h2>
             <p className={poppins.className}>
-              Todos nuestros sercivios de Servidores y Soluciones Cloud incluyen
+              Todos nuestros servicios de Servidores y Soluciones Cloud incluyen
             </p>
           </div>
           <div className={styles.personalizado} ref={cardOne}>

@@ -58,7 +58,7 @@ const DesarrolloWeb = () => {
           <div className={styles.title} ref={titleRef}>
             <h2 className={poppins.className}>Servicios de Desarrollo Web</h2>
             <p className={poppins.className}>
-              Todos nuestros sercivios de Desarrollo Web incluyen
+              Todos nuestros servicios de Desarrollo Web incluyen
             </p>
           </div>
           <div className={styles.personalizado} ref={cardOne}>
