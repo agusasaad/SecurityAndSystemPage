@@ -6,9 +6,10 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 250px 0px;
-  background-color: #00000000;
-  backdrop-filter: blur(50px);
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-color: #0000003f;
+  backdrop-filter: blur(200px);
 }
 
 .containerTitle {
@@ -26,13 +27,14 @@
   overflow: hidden;
   height: max-content;
   white-space: nowrap;
-  font-size: 7.5vw;
+  font-size: 6vw;
   font-weight: 600;
-  line-height: 150px;
+  line-height: 120px;
   letter-spacing: -6px;
   color: white;
   text-align: center;
   margin: 0 auto;
+  text-shadow: -1px 1px 7px rgb(32, 32, 32);
 }
 
 .typeWritten:first-child h1 {
@@ -41,7 +43,7 @@
 }
 
 .typeWritten:nth-child(2) h1 {
-  padding-right: 7px;
+  /* padding-right: 7px; */
   padding-bottom: 16px;
   will-change: transform, opacity;
 }
@@ -63,14 +65,17 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  position: relative;
+  margin-top: 30px;
 }
 
-.containerButton button {
-  margin-top: 30px;
+.containerButton .button {
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  padding: 10px 15px;
+  padding: 10px 0px;
+  padding-left: 15px;
+  padding-right: 5px;
   cursor: pointer;
   background-color: rgb(0, 0, 0);
   height: 100%;
@@ -82,17 +87,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
   will-change: transform, opacity;
 }
 
 .containerButton .buttonFolow {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 10px 15px;
+  cursor: pointer;
   border-bottom-width: 0px;
   --border-color: rgba(0, 0, 0, 0);
   --border-left-width: 0px;
   --border-right-width: 0px;
   --border-style: solid;
   --border-top-width: 0px;
+  border-radius: 10px;
   background-color: rgb(0, 75, 221);
   height: 100%;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset,
@@ -101,8 +111,75 @@
   will-change: transform, opacity;
 }
 
-.icon {
-  font-size: 23px;
+.socials {
+  width: 255px;
+  height: auto;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 1000;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(15, 15, 15);
+  box-shadow: rgba(255, 255, 255, 0.062) 0px 1px 0px 0px inset,
+    rgba(61, 61, 61, 0.342) 0px 2px 8px 0px inset;
+  -webkit-animation: swing-in-top-fwd 0.5s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+.socials ul {
+  height: auto;
+  padding: 10px 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.socials li {
+  padding: 10px 7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  font-weight: 300;
+}
+
+.socials li:hover {
+  background: #3131316c;
 }
 
 @media (max-width: 1500px) {
@@ -150,18 +227,23 @@
   }
 
   .containerButton {
-    padding: 10px;
+    margin-top: 0px !important;
   }
 
   .containerButton button {
     font-size: 15px;
+    margin: 0px;
+  }
+
+  .socials {
+    left: 18%;
   }
 }
 
 @media (max-width: 510px) {
   .homePage {
     padding-top: 170px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     gap: 10px;
     backdrop-filter: blur(50px);
   }
@@ -172,9 +254,24 @@
   .homePage .containerTitle h1 {
     font-size: 45px;
     letter-spacing: -1.5px;
+    line-height: 57px;
   }
 
-  .containerButton button {
-    margin-top: 5px;
+  .containerButton {
+    width: auto;
+    column-gap: 100px !important;
+    row-gap: 5px;
+  }
+
+  .buttonFolow {
+    order: 3;
+    margin-top: 10px !important;
+  }
+
+  .socials {
+    position: relative;
+    top: 0;
+    left: 0;
+    left: center;
   }
 }

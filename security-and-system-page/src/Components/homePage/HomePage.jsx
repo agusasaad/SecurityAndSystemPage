@@ -1,11 +1,15 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./HomePage.module.css";
 import { poppins } from "@/Fonts/fonts";
 import gsap from "gsap";
-import Url from "@/svg/Url";
+import ArrowWhite from "@/svg/ArrowWhite";
+import Linkedin from "@/svg/Linkedin";
+import Facebook from "@/svg/Facebook";
+import Instagram from "@/svg/Instagram";
 
 const HomePage = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const titleRef1 = useRef(null);
   const titleRef2 = useRef(null);
   const subtitleRef = useRef(null);
@@ -117,13 +121,40 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
-        <button className={`${poppins.className} ${styles.button}`}>
-          <span>Contratar Servicios</span>
-          <Url />
+        <button
+          className={`${poppins.className} ${styles.button}`}
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          <span>Nuestras Redes Sociales</span>
+          <ArrowWhite />
         </button>
         <button className={`${poppins.className} ${styles.buttonFolow}`}>
-          Seguinos Nuestras Redes
+          Solicitar Cotización
         </button>
+        {showMenu && (
+          <div className={styles.socials}>
+            <ul>
+              <a href="">
+                <li>
+                  <Linkedin />
+                  Linkedin
+                </li>
+              </a>
+              <a href="">
+                <li>
+                  <Facebook />
+                  Facebook
+                </li>
+              </a>
+              <a href="">
+                <li>
+                  <Instagram />
+                  Instragram
+                </li>
+              </a>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
