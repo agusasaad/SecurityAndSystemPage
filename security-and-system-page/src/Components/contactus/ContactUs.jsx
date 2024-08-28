@@ -65,7 +65,7 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="contact">
       <div className={styles.ContactUs} ref={containerRef}>
         <div className={styles.info}>
           <div className={styles.title}>

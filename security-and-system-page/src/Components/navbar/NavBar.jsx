@@ -45,7 +45,7 @@ const NavBar = () => {
               src={logoSAS}
               alt="Logo de la empresa Security And System"
               className={styles.LogoNav}
-              width={30}
+              width={40}
               height={"auto"}
             />
 
@@ -124,9 +124,11 @@ const NavBar = () => {
           </ul>
         </div>
         <div className={styles.end}>
-          <button className={`${poppins.className} ${styles.button}`}>
-            Contactanos
-          </button>
+          <a href="#contact">
+            <button className={`${poppins.className} ${styles.button}`}>
+              Contactanos
+            </button>
+          </a>
         </div>
         <div className={styles.hamburguerButton}>
           <button onClick={() => setShowMenu(!showMenu)}>
