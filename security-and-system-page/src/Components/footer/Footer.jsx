@@ -18,8 +18,8 @@ const Footer = () => {
             height={200}
           />
           <p>
-            Creación de sitios web a medida que combina diseño innovador y
-            funcionalidad para llevar tu presencia en línea al siguiente nivel.
+            Creación digital a medida, combinando diseño innovador y
+            funcionalidad, para llevar tu presencia en línea al siguiente nivel.
           </p>
           <div className={styles.social}>
             <span>

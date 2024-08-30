@@ -20,7 +20,6 @@
   align-items: stretch;
   flex-wrap: wrap;
   padding-bottom: 150px;
-  /* backdrop-filter: blur(100px); */
 }
 
 .mapContainer {
@@ -34,7 +33,6 @@
 .mapContainer img {
   width: 100%;
   height: auto;
-  opacity: 80%;
 }
 
 .gradient {
@@ -198,5 +196,16 @@
 
   .icon {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .infoContainer span {
+    font-size: 13px;
+    gap: 5px;
+  }
+
+  .info .title p {
+    font-size: 14px;
   }
 }

@@ -8,6 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlinePhone, MdOutlineEmail } from "react-icons/md";
 import map from "./../../../public/map.png";
 import location from "./../../../public/location.gif";
+import Link from "next/link";
 
 const ContactUs = () => {
   const containerRef = useRef(null);
@@ -81,22 +82,39 @@ const ContactUs = () => {
             </p>
           </div>
           <div className={styles.infoContainer} ref={spanRef}>
-            <span className={poppins.className}>
-              <FaLocationDot className={styles.icon} />
-              Juan José paso 1353, Morón
-            </span>
-            <span className={poppins.className}>
-              <MdOutlinePhone className={styles.icon} />
-              11 7726-4032
-            </span>
-            <span className={poppins.className}>
-              <MdOutlineEmail className={styles.icon} />
-              contact@securityandsystem.com
-            </span>
+            <Link
+              href="https://maps.app.goo.gl/GMFqPPhv4dxQHZzv7"
+              target="_blank"
+            >
+              <span className={poppins.className}>
+                <FaLocationDot className={styles.icon} />
+                Juan José paso 1353, Morón
+              </span>
+            </Link>
+            <Link
+              href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20sus%20servicios!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={poppins.className}>
+                <MdOutlinePhone className={styles.icon} />
+                11 5626-0023
+              </span>
+            </Link>
+            <Link
+              href="mailto:contact@securityandsystem.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={poppins.className}>
+                <MdOutlineEmail className={styles.icon} />
+                contact@securityandsystem.com
+              </span>
+            </Link>
           </div>
         </div>
         <div className={styles.mapContainer}>
-          <a
+          <Link
             className={styles.gradient}
             href="https://maps.app.goo.gl/GMFqPPhv4dxQHZzv7"
             target="_blank"
@@ -105,7 +123,7 @@ const ContactUs = () => {
             <span ref={locationRef}>
               <img src={location.src} alt="map" width={50} height={50} />
             </span>
-          </a>
+          </Link>
           <img src={map.src} alt="map" width={500} height={500} />
         </div>
       </div>
