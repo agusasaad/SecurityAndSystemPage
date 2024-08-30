@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 
 const Url = ({ height = "24px", width = "24px", color = "#000000" }) => {
   return (
