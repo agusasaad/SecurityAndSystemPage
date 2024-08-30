@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import foto_1 from "./../../../../../public/00_0000_Capa-2.png";
 import foto_2 from "./../../../../../public/00_0001_Capa-3.png";
 import foto_3 from "./../../../../../public/00_0002_Capa-4.png";
+import Link from "next/link";
 
 const Card_two = () => {
   const containerRef = useRef(null);
@@ -68,7 +69,11 @@ const Card_two = () => {
   }, []);
 
   return (
-    <a href="/aplicaciones_moviles" className={styles.card} ref={containerRef}>
+    <Link
+      href="/aplicaciones_moviles"
+      className={styles.card}
+      ref={containerRef}
+    >
       <div className={`${poppins.className} ${styles.containerText}`}>
         <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
@@ -99,7 +104,7 @@ const Card_two = () => {
         <img src={foto_2.src} alt={"Aplicaciones Móviles"} ref={img_twoRef} />
         <img src={foto_3.src} alt={"Aplicaciones Móviles"} ref={img_threeRef} />
       </div>
-    </a>
+    </Link>
   );
 };
 

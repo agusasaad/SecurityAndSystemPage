@@ -10,6 +10,7 @@ import foto_SYC_02 from "./../../../../../public/servidoresCloud/ELEMENTO_02.png
 import foto_SYC_03 from "./../../../../../public/servidoresCloud/ELEMENTO_03.png";
 import foto_SYC_04 from "./../../../../../public/servidoresCloud/ELEMENTO_04.png";
 import foto_SYC_05 from "./../../../../../public/servidoresCloud/ELEMENTO_06.png";
+import Link from "next/link";
 
 const Card_three = () => {
   const containerRef = useRef(null);
@@ -74,7 +75,7 @@ const Card_three = () => {
     );
   }, []);
   return (
-    <a
+    <Link
       href="/servidores_soluciones_cloud"
       className={styles.card}
       ref={containerRef}
@@ -131,7 +132,7 @@ const Card_three = () => {
           ref={img_fiveRef}
         />
       </div>
-    </a>
+    </Link>
   );
 };
 

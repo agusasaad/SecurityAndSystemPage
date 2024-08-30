@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
 import logoSAS from "../../../public/logoSAS.png";
@@ -12,6 +12,7 @@ import { PiUsersThreeLight } from "react-icons/pi";
 import { GrProjects } from "react-icons/gr";
 import { poppins } from "@/Fonts/fonts";
 import gsap from "gsap";
+import Link from "next/link";
 
 const NavBar = () => {
   const navBarAnimate = useRef(null);
@@ -40,7 +41,7 @@ const NavBar = () => {
     <div className={styles.containerNav} ref={navBarAnimate}>
       <div className={styles.nav}>
         <div className={styles.start}>
-          <a href="/">
+          <Link href="/">
             <Image
               src={logoSAS}
               alt="Logo de la empresa Security And System"
@@ -56,7 +57,7 @@ const NavBar = () => {
               width={150}
               height={"auto"}
             />
-          </a>
+          </Link>
         </div>
         <div className={`${styles.center} ${showMenu ? styles.show : ""}`}>
           <div className={styles.onClose}>
@@ -65,12 +66,12 @@ const NavBar = () => {
             </button>
           </div>
           <ul className={poppins.className}>
-            <a href="/">
+            <Link href="/">
               <li>
                 <CiHome className={styles.icon} />
                 Inicio
               </li>
-            </a>
+            </Link>
             <li onClick={() => setShowMenuServices(!showMenuServices)}>
               <GrServices className={styles.icon} />
               Servicios
@@ -98,18 +99,38 @@ const NavBar = () => {
             </li>
             {showMenuServices && (
               <ul className={styles.menuServices}>
-                <a href="/desarrollo_web">
+                <Link
+                  href="/desarrollo_web"
+                  onClick={() => {
+                    setShowMenu(false), setShowMenuServices(false);
+                  }}
+                >
                   <li>Desarrollo Web</li>
-                </a>
-                <a href="/aplicaciones_moviles">
+                </Link>
+                <Link
+                  href="/aplicaciones_moviles"
+                  onClick={() => {
+                    setShowMenu(false), setShowMenuServices(false);
+                  }}
+                >
                   <li>Aplicaciones Móviles</li>
-                </a>
-                <a href="/servidores_soluciones_cloud">
+                </Link>
+                <Link
+                  href="/servidores_soluciones_cloud"
+                  onClick={() => {
+                    setShowMenu(false), setShowMenuServices(false);
+                  }}
+                >
                   <li>Servidores y Soluciones Cloud</li>
-                </a>
-                <a href="/consultoria_it">
+                </Link>
+                <Link
+                  href="/consultoria_it"
+                  onClick={() => {
+                    setShowMenu(false), setShowMenuServices(false);
+                  }}
+                >
                   <li>Consultoria IT</li>
-                </a>
+                </Link>
               </ul>
             )}
 
@@ -124,11 +145,11 @@ const NavBar = () => {
           </ul>
         </div>
         <div className={styles.end}>
-          <a href="#contact">
+          <Link href="#contact">
             <button className={`${poppins.className} ${styles.button}`}>
               Contactanos
             </button>
-          </a>
+          </Link>
         </div>
         <div className={styles.hamburguerButton}>
           <button onClick={() => setShowMenu(!showMenu)}>

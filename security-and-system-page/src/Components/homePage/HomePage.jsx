@@ -7,6 +7,7 @@ import ArrowWhite from "@/svg/ArrowWhite";
 import Linkedin from "@/svg/Linkedin";
 import Facebook from "@/svg/Facebook";
 import Instagram from "@/svg/Instagram";
+import Link from "next/link";
 
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -85,6 +86,8 @@ const HomePage = () => {
       borderRightColor: "transparent",
       duration: 0.4,
       ease: "power1.inOut",
+      yoyo: true,
+      repeat: -1,
     });
 
     tl.to(subtitleRef.current, {
@@ -134,24 +137,24 @@ const HomePage = () => {
         {showMenu && (
           <div className={styles.socials}>
             <ul>
-              <a href="">
+              <Link href="/">
                 <li>
                   <Linkedin />
                   Linkedin
                 </li>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/">
                 <li>
                   <Facebook />
                   Facebook
                 </li>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/">
                 <li>
                   <Instagram />
                   Instragram
                 </li>
-              </a>
+              </Link>
             </ul>
           </div>
         )}

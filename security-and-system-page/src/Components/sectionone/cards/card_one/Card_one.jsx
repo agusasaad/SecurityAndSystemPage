@@ -9,6 +9,7 @@ import DesarrolloWebImg_1 from "./../../../../../public/desarrolloWeb/desarrollo
 import DesarrolloWebImg_2 from "./../../../../../public/desarrolloWeb/desarrolloWeb_2.png";
 import DesarrolloWebImg_3 from "./../../../../../public/desarrolloWeb/desarrolloWeb_3.png";
 import DesarrolloWebImg_4 from "./../../../../../public/desarrolloWeb/desarrolloWeb_4.png";
+import Link from "next/link";
 
 const images = [
   DesarrolloWebImg_1.src,
@@ -68,7 +69,7 @@ const Card_one = () => {
   }, []);
 
   return (
-    <a href="/desarrollo_web" className={styles.card} ref={containerRef}>
+    <Link href="/desarrollo_web" className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <span className={poppins.className} ref={subtitleRef}>
           Servicio
@@ -112,7 +113,7 @@ const Card_one = () => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

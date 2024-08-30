@@ -16,6 +16,7 @@ import foto_IT_11 from "./../../../../../public/ConsultoriaIT/ELEMENTO_11.png";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 const Card_four = () => {
   const containerRef = useRef(null);
@@ -93,7 +94,7 @@ const Card_four = () => {
     );
   }, []);
   return (
-    <a href="/consultoria_it" className={styles.card} ref={containerRef}>
+    <Link href="/consultoria_it" className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
@@ -132,7 +133,7 @@ const Card_four = () => {
         <img src={foto_IT_10.src} alt={"Consultoria IT"} ref={img_tenRef} />
         <img src={foto_IT_11.src} alt={"Consultoria IT"} ref={img_elevenRef} />
       </div>
-    </a>
+    </Link>
   );
 };
 
