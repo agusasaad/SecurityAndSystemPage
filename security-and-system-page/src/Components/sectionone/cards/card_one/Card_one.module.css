@@ -8,9 +8,11 @@
   position: sticky;
   top: 250px;
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(rgb(41, 41, 41) -19.6429%, rgb(24, 24, 24) 100%);
-
+  border: 1px solid rgb(34, 34, 34);
+  backdrop-filter: blur(24px);
+  background-image: url("./../../../../../public/background\ 1.svg");
+  background-size: 130%;
+  background-position: center;
   padding: 50px;
   overflow-x: hidden;
 }
@@ -41,7 +43,7 @@
 .containerText p {
   font-size: 17px;
   font-weight: 400;
-  color: rgb(182, 182, 182);
+  color: rgb(211, 211, 211);
   will-change: transform, opacity;
 }
 
@@ -54,7 +56,7 @@
 
 .tips p {
   font-size: 15px;
-  color: rgb(182, 182, 182);
+  color: rgb(211, 211, 211);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,6 +108,10 @@
     gap: 20px;
     padding: 40px;
     border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: 250%;
+    /* background-image: url("./../../../../../public/background_mobile.svg");
+    background-size: 100%; */
   }
   .containerText {
     padding: 0px;
