@@ -298,3 +298,10 @@
     left: 0;
   }
 }
+
+@media (max-width: 400px) {
+  .homePage .containerTitle h1 {
+    font-size: 40px;
+    line-height: 65px;
+  }
+}
