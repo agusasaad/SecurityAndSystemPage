@@ -20,6 +20,7 @@ const Card_three = () => {
   const tip_oneRef = useRef(null);
   const tip_twoRef = useRef(null);
   const tip_threeRef = useRef(null);
+  const button_container = useRef(null);
   const img_oneRef = useRef(null);
   const img_twoRef = useRef(null);
   const img_threeRef = useRef(null);
@@ -36,6 +37,7 @@ const Card_three = () => {
         tip_oneRef.current,
         tip_twoRef.current,
         tip_threeRef.current,
+        button_container.current,
         img_oneRef.current,
         img_twoRef.current,
         img_threeRef.current,
@@ -87,8 +89,8 @@ const Card_three = () => {
         </h3>
         <p className={poppins.className} ref={descriptionRef}>
           Implementamos infraestructuras robustas en AWS, Azure y Google Cloud,
-          garantizando escalabilidad, seguridad y disponibilidad con
-          configuraciones personalizadas para cada proyecto.
+          garantizando escalabilidad y seguridad con configuraciones adaptadas a
+          cada proyecto.
         </p>
         <div className={styles.tips}>
           <p className={poppins.className} ref={tip_oneRef}>
@@ -103,6 +105,22 @@ const Card_three = () => {
             <Checked />
             Gestión experta para alta disponibilidad.
           </p>
+        </div>
+        <div className={styles.containerButton} ref={button_container}>
+          <Link href="/servidores_soluciones_cloud">
+            <button className={`${poppins.className} ${styles.button_black}`}>
+              Más Detalles
+            </button>
+          </Link>
+          <Link
+            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Servidores%20y%20Soluciones%20Cloud!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className={`${poppins.className} ${styles.button}`}>
+              Contratar Servicio
+            </button>
+          </Link>
         </div>
       </div>
       <div className={styles.containerImg}>

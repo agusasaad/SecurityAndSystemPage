@@ -26,6 +26,7 @@ const Card_one = () => {
   const tip_oneRef = useRef(null);
   const tip_twoRef = useRef(null);
   const tip_threeRef = useRef(null);
+  const button_container = useRef(null);
   const img_oneRef = useRef(null);
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -39,6 +40,7 @@ const Card_one = () => {
         tip_oneRef.current,
         tip_twoRef.current,
         tip_threeRef.current,
+        button_container.current,
         img_oneRef.current,
       ],
       {
@@ -50,7 +52,7 @@ const Card_one = () => {
         x: 0,
         duration: 0.7,
         ease: "power1",
-        stagger: 0.2,
+        stagger: 0.1,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top+=200 80%",
@@ -69,13 +71,13 @@ const Card_one = () => {
   }, []);
 
   return (
-    <Link href="/desarrollo_web" className={styles.card} ref={containerRef}>
+    <div className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <span className={poppins.className} ref={subtitleRef}>
           Servicio
         </span>
         <h3 className={poppins.className} ref={titleRef}>
-          Desarrollo de aplicaciones Web
+          Desarrollo Web
         </h3>
         <p className={poppins.className} ref={descriptionRef}>
           Nuestros diseños web están desarrollados para representar la identidad
@@ -95,6 +97,22 @@ const Card_one = () => {
             Aumenta la interacción con tus clientes.
           </p>
         </div>
+        <div className={styles.containerButton} ref={button_container}>
+          <Link href="/desarrollo_web">
+            <button className={`${poppins.className} ${styles.button_black}`}>
+              Más Detalles
+            </button>
+          </Link>
+          <Link
+            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Aplicaciones%20M%C3%B3viles!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className={`${poppins.className} ${styles.button}`}>
+              Contratar Servicio
+            </button>
+          </Link>
+        </div>
       </div>
       <div className={styles.containerImg} ref={img_oneRef}>
         <div className={styles.carousel}>
@@ -113,7 +131,7 @@ const Card_one = () => {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

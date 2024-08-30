@@ -17,6 +17,7 @@ const Card_two = () => {
   const tip_oneRef = useRef(null);
   const tip_twoRef = useRef(null);
   const tip_threeRef = useRef(null);
+  const button_container = useRef(null);
   const img_oneRef = useRef(null);
   const img_twoRef = useRef(null);
   const img_threeRef = useRef(null);
@@ -31,6 +32,7 @@ const Card_two = () => {
         tip_oneRef.current,
         tip_twoRef.current,
         tip_threeRef.current,
+        button_container.current,
         img_oneRef.current,
         img_twoRef.current,
         img_threeRef.current,
@@ -44,7 +46,7 @@ const Card_two = () => {
         x: 0,
         duration: 0.7,
         ease: "power1",
-        stagger: 0.2,
+        stagger: 0.1,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top+=200 80%",
@@ -69,11 +71,7 @@ const Card_two = () => {
   }, []);
 
   return (
-    <Link
-      href="/aplicaciones_moviles"
-      className={styles.card}
-      ref={containerRef}
-    >
+    <div className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
@@ -98,13 +96,29 @@ const Card_two = () => {
             Expande tu alcance con soluciones móviles efectivas.
           </p>
         </div>
+        <div className={styles.containerButton} ref={button_container}>
+          <Link href="/aplicaciones_moviles">
+            <button className={`${poppins.className} ${styles.button_black}`}>
+              Más Detalles
+            </button>
+          </Link>
+          <Link
+            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Aplicaciones%20M%C3%B3viles!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className={`${poppins.className} ${styles.button}`}>
+              Contratar Servicio
+            </button>
+          </Link>
+        </div>
       </div>
       <div className={styles.containerImg}>
         <img src={foto_1.src} alt={"Aplicaciones Móviles"} ref={img_oneRef} />
         <img src={foto_2.src} alt={"Aplicaciones Móviles"} ref={img_twoRef} />
         <img src={foto_3.src} alt={"Aplicaciones Móviles"} ref={img_threeRef} />
       </div>
-    </Link>
+    </div>
   );
 };
 

@@ -26,6 +26,7 @@ const Card_four = () => {
   const tip_oneRef = useRef(null);
   const tip_twoRef = useRef(null);
   const tip_threeRef = useRef(null);
+  const button_container = useRef(null);
   const img_oneRef = useRef(null);
   const img_twoRef = useRef(null);
   const img_threeRef = useRef(null);
@@ -48,6 +49,7 @@ const Card_four = () => {
         tip_oneRef.current,
         tip_twoRef.current,
         tip_threeRef.current,
+        button_container.current,
         img_oneRef.current,
         img_twoRef.current,
         img_threeRef.current,
@@ -94,7 +96,7 @@ const Card_four = () => {
     );
   }, []);
   return (
-    <Link href="/consultoria_it" className={styles.card} ref={containerRef}>
+    <div className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
@@ -119,6 +121,22 @@ const Card_four = () => {
             Soluciones en colaboración con clientes.
           </p>
         </div>
+        <div className={styles.containerButton} ref={button_container}>
+          <Link href="/consultoria_it">
+            <button className={`${poppins.className} ${styles.button_black}`}>
+              Más Detalles
+            </button>
+          </Link>
+          <Link
+            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Consultor%C3%ADa%20IT!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className={`${poppins.className} ${styles.button}`}>
+              Contratar Servicio
+            </button>
+          </Link>
+        </div>
       </div>
       <div className={styles.containerImg}>
         <img src={foto_IT_1.src} alt={"Consultoria IT"} ref={img_oneRef} />
@@ -133,7 +151,7 @@ const Card_four = () => {
         <img src={foto_IT_10.src} alt={"Consultoria IT"} ref={img_tenRef} />
         <img src={foto_IT_11.src} alt={"Consultoria IT"} ref={img_elevenRef} />
       </div>
-    </Link>
+    </div>
   );
 };
 
