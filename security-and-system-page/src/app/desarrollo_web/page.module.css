@@ -13,7 +13,7 @@
   position: absolute;
   width: 100%;
   height: 100vh;
-  top: -35%;
+  top: -20%;
   z-index: -1;
   animation: rotateAnimation 10s linear infinite;
 }
@@ -268,6 +268,9 @@
 }
 
 @media (max-width: 450px) {
+  .gradient {
+    top: -10% !important;
+  }
   .containerServices {
     padding-top: 150px;
     padding-bottom: 50px;
