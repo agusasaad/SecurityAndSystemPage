@@ -5,8 +5,7 @@
   width: 100%;
   height: auto;
   gap: 50px;
-  padding-bottom: 100px;
-  margin-top: 40px;
+  padding: 0px 0px;
   background-image: url("../../../public/background.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,11 +20,6 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-.containerTitle .subtitle {
-  padding: 5px 15px;
-  font-size: 14px;
-  color: #c7c7c7;
 }
 
 .containerTitle h2 {
@@ -47,7 +41,7 @@
   line-height: 30px;
   font-size: 20px;
   font-weight: 400;
-  color: grey;
+  color: rgb(182, 182, 182);
 }
 
 @media (max-width: 1500px) {

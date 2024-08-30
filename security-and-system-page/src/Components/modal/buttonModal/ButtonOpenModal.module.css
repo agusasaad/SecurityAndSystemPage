@@ -11,18 +11,20 @@
 }
 
 .containerButton button {
-  font-size: 15px;
+  font-size: 30px;
   font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 10px;
+  border-radius: 10px;
   --border-bottom-width: 0px;
   --border-color: rgba(0, 0, 0, 0);
-  background-color: rgb(104, 0, 165);
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset,
-    rgba(0, 0, 0, 0.16) 0px 2px 8px 0px;
+  background: linear-gradient(
+    rgb(119, 57, 170) -19.6429%,
+    rgb(59, 9, 100) 100%
+  );
+  color: rgb(240, 240, 240);
   transition: all 0.3s ease;
 }
 

@@ -5,11 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding-top: 150px;
+  padding-top: 230px;
   padding-bottom: 150px;
-  background-color: #0000003f;
-  backdrop-filter: blur(200px);
 }
 
 .containerTitle {
@@ -27,14 +24,13 @@
   overflow: hidden;
   height: max-content;
   white-space: nowrap;
-  font-size: 6vw;
+  font-size: 130px;
   font-weight: 600;
-  line-height: 120px;
+  line-height: 130px;
   letter-spacing: -6px;
   color: white;
   text-align: center;
   margin: 0 auto;
-  text-shadow: -1px 1px 7px rgb(32, 32, 32);
 }
 
 .typeWritten:first-child h1 {
@@ -43,8 +39,8 @@
 }
 
 .typeWritten:nth-child(2) h1 {
-  /* padding-right: 7px; */
-  padding-bottom: 16px;
+  padding-right: 7px;
+  padding-bottom: 25px;
   will-change: transform, opacity;
 }
 
@@ -194,12 +190,12 @@
   }
 
   .containerTitle {
-    gap: 1px;
+    gap: 5px;
   }
   .homePage .containerTitle h1 {
-    font-size: 7.5vw;
-    letter-spacing: -0.02em;
-    line-height: normal;
+    font-size: 100px;
+    line-height: 120px;
+    letter-spacing: -3px;
   }
 
   .typeWritten:first-child h1 {
@@ -208,26 +204,22 @@
 
   .typeWritten:nth-child(2) h1 {
     padding-right: 0px;
-    padding-bottom: 0px;
   }
 
   .containerText {
     width: 90%;
-    max-width: 500px;
-    font-size: 17px;
+    max-width: 600px;
+    font-size: 18px;
   }
 }
 
-@media (max-width: 750px) {
-  .homePage {
-    padding: 140px 0px;
-  }
+@media (max-width: 900px) {
   .homePage .containerTitle h1 {
-    font-size: 9vw;
+    font-size: 90px;
   }
 
   .containerButton {
-    margin-top: 0px !important;
+    margin-top: 15px !important;
   }
 
   .containerButton button {
@@ -240,7 +232,14 @@
   }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 750px) {
+  .homePage .containerTitle h1 {
+    font-size: 70px;
+    line-height: 90px;
+  }
+}
+
+@media (max-width: 600px) {
   .homePage {
     padding-top: 170px;
     padding-bottom: 100px;
@@ -249,29 +248,53 @@
   }
 
   .homePage .containerTitle {
-    gap: 10px;
+    gap: 0px;
   }
   .homePage .containerTitle h1 {
-    font-size: 45px;
-    letter-spacing: -1.5px;
-    line-height: 57px;
+    font-size: 50px;
+    letter-spacing: -2px;
+    line-height: 75px;
+    padding: 0px 2px;
   }
 
-  .containerButton {
-    width: auto;
-    column-gap: 100px !important;
-    row-gap: 5px;
+  .containerText {
+    margin: 10px 0px;
   }
 
   .buttonFolow {
     order: 3;
-    margin-top: 10px !important;
+  }
+
+  .button {
+    padding: 8px 15px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .homePage {
+    gap: 0px;
+  }
+
+  .homePage .containerTitle h1 {
+    font-size: 45px;
+    line-height: 70px;
+  }
+
+  .containerText {
+    font-size: 16px;
+  }
+
+  .containerButton {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .containerButton .buttonFolow {
+    margin-top: 10px;
   }
 
   .socials {
     position: relative;
     top: 0;
     left: 0;
-    left: center;
   }
 }
