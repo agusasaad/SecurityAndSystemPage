@@ -8,9 +8,10 @@
   position: sticky;
   top: 250px;
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px);
-  background-color: rgb(24, 24, 31);
+  background-image: url("./../../../../../public/background\ 1.svg");
+  background-size: 250%;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 50px;
   overflow-x: hidden;
 }
@@ -97,8 +98,10 @@
 @media (max-width: 550px) {
   .card {
     gap: 20px;
-    padding: 40px 35px;
+    padding: 40px;
     border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: 280%;
   }
   .containerText {
     padding: 0px;
