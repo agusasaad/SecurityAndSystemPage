@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+"use client";
+import { useEffect, useRef } from "react";
 import styles from "./Modal.module.css";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { FaTelegram } from "react-icons/fa";

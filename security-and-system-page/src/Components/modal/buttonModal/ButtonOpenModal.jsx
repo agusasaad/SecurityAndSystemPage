@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
 import styles from "./ButtonOpenModal.module.css";
 import { poppins } from "@/Fonts/fonts";
+import { IoMdChatbubbles } from "react-icons/io";
 const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
   return (
     <div className={styles.containerButton}>
@@ -8,7 +9,7 @@ const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
         className={poppins.className}
         onClick={() => setModalOpen(!isModalOpen)}
       >
-        Empecemos
+        <IoMdChatbubbles />
       </button>
     </div>
   );
