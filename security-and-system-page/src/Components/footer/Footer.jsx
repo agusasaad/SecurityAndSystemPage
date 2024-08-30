@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import { FaLinkedin } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -34,16 +36,16 @@ const Footer = () => {
         <div className={styles.routes}>
           <ul>
             <li>
-              <a href="/">INICIO</a>
+              <Link href="/">INICIO</Link>
             </li>
             <li>
-              <a href="/desarrollo_web">NUESTROS SERVICIOS</a>
+              <Link href="/desarrollo_web">NUESTROS SERVICIOS</Link>
             </li>
             <li>
-              <a href="/">SOBRE NOSOTROS</a>
+              <Link href="/">SOBRE NOSOTROS</Link>
             </li>
             <li>
-              <a href="/">NUESTROS TRABAJOS</a>
+              <Link href="/">NUESTROS TRABAJOS</Link>
             </li>
           </ul>
         </div>
