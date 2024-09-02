@@ -7,6 +7,8 @@ import { BsShieldLock } from "react-icons/bs";
 import { TbCloudCog } from "react-icons/tb";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 const ConsultoriaIt = () => {
   const titleRef = useRef(null);
@@ -136,6 +138,18 @@ const ConsultoriaIt = () => {
               digitales que mejoren la productividad y competitividad de la
               empresa.
             </p>
+          </div>
+          <div className={styles.controlButtons}>
+            <Link href={"/servidores_soluciones_cloud"}>
+              <button className={poppins.className}>
+                <IoArrowBack /> Atras
+              </button>
+            </Link>
+            <Link href={"/desarrollo_web"}>
+              <button className={poppins.className}>
+                Siguiente <IoArrowForward />
+              </button>
+            </Link>
           </div>
         </section>
       </div>

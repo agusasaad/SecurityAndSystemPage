@@ -5,6 +5,8 @@ import { PiCodeBold } from "react-icons/pi";
 import { TbSettingsCode } from "react-icons/tb";
 import { TbDeviceMobileCode } from "react-icons/tb";
 import { BsDatabaseCheck } from "react-icons/bs";
+import { IoArrowForward } from "react-icons/io5";
+import { IoArrowBack } from "react-icons/io5";
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 import Modal from "./modal_desarrollo_web/Modal";
@@ -276,11 +278,15 @@ const DesarrolloWeb = () => {
               </div>
             </div>
           </div>
-
-          <div className={styles.containerButtonSectionTwo}>
-            <Link href="/web_proyectos">
+          <div className={styles.controlButtons}>
+            <Link href={"/consultoria_it"}>
               <button className={poppins.className}>
-                Ver Todos los Proyectos
+                <IoArrowBack /> Atras
+              </button>
+            </Link>
+            <Link href={"/aplicaciones_moviles"}>
+              <button className={poppins.className}>
+                Siguiente <IoArrowForward />
               </button>
             </Link>
           </div>

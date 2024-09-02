@@ -5,9 +5,11 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 import { TbDeviceMobileCog } from "react-icons/tb";
 import { FaCircleNodes } from "react-icons/fa6";
 import { PiArrowsCounterClockwiseBold } from "react-icons/pi";
-
+import { IoArrowForward } from "react-icons/io5";
+import { IoArrowBack } from "react-icons/io5";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 const AplicacionesMoviles = () => {
   const titleRef = useRef(null);
@@ -143,6 +145,18 @@ const AplicacionesMoviles = () => {
               plataformas de redes sociales, para enriquecer la funcionalidad y
               mejorar la experiencia del usuario.
             </p>
+          </div>
+          <div className={styles.controlButtons}>
+            <Link href={"/desarrollo_web"}>
+              <button className={poppins.className}>
+                <IoArrowBack /> Atras
+              </button>
+            </Link>
+            <Link href={"/servidores_soluciones_cloud"}>
+              <button className={poppins.className}>
+                Siguiente <IoArrowForward />
+              </button>
+            </Link>
           </div>
         </section>
       </div>

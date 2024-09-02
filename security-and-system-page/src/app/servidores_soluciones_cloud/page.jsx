@@ -7,6 +7,8 @@ import { BsBarChartFill } from "react-icons/bs";
 import { BiCheckShield } from "react-icons/bi";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 const ServidoresSolucionesCloud = () => {
   const titleRef = useRef(null);
@@ -140,6 +142,18 @@ const ServidoresSolucionesCloud = () => {
             </p>
           </div>
         </section>
+        <div className={styles.controlButtons}>
+          <Link href={"/aplicaciones_moviles"}>
+            <button className={poppins.className}>
+              <IoArrowBack /> Atras
+            </button>
+          </Link>
+          <Link href={"/consultoria_it"}>
+            <button className={poppins.className}>
+              Siguiente <IoArrowForward />
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
