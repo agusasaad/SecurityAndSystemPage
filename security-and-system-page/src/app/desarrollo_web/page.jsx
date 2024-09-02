@@ -20,6 +20,7 @@ const DesarrolloWeb = () => {
   const cardTwo = useRef(null);
   const cardThree = useRef(null);
   const cardFour = useRef(null);
+  const buttonControl = useRef(null);
   const gradientRef = useRef(null);
 
   const [showModal, setShowModal] = useState(false);
@@ -40,6 +41,7 @@ const DesarrolloWeb = () => {
         cardTwo.current,
         cardThree.current,
         cardFour.current,
+        buttonControl.current,
       ],
       { opacity: 0, y: 100, visibility: "hidden" },
       {
@@ -278,12 +280,14 @@ const DesarrolloWeb = () => {
               </div>
             </div>
           </div>
-          <div className={styles.controlButtons}>
-            <Link href={"/consultoria_it"}>
-              <button className={poppins.className}>
-                <IoArrowBack /> Atras
-              </button>
-            </Link>
+          <div className={styles.controlButtons} ref={buttonControl}>
+            <button
+              className={poppins.className}
+              disabled
+              style={{ opacity: 0.5, pointerEvents: "none" }}
+            >
+              <IoArrowBack /> Atras
+            </button>
             <Link href={"/aplicaciones_moviles"}>
               <button className={poppins.className}>
                 Siguiente <IoArrowForward />

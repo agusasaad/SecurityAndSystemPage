@@ -16,6 +16,7 @@ const ServidoresSolucionesCloud = () => {
   const cardTwo = useRef(null);
   const cardThree = useRef(null);
   const cardFour = useRef(null);
+  const buttonControl = useRef(null);
   const gradientRef = useRef(null);
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const ServidoresSolucionesCloud = () => {
         cardTwo.current,
         cardThree.current,
         cardFour.current,
+        buttonControl.current,
       ],
       { opacity: 0, y: 100, visibility: "hidden" },
       {
@@ -142,7 +144,7 @@ const ServidoresSolucionesCloud = () => {
             </p>
           </div>
         </section>
-        <div className={styles.controlButtons}>
+        <div className={styles.controlButtons} ref={buttonControl}>
           <Link href={"/aplicaciones_moviles"}>
             <button className={poppins.className}>
               <IoArrowBack /> Atras

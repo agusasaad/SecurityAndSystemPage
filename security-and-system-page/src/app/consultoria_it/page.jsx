@@ -16,6 +16,7 @@ const ConsultoriaIt = () => {
   const cardTwo = useRef(null);
   const cardThree = useRef(null);
   const cardFour = useRef(null);
+  const buttonControl = useRef(null);
   const gradientRef = useRef(null);
   useEffect(() => {
     const tl = gsap.timeline();
@@ -27,6 +28,7 @@ const ConsultoriaIt = () => {
         cardTwo.current,
         cardThree.current,
         cardFour.current,
+        buttonControl.current,
       ],
       { opacity: 0, y: 100, visibility: "hidden" },
       {
@@ -139,17 +141,19 @@ const ConsultoriaIt = () => {
               empresa.
             </p>
           </div>
-          <div className={styles.controlButtons}>
+          <div className={styles.controlButtons} ref={buttonControl}>
             <Link href={"/servidores_soluciones_cloud"}>
               <button className={poppins.className}>
                 <IoArrowBack /> Atras
               </button>
             </Link>
-            <Link href={"/desarrollo_web"}>
-              <button className={poppins.className}>
-                Siguiente <IoArrowForward />
-              </button>
-            </Link>
+            <button
+              className={poppins.className}
+              disabled
+              style={{ opacity: 0.5, pointerEvents: "none" }}
+            >
+              Siguiente <IoArrowForward />
+            </button>
           </div>
         </section>
       </div>

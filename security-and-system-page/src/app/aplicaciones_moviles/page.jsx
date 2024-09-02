@@ -17,6 +17,7 @@ const AplicacionesMoviles = () => {
   const cardTwo = useRef(null);
   const cardThree = useRef(null);
   const cardFour = useRef(null);
+  const buttonControl = useRef(null);
   const gradientRef = useRef(null);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const AplicacionesMoviles = () => {
         cardTwo.current,
         cardThree.current,
         cardFour.current,
+        buttonControl.current,
       ],
       { opacity: 0, y: 100, visibility: "hidden" },
       {
@@ -146,7 +148,7 @@ const AplicacionesMoviles = () => {
               mejorar la experiencia del usuario.
             </p>
           </div>
-          <div className={styles.controlButtons}>
+          <div className={styles.controlButtons} ref={buttonControl}>
             <Link href={"/desarrollo_web"}>
               <button className={poppins.className}>
                 <IoArrowBack /> Atras
