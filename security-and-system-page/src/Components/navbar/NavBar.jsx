@@ -138,10 +138,12 @@ const NavBar = () => {
               <PiUsersThreeLight className={styles.icon} />
               Sobre Nosotros
             </li>
-            <li>
-              <GrProjects className={styles.icon} />
-              Nuestros Trabajos
-            </li>
+            <Link href={"/web_proyectos"}>
+              <li>
+                <GrProjects className={styles.icon} />
+                Nuestros Trabajos
+              </li>
+            </Link>
           </ul>
         </div>
         <div className={styles.end}>
