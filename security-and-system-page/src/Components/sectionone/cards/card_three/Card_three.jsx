@@ -14,7 +14,6 @@ import Link from "next/link";
 
 const Card_three = () => {
   const containerRef = useRef(null);
-  const subtitleRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const tip_oneRef = useRef(null);
@@ -31,7 +30,6 @@ const Card_three = () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       [
-        subtitleRef.current,
         titleRef.current,
         descriptionRef.current,
         tip_oneRef.current,
@@ -100,7 +98,6 @@ const Card_three = () => {
   return (
     <div className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
-        <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
           Servidores y Soluciones Cloud
         </h3>
@@ -129,7 +126,7 @@ const Card_three = () => {
               className={`${poppins.className} ${styles.button_black}`}
               ref={button_container}
             >
-              +Informacion
+              Detalles
             </button>
           </Link>
         </div>

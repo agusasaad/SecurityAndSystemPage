@@ -20,7 +20,6 @@ const images = [
 
 const Card_one = () => {
   const containerRef = useRef(null);
-  const subtitleRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const tip_oneRef = useRef(null);
@@ -44,7 +43,6 @@ const Card_one = () => {
     timeline
       .fromTo(
         [
-          subtitleRef.current,
           titleRef.current,
           descriptionRef.current,
           tip_oneRef.current,
@@ -91,9 +89,6 @@ const Card_one = () => {
   return (
     <div className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
-        <span className={poppins.className} ref={subtitleRef}>
-          Servicio
-        </span>
         <h3 className={poppins.className} ref={titleRef}>
           Desarrollo Web
         </h3>
@@ -121,7 +116,7 @@ const Card_one = () => {
               className={`${poppins.className} ${styles.button_black}`}
               ref={button_container}
             >
-              +Informacion
+              Detalles
             </button>
           </Link>
         </div>
