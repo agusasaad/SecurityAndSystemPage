@@ -13,7 +13,10 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 
-const page = () => {
+const Proyectos = () => {
+  const titleRef = useRef(null);
+  const cardOne = useRef(null);
+
   const imageCarrucel = [
     {
       src: web1,
@@ -49,9 +52,6 @@ const page = () => {
   ];
 
   const copy = [...imageCarrucel, ...imageCarrucel];
-
-  const titleRef = useRef(null);
-  const cardOne = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -150,4 +150,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Proyectos;
