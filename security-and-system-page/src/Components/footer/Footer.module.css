@@ -2,7 +2,7 @@
   position: relative; /* Asegura que el z-index funcione */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(24px);
-  background-color: rgb(35 35 43);
+  background-color: rgb(35 35 43 / 51%);
   width: 100%;
   height: auto;
   z-index: 10;
