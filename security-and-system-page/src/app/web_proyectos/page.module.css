@@ -153,6 +153,7 @@
   .container {
     gap: 30px;
     padding-top: 150px;
+    padding-bottom: 50px;
   }
   .containerTitle h1 {
     font-size: 50px;

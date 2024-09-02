@@ -8,6 +8,7 @@ import web4 from "./../../../public/proyectos/sdp_optimizada.jpg";
 import web5 from "./../../../public/proyectos/que_dj_optimizada.jpg";
 import web6 from "./../../../public/proyectos/net_expertos_optimizada.jpg";
 import web7 from "./../../../public/proyectos/tu_voz_suma_optimizada.jpg";
+import web8 from "./../../../public/proyectos/dni_optimizado.jpg";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
@@ -20,22 +21,30 @@ const page = () => {
       link: "https://cinqcapital.vercel.app/",
     },
     { src: web2, name: "Fest Club", link: "https://www.fest-club.com/" },
+    { src: web5, name: "Que DJ", link: "https://quedj.online/" },
+
     { src: web3, name: "Salon Plaza", link: "https://salonplaza.com.ar/" },
     {
       src: web4,
       name: "Revestimiento SDP",
       link: "https://revestimientosdp.com.ar/",
     },
-    { src: web5, name: "Que DJ", link: "https://quedj.online/" },
+
+    {
+      src: web7,
+      name: "Tu Voz Suma",
+      link: "https://tuvozsuma.online/welcome",
+    },
     {
       src: web6,
       name: "Net Expertos",
       link: "https://netexpertos.vercel.app/",
     },
+
     {
-      src: web7,
-      name: "Tu Voz Suma",
-      link: "https://tuvozsuma.online/welcome",
+      src: web8,
+      name: "DNI Logistica",
+      link: "https://www.dnilogistica.com/",
     },
   ];
 
