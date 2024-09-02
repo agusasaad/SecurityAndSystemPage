@@ -4,9 +4,9 @@ import Checked from "@/svg/Checked";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import foto_1 from "./../../../../../public/00_0000_Capa-2.png";
-import foto_2 from "./../../../../../public/00_0001_Capa-3.png";
-import foto_3 from "./../../../../../public/00_0002_Capa-4.png";
+import foto_1 from "./../../../../../public/aplicaciones_mobiles/00_0000_Capa-2.png";
+import foto_2 from "./../../../../../public/aplicaciones_mobiles/00_0001_Capa-3.png";
+import foto_3 from "./../../../../../public/aplicaciones_mobiles/00_0002_Capa-4.png";
 import Link from "next/link";
 
 const Card_two = () => {
