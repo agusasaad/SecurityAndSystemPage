@@ -36,7 +36,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 170px 0px;
-  gap: 100px;
+  gap: 50px;
 }
 
 .sectionOne {
@@ -114,6 +114,26 @@
   color: rgb(150, 150, 150);
 }
 
+.controlButtons {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.controlButtons button {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
 @media (max-width: 850px) {
   .gradient {
     top: -20%;
@@ -129,6 +149,14 @@
     font-weight: 600;
     letter-spacing: -2px;
     text-wrap: balance;
+  }
+  .controlButtons {
+    width: 90%;
+  }
+
+  .controlButtons button {
+    font-size: 20px;
+    letter-spacing: -0.5px;
   }
 }
 

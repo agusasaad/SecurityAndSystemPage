@@ -21,7 +21,6 @@
 .containerTitle span {
   font-size: 18px;
   font-weight: 500;
-  color: rgb(83, 141, 255);
 }
 
 .containerTitle h1 {
@@ -111,7 +110,7 @@
 }
 
 .buttons h3 {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: -1px;
 }
@@ -231,7 +230,7 @@
   }
 
   .buttons_mobile h3 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 500;
     letter-spacing: -1px;
   }
