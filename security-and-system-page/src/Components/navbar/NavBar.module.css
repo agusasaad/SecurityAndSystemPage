@@ -54,7 +54,7 @@
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(24px);
-  background-color: rgb(35 35 43);
+  background-color: rgb(35 35 43 / 51%);
   padding: 14px 30px;
   border-radius: 30px;
 }
@@ -99,8 +99,8 @@
   z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  backdrop-filter: blur(24px);
-  background-color: rgb(24, 24, 31);
+  backdrop-filter: blur(24px) !important;
+  background-color: rgba(35, 35, 43, 0.986);
   -webkit-animation: swing-in-top-fwd 0.5s
     cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
@@ -223,7 +223,7 @@
     border: none;
     position: relative;
     backdrop-filter: blur(100px);
-    background-color: rgba(24, 24, 31, 0.993);
+    background-color: rgb(35 35 43 / 51%);
   }
 
   .onClose {
