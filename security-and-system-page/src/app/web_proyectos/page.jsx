@@ -1,12 +1,12 @@
 import { poppins } from "@/Fonts/fonts";
 import styles from "./page.module.css";
-import web1 from "./../../../public/cinq_capital.png";
-import web2 from "./../../../public/fest_club.png";
-import web3 from "./../../../public/fiestas.png";
-import web4 from "./../../../public/sdp.png";
-import web5 from "./../../../public/que_dj.png";
-import web6 from "./../../../public/net_expertos.png";
-import web7 from "./../../../public/tu_voz_suma.png";
+import web1 from "./../../../public/proyectos/cinq_capital.png";
+import web2 from "./../../../public/proyectos/fest_club.png";
+import web3 from "./../../../public/proyectos/fiestas.png";
+import web4 from "./../../../public/proyectos/sdp.png";
+import web5 from "./../../../public/proyectos/que_dj.png";
+import web6 from "./../../../public/proyectos/net_expertos.png";
+import web7 from "./../../../public/proyectos/tu_voz_suma.png";
 
 const page = () => {
   const imageCarrucel = [web1, web2, web5, web3, web6, web4, web7];
