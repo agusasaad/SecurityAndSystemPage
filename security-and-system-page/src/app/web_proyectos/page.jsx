@@ -20,8 +20,12 @@ const page = () => {
       link: "https://cinqcapital.vercel.app/",
     },
     { src: web2, name: "Fest Club", link: "https://www.fest-club.com/" },
-    { src: web3, name: "Fiestas", link: "https://salonplaza.com.ar/" },
-    { src: web4, name: "SDP", link: "https://revestimientosdp.com.ar/" },
+    { src: web3, name: "Salon Plaza", link: "https://salonplaza.com.ar/" },
+    {
+      src: web4,
+      name: "Revestimiento SDP",
+      link: "https://revestimientosdp.com.ar/",
+    },
     { src: web5, name: "Que DJ", link: "https://quedj.online/" },
     {
       src: web6,
@@ -61,8 +65,10 @@ const page = () => {
   return (
     <div className={`${styles.container} ${poppins.className}`}>
       <div className={styles.containerTitle} ref={titleRef}>
-        <span>Proyectos Realizados</span>
-        <h1>Explora Nuestra variedad de Proyectos.</h1>
+        <span className={poppins.className}>Proyectos Realizados</span>
+        <h1 className={poppins.className}>
+          Explora Nuestra variedad de Proyectos.
+        </h1>
       </div>
       <div className={styles.containerCards} ref={cardOne}>
         <div className={styles.containerCarrucel}>
@@ -76,18 +82,23 @@ const page = () => {
               />
 
               <div className={styles.buttons}>
-                <button
-                  className={`${poppins.className} ${styles.button_blue}`}
-                >
-                  Detalles
-                </button>
-                <Link href={element.link} target="_blank">
+                <div className={styles.titleCard}>
+                  <h3 className={poppins.className}>{element.name}</h3>
+                </div>
+                <div className={styles.buttonControl}>
                   <button
-                    className={`${poppins.className} ${styles.button_black}`}
+                    className={`${poppins.className} ${styles.button_blue}`}
                   >
-                    Link
+                    Detalles
                   </button>
-                </Link>
+                  <Link href={element.link} target="_blank">
+                    <button
+                      className={`${poppins.className} ${styles.button_black}`}
+                    >
+                      Link
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -104,18 +115,23 @@ const page = () => {
               />
 
               <div className={styles.buttons_mobile}>
-                <button
-                  className={`${poppins.className} ${styles.button_blue}`}
-                >
-                  Detalles
-                </button>
-                <Link href={element.link} target="_blank">
+                <div className={styles.titleCard}>
+                  <h3 className={poppins.className}>{element.name}</h3>
+                </div>
+                <div className={styles.buttonControl}>
                   <button
-                    className={`${poppins.className} ${styles.button_black}`}
+                    className={`${poppins.className} ${styles.button_blue}`}
                   >
-                    Link
+                    Detalles
                   </button>
-                </Link>
+                  <Link href={element.link} target="_blank">
+                    <button
+                      className={`${poppins.className} ${styles.button_black}`}
+                    >
+                      Link
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
