@@ -8,8 +8,8 @@ import { BsDatabaseCheck } from "react-icons/bs";
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 import Modal from "./modal_desarrollo_web/Modal";
-import cinq_capital from "./../../../public/proyectos/cinq_capital.png";
-import fest_club from "./../../../public/proyectos/fest_club.png";
+import cinq_capital from "./../../../public/proyectos/cinq_capital_optimizada.jpg";
+import fest_club from "./../../../public/proyectos/fest_club_optimizada.jpg";
 import Link from "next/link";
 
 const DesarrolloWeb = () => {
