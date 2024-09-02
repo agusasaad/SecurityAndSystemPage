@@ -66,7 +66,12 @@ const NavBar = () => {
             </button>
           </div>
           <ul className={poppins.className}>
-            <Link href="/">
+            <Link
+              href="/"
+              onClick={() => {
+                setShowMenu(false), setShowMenuServices(false);
+              }}
+            >
               <li>
                 <CiHome className={styles.icon} />
                 Inicio
@@ -138,7 +143,12 @@ const NavBar = () => {
               <PiUsersThreeLight className={styles.icon} />
               Sobre Nosotros
             </li>
-            <Link href={"/web_proyectos"}>
+            <Link
+              href={"/web_proyectos"}
+              onClick={() => {
+                setShowMenu(false), setShowMenuServices(false);
+              }}
+            >
               <li>
                 <GrProjects className={styles.icon} />
                 Nuestros Trabajos
