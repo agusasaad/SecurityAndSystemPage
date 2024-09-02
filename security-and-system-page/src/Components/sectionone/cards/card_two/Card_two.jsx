@@ -24,19 +24,21 @@ const Card_two = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    const elements = [
+      subtitleRef.current,
+      titleRef.current,
+      descriptionRef.current,
+      tip_oneRef.current,
+      tip_twoRef.current,
+      tip_threeRef.current,
+      img_oneRef.current,
+      img_twoRef.current,
+      img_threeRef.current,
+    ];
+
     gsap.fromTo(
-      [
-        subtitleRef.current,
-        titleRef.current,
-        descriptionRef.current,
-        tip_oneRef.current,
-        tip_twoRef.current,
-        tip_threeRef.current,
-        button_container.current,
-        img_oneRef.current,
-        img_twoRef.current,
-        img_threeRef.current,
-      ],
+      elements,
       {
         opacity: 0,
         x: 100,
@@ -68,6 +70,26 @@ const Card_two = () => {
         yoyo: true,
       }
     );
+
+    gsap.fromTo(
+      button_container.current,
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.7,
+        ease: "power1",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top+=200 80%",
+          end: "bottom 20%",
+        },
+        delay: 1.5,
+      }
+    );
   }, []);
 
   return (
@@ -96,19 +118,13 @@ const Card_two = () => {
             Expande tu alcance con soluciones móviles efectivas.
           </p>
         </div>
-        <div className={styles.containerButton} ref={button_container}>
-          <Link href="/aplicaciones_moviles">
-            <button className={`${poppins.className} ${styles.button_black}`}>
-              Más Detalles
-            </button>
-          </Link>
-          <Link
-            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Aplicaciones%20M%C3%B3viles!"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className={`${poppins.className} ${styles.button}`}>
-              Contratar Servicio
+        <div className={styles.containerButton}>
+          <Link href="/desarrollo_web">
+            <button
+              className={`${poppins.className} ${styles.button_black}`}
+              ref={button_container}
+            >
+              +Informacion
             </button>
           </Link>
         </div>

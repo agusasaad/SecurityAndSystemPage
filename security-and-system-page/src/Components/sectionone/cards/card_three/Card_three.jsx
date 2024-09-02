@@ -37,7 +37,6 @@ const Card_three = () => {
         tip_oneRef.current,
         tip_twoRef.current,
         tip_threeRef.current,
-        button_container.current,
         img_oneRef.current,
         img_twoRef.current,
         img_threeRef.current,
@@ -62,6 +61,27 @@ const Card_three = () => {
       }
     );
 
+    // Retrasa la animación del botón con 2 segundos
+    gsap.fromTo(
+      button_container.current,
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.7,
+        ease: "power1",
+        delay: 3,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top+=200 80%",
+          end: "bottom 20%",
+        },
+      }
+    );
+
     gsap.fromTo(
       img_fourRef.current,
       {
@@ -76,12 +96,9 @@ const Card_three = () => {
       }
     );
   }, []);
+
   return (
-    <Link
-      href="/servidores_soluciones_cloud"
-      className={styles.card}
-      ref={containerRef}
-    >
+    <div className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
         <h5 ref={subtitleRef}>Servicio</h5>
         <h3 className={poppins.className} ref={titleRef}>
@@ -106,19 +123,13 @@ const Card_three = () => {
             Gestión experta para alta disponibilidad.
           </p>
         </div>
-        <div className={styles.containerButton} ref={button_container}>
-          <Link href="/servidores_soluciones_cloud">
-            <button className={`${poppins.className} ${styles.button_black}`}>
-              Más Detalles
-            </button>
-          </Link>
-          <Link
-            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Servidores%20y%20Soluciones%20Cloud!"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className={`${poppins.className} ${styles.button}`}>
-              Contratar Servicio
+        <div className={styles.containerButton}>
+          <Link href="/desarrollo_web">
+            <button
+              className={`${poppins.className} ${styles.button_black}`}
+              ref={button_container}
+            >
+              +Informacion
             </button>
           </Link>
         </div>
@@ -150,7 +161,7 @@ const Card_three = () => {
           ref={img_fiveRef}
         />
       </div>
-    </Link>
+    </div>
   );
 };
 

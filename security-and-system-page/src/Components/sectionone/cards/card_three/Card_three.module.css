@@ -14,6 +14,7 @@
   background-repeat: no-repeat;
   padding: 50px;
   overflow-x: hidden;
+  border: 1px solid rgb(34, 34, 34);
 }
 
 .containerText {
@@ -69,34 +70,19 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  will-change: transform, opacity;
-}
-
-.containerButton .button {
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-bottom-width: 0px;
-  --border-color: rgba(0, 0, 0, 0);
-  --border-left-width: 0px;
-  --border-right-width: 0px;
-  --border-style: solid;
-  --border-top-width: 0px;
-  border-radius: 10px;
-  background-color: rgb(0, 75, 221);
-  height: 100%;
-  opacity: 1;
-  will-change: transform, opacity;
 }
 
 .containerButton .button_black {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   padding: 10px 15px;
   border-radius: 10px;
-  background-color: rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(15, 15, 15);
+  --border-bottom-width: 0px;
+  --border-color: rgba(0, 0, 0, 0);
+  background-color: rgb(0, 75, 221);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset,
+    rgba(0, 0, 0, 0.16) 0px 2px 8px 0px;
+  will-change: opacity, scale;
 }
 
 .containerImg {
@@ -123,11 +109,22 @@
     flex-direction: column;
     position: relative;
     top: 0px;
+    padding-bottom: 50px !important;
   }
 
   .containerText {
     width: 100%;
     max-width: 90%;
+  }
+
+  .containerButton {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
   }
 }
 
@@ -160,7 +157,6 @@
 
   .containerButton {
     margin-top: 0px;
-    margin: 7px 0px;
   }
 }
 

@@ -2,6 +2,9 @@
 import { poppins } from "@/Fonts/fonts";
 import styles from "./Card_four.module.css";
 import Checked from "@/svg/Checked";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import foto_IT_1 from "./../../../../../public/ConsultoriaIT/ELEMENTO_1.png";
 import foto_IT_2 from "./../../../../../public/ConsultoriaIT/ELEMENTO_2.png";
 import foto_IT_3 from "./../../../../../public/ConsultoriaIT/ELEMENTO_3.png";
@@ -13,9 +16,6 @@ import foto_IT_8 from "./../../../../../public/ConsultoriaIT/ELEMENTO_8.png";
 import foto_IT_9 from "./../../../../../public/ConsultoriaIT/ELEMENTO_9.png";
 import foto_IT_10 from "./../../../../../public/ConsultoriaIT/ELEMENTO_10.png";
 import foto_IT_11 from "./../../../../../public/ConsultoriaIT/ELEMENTO_11.png";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 
 const Card_four = () => {
@@ -41,6 +41,7 @@ const Card_four = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     gsap.fromTo(
       [
         subtitleRef.current,
@@ -49,7 +50,6 @@ const Card_four = () => {
         tip_oneRef.current,
         tip_twoRef.current,
         tip_threeRef.current,
-        button_container.current,
         img_oneRef.current,
         img_twoRef.current,
         img_threeRef.current,
@@ -80,6 +80,27 @@ const Card_four = () => {
       }
     );
 
+    // Animación del botón
+    gsap.fromTo(
+      button_container.current,
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.7,
+        ease: "power1",
+        delay: 4, // Retraso de 2 segundos
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top+=200 80%",
+          end: "bottom 20%",
+        },
+      }
+    );
+
     gsap.fromTo(
       img_elevenRef.current,
       {
@@ -95,6 +116,7 @@ const Card_four = () => {
       }
     );
   }, []);
+
   return (
     <div className={styles.card} ref={containerRef}>
       <div className={`${poppins.className} ${styles.containerText}`}>
@@ -121,19 +143,13 @@ const Card_four = () => {
             Soluciones en colaboración con clientes.
           </p>
         </div>
-        <div className={styles.containerButton} ref={button_container}>
-          <Link href="/consultoria_it">
-            <button className={`${poppins.className} ${styles.button_black}`}>
-              Más Detalles
-            </button>
-          </Link>
-          <Link
-            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Consultor%C3%ADa%20IT!"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className={`${poppins.className} ${styles.button}`}>
-              Contratar Servicio
+        <div className={styles.containerButton}>
+          <Link href="/desarrollo_web">
+            <button
+              className={`${poppins.className} ${styles.button_black}`}
+              ref={button_container}
+            >
+              +Informacion
             </button>
           </Link>
         </div>

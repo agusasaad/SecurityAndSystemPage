@@ -32,34 +32,52 @@ const Card_one = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
-      [
-        subtitleRef.current,
-        titleRef.current,
-        descriptionRef.current,
-        tip_oneRef.current,
-        tip_twoRef.current,
-        tip_threeRef.current,
-        button_container.current,
-        img_oneRef.current,
-      ],
-      {
-        opacity: 0,
-        x: 100,
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top+=200 80%",
+        end: "bottom 20%",
       },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.7,
-        ease: "power1",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top+=200 80%",
-          end: "bottom 20%",
+    });
+
+    timeline
+      .fromTo(
+        [
+          subtitleRef.current,
+          titleRef.current,
+          descriptionRef.current,
+          tip_oneRef.current,
+          tip_twoRef.current,
+          tip_threeRef.current,
+          img_oneRef.current,
+        ],
+        {
+          opacity: 0,
+          x: 100,
         },
-      }
-    );
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.7,
+          ease: "power1",
+          stagger: 0.1,
+        }
+      )
+      .fromTo(
+        button_container.current,
+        {
+          opacity: 0,
+          scale: 0,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.7,
+          ease: "power1",
+          delay: 0.6,
+        }
+      );
   }, []);
 
   useEffect(() => {
@@ -97,19 +115,13 @@ const Card_one = () => {
             Aumenta la interacción con tus clientes.
           </p>
         </div>
-        <div className={styles.containerButton} ref={button_container}>
+        <div className={styles.containerButton}>
           <Link href="/desarrollo_web">
-            <button className={`${poppins.className} ${styles.button_black}`}>
-              Más Detalles
-            </button>
-          </Link>
-          <Link
-            href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Aplicaciones%20M%C3%B3viles!"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className={`${poppins.className} ${styles.button}`}>
-              Contratar Servicio
+            <button
+              className={`${poppins.className} ${styles.button_black}`}
+              ref={button_container}
+            >
+              +Informacion
             </button>
           </Link>
         </div>
