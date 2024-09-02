@@ -8,8 +8,9 @@ import { BsDatabaseCheck } from "react-icons/bs";
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 import Modal from "./modal_desarrollo_web/Modal";
-import cinq_capital from "./../../../public/project_1.jpg";
-import fest_club from "./../../../public/project_4.jpg";
+import cinq_capital from "./../../../public/proyectos/cinq_capital.png";
+import fest_club from "./../../../public/proyectos/fest_club.png";
+import Link from "next/link";
 
 const DesarrolloWeb = () => {
   const titleRef = useRef(null);
@@ -67,7 +68,7 @@ const DesarrolloWeb = () => {
       <div className={styles.containerServices}>
         <section className={styles.sectionOne}>
           <div className={styles.title} ref={titleRef}>
-            <h2 className={poppins.className}>Servicios de Desarrollo Web</h2>
+            <h2 className={poppins.className}>Desarrollo Web</h2>
             <p className={poppins.className}>
               Todos nuestros servicios de Desarrollo Web incluyen
             </p>
@@ -185,12 +186,7 @@ const DesarrolloWeb = () => {
 
         <section className={styles.sectionTwo}>
           <div className={styles.cardProyect}>
-            <img
-              src={cinq_capital.src}
-              alt=""
-              width={"600px"}
-              height={"auto"}
-            />
+            <img src={cinq_capital.src} alt="" width={"100%"} height={"auto"} />
             <div className={styles.containerInfo}>
               <h4 className={poppins.className}>Cinq Capital</h4>
               <p className={poppins.className}>
@@ -282,9 +278,11 @@ const DesarrolloWeb = () => {
           </div>
 
           <div className={styles.containerButtonSectionTwo}>
-            <button className={poppins.className}>
-              Ver Todos los Proyectos
-            </button>
+            <Link href="/web_proyectos">
+              <button className={poppins.className}>
+                Ver Todos los Proyectos
+              </button>
+            </Link>
           </div>
         </section>
       </div>
