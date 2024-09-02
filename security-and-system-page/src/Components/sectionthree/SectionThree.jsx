@@ -5,9 +5,8 @@ import web2 from "./../../../public/project_2.jpg";
 import web3 from "./../../../public/project_3.jpg";
 import web4 from "./../../../public/project_4.jpg";
 import web5 from "./../../../public/project_5.jpg";
-
-import Image from "next/image";
 import { poppins } from "@/Fonts/fonts";
+import Link from "next/link";
 const SectionThree = () => {
   const imageCarrucel = [web1, web2, web3, web4, web5];
 
@@ -62,7 +61,9 @@ const SectionThree = () => {
             Explora nuestros proyectos realizados y descubre cómo hemos ayudado
             a nuestros clientes a alcanzar sus objetivos en línea.
           </p>
-          <button className={poppins.className}>Ver Proyectos</button>
+          <Link href={"/web_proyectos"}>
+            <button className={poppins.className}>Ver Proyectos</button>
+          </Link>
         </div>
       </div>
     </div>
