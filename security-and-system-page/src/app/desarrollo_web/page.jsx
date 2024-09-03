@@ -194,10 +194,10 @@ const DesarrolloWeb = () => {
             <div className={styles.containerInfo}>
               <h4 className={poppins.className}>Cinq Capital</h4>
               <p className={poppins.className}>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Expedita quas, rerum officiis optio, vero accusantium sequi
-                itaque atque similique dignissimos harum corrupti ad doloribus
-                labore voluptas. Architecto eveniet animi aspernatur.
+                Cinq Capital es una plataforma de inversiones diseñada para
+                ofrecer soluciones financieras avanzadas. Facilita el acceso a
+                oportunidades de inversión, brindando herramientas y recursos
+                para gestionar y optimizar tu cartera de forma eficaz.
               </p>
               <div className={styles.containerService}>
                 <span
@@ -235,10 +235,11 @@ const DesarrolloWeb = () => {
             <div className={styles.containerInfo}>
               <h4 className={poppins.className}>Fest Club</h4>
               <p className={poppins.className}>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Expedita quas, rerum officiis optio, vero accusantium sequi
-                itaque atque similique dignissimos harum corrupti ad doloribus
-                labore voluptas. Architecto eveniet animi aspernatur.
+                Fest Club es una plataforma digital para la compra de entradas a
+                eventos en la discoteca. Permite a los usuarios explorar
+                eventos, seleccionar fechas y adquirir boletos de forma rápida y
+                sencilla, proporcionando una experiencia de compra eficiente y
+                sin complicaciones.
               </p>
               <div className={styles.containerService}>
                 <span
