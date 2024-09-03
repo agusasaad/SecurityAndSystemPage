@@ -8,11 +8,14 @@ import { BsDatabaseCheck } from "react-icons/bs";
 import { IoArrowForward } from "react-icons/io5";
 import { IoArrowBack } from "react-icons/io5";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import Modal from "./modal_desarrollo_web/Modal";
 import cinq_capital from "./../../../public/proyectos/cinq_capital_optimizada.jpg";
 import fest_club from "./../../../public/proyectos/fest_club_optimizada.jpg";
 import Link from "next/link";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const DesarrolloWeb = () => {
   const titleRef = useRef(null);
@@ -20,6 +23,8 @@ const DesarrolloWeb = () => {
   const cardTwo = useRef(null);
   const cardThree = useRef(null);
   const cardFour = useRef(null);
+  const cardFive = useRef(null);
+  const cardSix = useRef(null);
   const buttonControl = useRef(null);
   const gradientRef = useRef(null);
 
@@ -62,6 +67,37 @@ const DesarrolloWeb = () => {
         visibility: "visible",
         duration: 1,
         ease: "power3",
+      }
+    );
+
+    // Animación para las últimas dos cards
+    gsap.fromTo(
+      cardFive.current,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: cardFive.current,
+          start: "top-=10% 80%",
+          end: "bottom top",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      cardSix.current,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: cardSix.current,
+          start: "top-=10% 80%",
+          end: "bottom top",
+        },
       }
     );
   }, []);
@@ -189,7 +225,7 @@ const DesarrolloWeb = () => {
         </section>
 
         <section className={styles.sectionTwo}>
-          <div className={styles.cardProyect}>
+          <div className={styles.cardProyect} ref={cardFive}>
             <img src={cinq_capital.src} alt="" width={"100%"} height={"auto"} />
             <div className={styles.containerInfo}>
               <h4 className={poppins.className}>Cinq Capital</h4>
@@ -230,7 +266,7 @@ const DesarrolloWeb = () => {
               </div>
             </div>
           </div>
-          <div className={styles.cardProyect}>
+          <div className={styles.cardProyect} ref={cardSix}>
             <img src={fest_club.src} alt="" width={"600px"} height={"auto"} />
             <div className={styles.containerInfo}>
               <h4 className={poppins.className}>Fest Club</h4>
