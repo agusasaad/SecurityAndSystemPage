@@ -116,7 +116,7 @@ const Card_two = () => {
           </p>
         </div>
         <div className={styles.containerButton}>
-          <Link href="/desarrollo_web">
+          <Link href="/aplicaciones_moviles">
             <button
               className={`${poppins.className} ${styles.button_black}`}
               ref={button_container}
