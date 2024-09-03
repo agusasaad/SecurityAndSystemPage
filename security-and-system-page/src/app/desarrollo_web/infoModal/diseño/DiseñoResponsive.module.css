@@ -29,6 +29,7 @@
   font-weight: 500;
   border-radius: 20px;
   margin-bottom: 10px;
+  color: rgb(207, 207, 207);
 }
 
 .desarrolloWebInfo p {
@@ -62,6 +63,28 @@
 
   .parrafo span {
     font-size: 17px;
+  }
+
+  .parrafo p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .desarrolloWebInfo {
+    padding: 35px 20px;
+  }
+  .desarrolloWebInfo h2 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  .parrafo span {
+    font-size: 17px;
+  }
+
+  .icon {
+    display: none;
   }
 
   .parrafo p {

@@ -300,6 +300,10 @@
     text-wrap: balance;
   }
 
+  .containerInfo {
+    padding: 20px 25px;
+  }
+
   .containerInfo h4 {
     font-size: 26px;
   }
