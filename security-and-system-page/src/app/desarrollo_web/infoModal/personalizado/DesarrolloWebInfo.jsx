@@ -21,7 +21,10 @@ const DesarrolloWebInfo = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "rgb(0, 189, 87)" }} />
+          <IoCheckmarkCircleOutline
+            style={{ color: "rgb(0, 189, 87)" }}
+            className={styles.icon}
+          />
           Entendiendo tu Visión
         </span>
         <p className={poppins.className}>
@@ -32,7 +35,10 @@ const DesarrolloWebInfo = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "rgb(0, 189, 87)" }} />
+          <IoCheckmarkCircleOutline
+            style={{ color: "rgb(0, 189, 87)" }}
+            className={styles.icon}
+          />
           Diseño Intuitivo y Eficiente
         </span>
         <p className={poppins.className}>

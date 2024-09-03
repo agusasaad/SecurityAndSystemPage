@@ -23,25 +23,32 @@ const Codificacion = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "#c084fd" }} />
-          Entendiendo tu Visión
+          <IoCheckmarkCircleOutline
+            style={{ color: "#c084fd" }}
+            className={styles.icon}
+          />
+          Programación Optimizada y Eficiente
         </span>
         <p className={poppins.className}>
-          Entendemos que cada negocio es diferente, por lo que trabajamos
-          estrechamente contigo para entender tu visión y traducirla en un sitio
-          web que no solo sea visualmente atractivo, sino también funcional y
-          alineado con tus objetivos comerciales.
+          En nuestro equipo, nos especializamos en implementar soluciones de
+          programación altamente optimizadas que priorizan la eficiencia y el
+          rendimiento en cada proyecto. Nos enfocamos en escribir código limpio,
+          legible y mantenible.
         </p>
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "#c084fd" }} />
-          Diseño Intuitivo y Eficiente
+          <IoCheckmarkCircleOutline
+            style={{ color: "#c084fd" }}
+            className={styles.icon}
+          />
+          Enfoque en Escalabilidad y Futuras Necesidades
         </span>
         <p className={poppins.className}>
-          Nuestro equipo de expertos en diseño y desarrollo se asegura de que
-          cada detalle esté perfectamente optimizado para ofrecer una
-          experiencia de usuario intuitiva.
+          Nuestro enfoque no solo se centra en cumplir con los requisitos
+          actuales, sino también en anticipar futuras necesidades, lo que
+          permite una integración fluida de nuevas funciones y una fácil
+          escalabilidad del sistema.
         </p>
       </div>
     </div>

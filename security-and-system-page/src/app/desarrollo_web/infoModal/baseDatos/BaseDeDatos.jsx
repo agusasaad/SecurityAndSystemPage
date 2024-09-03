@@ -22,25 +22,32 @@ const BaseDeDatos = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "#ff9a3c" }} />
-          Entendiendo tu Visión
+          <IoCheckmarkCircleOutline
+            style={{ color: "#ff9a3c" }}
+            className={styles.icon}
+          />
+          Estructuras de Datos Seguras
         </span>
         <p className={poppins.className}>
-          Entendemos que cada negocio es diferente, por lo que trabajamos
-          estrechamente contigo para entender tu visión y traducirla en un sitio
-          web que no solo sea visualmente atractivo, sino también funcional y
-          alineado con tus objetivos comerciales.
+          Nuestra experiencia nos permite diseñar y mantener estructuras de
+          datos que no solo aseguran la integridad y seguridad de la
+          información, sino que también están preparadas para manejar grandes
+          volúmenes de datos sin comprometer el rendimiento.
         </p>
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "#ff9a3c" }} />
-          Diseño Intuitivo y Eficiente
+          <IoCheckmarkCircleOutline
+            style={{ color: "#ff9a3c" }}
+            className={styles.icon}
+          />
+          Bases de Datos Adaptadas a tus Necesidades
         </span>
         <p className={poppins.className}>
-          Nuestro equipo de expertos en diseño y desarrollo se asegura de que
-          cada detalle esté perfectamente optimizado para ofrecer una
-          experiencia de usuario intuitiva.
+          Nos aseguramos de que cada base de datos esté alineada con las
+          necesidades específicas de tu empresa, permitiendo una gestión de
+          datos eficiente y facilitando la toma de decisiones basada en
+          información precisa y oportuna.
         </p>
       </div>
     </div>

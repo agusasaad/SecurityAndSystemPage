@@ -21,25 +21,32 @@ const DiseñoResponsive = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "#4e9eff" }} />
-          Entendiendo tu Visión
+          <IoCheckmarkCircleOutline
+            style={{ color: "#4e9eff" }}
+            className={styles.icon}
+          />
+          Interfaz Adaptativa para Todos los Dispositivos
         </span>
         <p className={poppins.className}>
-          Entendemos que cada negocio es diferente, por lo que trabajamos
-          estrechamente contigo para entender tu visión y traducirla en un sitio
-          web que no solo sea visualmente atractivo, sino también funcional y
-          alineado con tus objetivos comerciales.
+          Nos especializamos en la creación de interfaces que se adaptan
+          perfectamente a cualquier dispositivo, garantizando una experiencia de
+          usuario fluida y consistente sin importar si se accede desde un
+          smartphone, tablet, o cualquier otro dispositivo móvil.
         </p>
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline style={{ color: "#4e9eff" }} />
-          Diseño Intuitivo y Eficiente
+          <IoCheckmarkCircleOutline
+            style={{ color: "#4e9eff" }}
+            className={styles.icon}
+          />
+          Experiencia Óptima en Cualquier Dispositivo y Lugar
         </span>
         <p className={poppins.className}>
-          Nuestro equipo de expertos en diseño y desarrollo se asegura de que
-          cada detalle esté perfectamente optimizado para ofrecer una
-          experiencia de usuario intuitiva.
+          Nos aseguramos de que su producto ofrezca la mejor experiencia
+          posible, independientemente del dispositivo utilizado, permitiendo a
+          los usuarios interactuar con su contenido de manera efectiva en
+          cualquier lugar y en cualquier momento.
         </p>
       </div>
     </div>
