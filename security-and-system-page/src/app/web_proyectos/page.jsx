@@ -85,7 +85,7 @@ const Proyectos = () => {
             <div key={index} className={styles.card_web}>
               <img
                 src={element.src.src}
-                width={"600px"}
+                width={"550px"}
                 height={"auto"}
                 alt={`Imagen del proyecto ${element.name}`}
               />
