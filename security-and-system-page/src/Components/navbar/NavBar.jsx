@@ -138,11 +138,17 @@ const NavBar = () => {
                 </Link>
               </ul>
             )}
-
-            <li>
-              <PiUsersThreeLight className={styles.icon} />
-              Sobre Nosotros
-            </li>
+            <Link
+              href={"/sobre_nosotros"}
+              onClick={() => {
+                setShowMenu(false), setShowMenuServices(false);
+              }}
+            >
+              <li>
+                <PiUsersThreeLight className={styles.icon} />
+                Sobre Nosotros
+              </li>
+            </Link>
             <Link
               href={"/web_proyectos"}
               onClick={() => {
