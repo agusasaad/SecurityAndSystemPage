@@ -6,7 +6,7 @@
   align-items: center;
   gap: 100px;
   padding: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 120px;
   background: #0c0c0c;
 }
 
@@ -233,6 +233,9 @@
 }
 
 @media (max-width: 500px) {
+  .container {
+    padding-bottom: 40px;
+  }
   .banner {
     height: 300px;
     background-size: cover;
