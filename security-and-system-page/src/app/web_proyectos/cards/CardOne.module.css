@@ -1,5 +1,6 @@
 .container {
-  width: 100%;
+  width: 90%;
+  max-width: 700px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -7,8 +8,6 @@
 }
 
 .containerTitle {
-  width: 100%;
-  max-width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,12 +37,9 @@
   line-height: 80px;
   text-align: center;
   text-wrap: balance;
-  will-change: transform, opacity;
 }
 
 .containerCards {
-  width: 90%;
-  max-width: 1000px;
   height: auto;
   display: grid;
   place-items: center;
@@ -52,7 +48,7 @@
   cursor: pointer;
   margin-top: 100px;
   margin-bottom: 150px;
-  will-change: transform, opacity;
+  transform: translateX(100px);
 }
 
 .containerCards .card {
@@ -64,16 +60,14 @@
   align-items: center;
   border-radius: 10px;
   position: relative;
-  will-change: transform, opacity;
 }
 
 .containerCards .card img {
-  width: 450px;
-  height: 450px;
+  width: 400px;
+  height: 400px;
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
-  will-change: transform, opacity;
 }
 
 .containerCards .card .title {
@@ -125,8 +119,9 @@
 
 @media (max-width: 750px) {
   .containerCards {
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 200px;
+    transform: translateX(0px);
   }
 
   .containerCards .card {
@@ -141,6 +136,10 @@
     height: auto;
     border-radius: 10px;
     will-change: transform, opacity;
+  }
+
+  .containerCards .card .title {
+    display: none;
   }
 }
 
