@@ -2,11 +2,11 @@
 import { poppins } from "@/Fonts/fonts";
 import styles from "./CardOne.module.css";
 import web1 from "./../../../../public/proyectos/cinq_capital_optimizada.jpg";
-import web2 from "./../../../../public/proyectos/fest_club_optimizada.jpg";
+import web2 from "./../../../../public/proyectos/fest_club.jpg";
 import web3 from "./../../../../public/proyectos/fiestas_optimizada.jpg";
 import web4 from "./../../../../public/proyectos/sdp_optimizada.jpg";
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CardOne = () => {
   const subtitleRef = useRef(null);
@@ -17,11 +17,34 @@ const CardOne = () => {
   const card_three = useRef(null);
   const card_four = useRef(null);
 
+  const initialCards = [
+    { id: 1, title: "Cinq Capital", imageSrc: web1.src, ref: card_one },
+    { id: 2, title: "Fest Club", imageSrc: web2.src, ref: card_two },
+    { id: 3, title: "Salon Plaza", imageSrc: web3.src, ref: card_three },
+    { id: 4, title: "Revestimiento SDP", imageSrc: web4.src, ref: card_four },
+  ];
+
+  const [cards, setCards] = useState(initialCards);
+  const [isMobile, setIsMobile] = useState(false); // Nuevo estado para móvil
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Detecta si la pantalla es móvil
+    };
+
+    // Llama a la función para inicializar al montar
+    handleResize();
+
+    // Listener para detectar cambios en el tamaño de la ventana
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup del listener cuando se desmonta el componente
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const tl = gsap.timeline();
-
-    // Animación inicial de entrada
-    if (window.innerWidth > 750) {
+    if (window.innerWidth > 768) {
       tl.fromTo(
         [
           subtitleRef.current,
@@ -43,6 +66,50 @@ const CardOne = () => {
           delay: 0.5,
         }
       );
+      tl.to(card_one.current, {
+        rotation: -45,
+        x: -170,
+        y: 50,
+        boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+        duration: 0.5,
+        ease: "power3.out",
+      })
+        .to(
+          card_two.current,
+          {
+            rotation: -30,
+            x: -120,
+            y: 23,
+            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            duration: 0.5,
+            ease: "power3.out",
+          },
+          "<"
+        )
+        .to(
+          card_three.current,
+          {
+            rotation: -15,
+            x: -60,
+            y: 5,
+            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            duration: 0.5,
+            ease: "power3.out",
+          },
+          "<"
+        )
+        .to(
+          card_four.current,
+          {
+            rotation: 0,
+            x: 0,
+            y: 0,
+            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            duration: 0.5,
+            ease: "power3.out",
+          },
+          "<"
+        );
     } else {
       tl.fromTo(
         [subtitleRef.current, titleRef.current, containerCard.current],
@@ -57,72 +124,21 @@ const CardOne = () => {
           delay: 0.5,
         }
       );
-    }
-    // Animación de apertura como un mazo de cartas
-
-    if (window.innerWidth > 750) {
       tl.to(card_one.current, {
-        rotation: -15,
-        x: -80,
-        y: -10,
-        boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
-        pointerEvents: "none",
-        duration: 0.5,
-        ease: "power3.out",
-      })
-        .to(
-          card_two.current,
-          {
-            rotation: -5,
-            x: -25,
-            y: -15,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
-            pointerEvents: "none",
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "<"
-        )
-        .to(
-          card_three.current,
-          {
-            rotation: 10,
-            x: 25,
-            y: -5,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
-            pointerEvents: "none",
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "<"
-        )
-        .to(
-          card_four.current,
-          {
-            rotation: 25,
-            x: 72,
-            y: 15,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
-            pointerEvents: "none",
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "<"
-        );
-    } else {
-      tl.to(card_one.current, {
+        rotation: 0,
+        x: 0,
         y: 0,
-        pointerEvents: "none",
-        boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.5)",
+        boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
         duration: 0.5,
         ease: "power3.out",
       })
         .to(
           card_two.current,
           {
+            rotation: 0,
+            x: 0,
             y: 50,
-            pointerEvents: "none",
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
             duration: 0.5,
             ease: "power3.out",
           },
@@ -131,9 +147,10 @@ const CardOne = () => {
         .to(
           card_three.current,
           {
+            rotation: 0,
+            x: 0,
             y: 100,
-            pointerEvents: "none",
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
             duration: 0.5,
             ease: "power3.out",
           },
@@ -142,9 +159,10 @@ const CardOne = () => {
         .to(
           card_four.current,
           {
+            rotation: 0,
+            x: 0,
             y: 150,
-            pointerEvents: "none",
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
             duration: 0.5,
             ease: "power3.out",
           },
@@ -153,70 +171,49 @@ const CardOne = () => {
     }
   }, []);
 
-  const resetCards = () => {
-    if (window.innerWidth > 750) {
-      gsap.to(
-        [
-          card_one.current,
-          card_two.current,
-          card_three.current,
-          card_four.current,
-        ],
-        {
-          rotation: 0,
-          x: 0,
-          y: 0,
-          pointerEvents: "auto",
-          display: "flex",
-          alignItems: "center",
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      );
+  const moveCardToBack = (cardId) => {
+    const selectedCard = cards.find((card) => card.id === cardId);
+    const reorderedCards = [
+      ...cards.filter((card) => card.id !== cardId),
+      selectedCard,
+    ];
+    setCards(reorderedCards);
 
-      gsap.to([containerCard.current], {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "15px",
-        marginTop: "30px",
-        marginBottom: "100px",
-        flexWrap: "wrap",
-        duration: 0.3,
+    reorderedCards.forEach((card, index) => {
+      const { x, y, rotation } = getCardTransform(index, isMobile); // Pasar isMobile
+      gsap.to(card.ref.current, {
+        rotation,
+        x,
+        y,
+        duration: 0.4,
         ease: "power1",
-        delay: 0.5,
       });
-    } else {
-      gsap.to([containerCard.current], {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        flexWrap: "wrap",
-        gap: "15px",
-        marginBottom: "50px",
-        duration: 0.3,
-        ease: "power1",
-        delay: 0.5,
-      });
-      gsap.to(
-        [
-          card_one.current,
-          card_two.current,
-          card_three.current,
-          card_four.current,
-        ],
-        {
-          y: 0,
-          display: "flex",
-          alignItems: "center",
-          duration: 0.5,
-          pointerEvents: "auto",
-          ease: "power3.out",
-        }
-      );
-    }
+
+      card.ref.current.style.zIndex = index + 1; // Mantiene el z-index correcto
+    });
+  };
+
+  const getCardTransform = (index, isMobile) => {
+    // Transformaciones para escritorio
+    const desktopTransformations = [
+      { rotation: -45, x: -170, y: 50 }, // Card 1
+      { rotation: -30, x: -120, y: 23 }, // Card 2
+      { rotation: -15, x: -60, y: 5 }, // Card 3
+      { rotation: 0, x: 0, y: 0 }, // Card 4
+    ];
+
+    // Transformaciones para móvil
+    const mobileTransformations = [
+      { rotation: 0, x: 0, y: 0 }, // Card 1
+      { rotation: 0, x: 0, y: 50 }, // Card 2
+      { rotation: 0, x: 0, y: 100 }, // Card 3
+      { rotation: 0, x: 0, y: 150 }, // Card 4
+    ];
+
+    // Retorna las transformaciones dependiendo si es móvil o no
+    return isMobile
+      ? mobileTransformations[index]
+      : desktopTransformations[index];
   };
 
   return (
@@ -229,39 +226,27 @@ const CardOne = () => {
           Proyectos Web
         </h1>
       </div>
-      <div
-        className={styles.containerCards}
-        ref={containerCard}
-        onClick={resetCards}
-      >
-        <div className={styles.card} ref={card_one}>
-          <img src={web1.src} alt="" />
-          <div className={styles.title}>
-            <h5 className={poppins.className}>Cinq Capital</h5>
-            <button>Detalles</button>
+      <div className={styles.containerCards} ref={containerCard}>
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            className={styles.card}
+            ref={card.ref}
+            onClick={() => moveCardToBack(card.id)}
+          >
+            <img src={card.imageSrc} alt={card.title} />
+            <div className={styles.title}>
+              <h5 className={poppins.className}>{card.title}</h5>
+              <button
+                onClick={() => {
+                  console.log(card.id);
+                }}
+              >
+                Detalles
+              </button>
+            </div>
           </div>
-        </div>
-        <div className={styles.card} ref={card_two}>
-          <img src={web2.src} alt="" />
-          <div className={styles.title}>
-            <h5 className={poppins.className}>Fest Club</h5>
-            <button>Detalles</button>
-          </div>
-        </div>
-        <div className={styles.card} ref={card_three}>
-          <img src={web3.src} alt="" />
-          <div className={styles.title}>
-            <h5 className={poppins.className}>Salon Plaza</h5>
-            <button>Detalles</button>
-          </div>
-        </div>
-        <div className={styles.card} ref={card_four}>
-          <img src={web4.src} alt="" />
-          <div className={styles.title}>
-            <h5 className={poppins.className}>Revestimiento SDP</h5>
-            <button>Detalles</button>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
