@@ -14,7 +14,7 @@ const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
   return (
     <div className={styles.containerButton}>
       <button className={poppins.className} onClick={handleClick}>
-        <img src={gifBlubble.src} alt="" width={60} height={60} />
+        <img src={gifBlubble.src} alt="" width={80} height={80} />
       </button>
     </div>
   );
