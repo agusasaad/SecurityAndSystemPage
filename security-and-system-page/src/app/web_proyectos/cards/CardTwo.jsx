@@ -80,7 +80,7 @@ const CardTwo = () => {
           y: 0,
           visibility: "visible",
           duration: 0.8,
-          stagger: 0.1,
+          stagger: 0.2,
           ease: "power3.out",
           delay: 0.5,
         }
