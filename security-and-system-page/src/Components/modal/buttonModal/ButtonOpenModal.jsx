@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
 import gsap from "gsap";
 import gifBlubble from "./../../../../public/mecanografia.gif";
+import fondo from "./../../../../public/fondoBotton.png";
 
 const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
   const handleClick = () => {
@@ -14,7 +15,20 @@ const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
   return (
     <div className={styles.containerButton}>
       <button className={poppins.className} onClick={handleClick}>
-        <img src={gifBlubble.src} alt="" width={80} height={80} />
+        <img
+          src={fondo.src}
+          alt="fondo"
+          width={100}
+          height={100}
+          className={styles.buttonFondo}
+        />
+        <img
+          className={styles.buttonGif}
+          src={gifBlubble.src}
+          alt=""
+          width={90}
+          height={100}
+        />
       </button>
     </div>
   );

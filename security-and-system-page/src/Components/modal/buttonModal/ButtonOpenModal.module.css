@@ -18,10 +18,16 @@
   align-items: center;
   color: rgb(240, 240, 240);
   transition: all 0.3s ease;
+  position: relative;
 }
 
-.containerButton button img {
+.containerButton button .buttonFondo {
   border-radius: 10px;
+}
+
+.containerButton button .buttonGif {
+  position: absolute;
+  top: 0;
 }
 
 .containerButton button:hover {
