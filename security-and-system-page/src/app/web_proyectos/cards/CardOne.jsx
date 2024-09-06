@@ -275,13 +275,7 @@ const CardOne = () => {
             <img src={card.imageSrc} alt={card.title} />
             <div className={styles.title}>
               <h5 className={poppins.className}>{card.title}</h5>
-              <button
-                onClick={() => {
-                  console.log(card.id);
-                }}
-              >
-                Detalles
-              </button>
+              <button>Detalles</button>
             </div>
           </div>
         ))}
