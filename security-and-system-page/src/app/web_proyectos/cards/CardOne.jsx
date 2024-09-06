@@ -185,7 +185,7 @@ const CardOne = () => {
         rotation,
         x,
         y,
-        duration: 0.4,
+        duration: 0.7,
         ease: "power1",
       });
 
