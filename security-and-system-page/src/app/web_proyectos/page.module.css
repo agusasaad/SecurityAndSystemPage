@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 180px 0px;
+  padding: 200px 0px;
   background-image: url("../../../public/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,7 +15,7 @@
 
 @media (max-width: 750px) {
   .container {
-    padding: 130px 0px;
+    padding: 150px 0px;
   }
 }
 

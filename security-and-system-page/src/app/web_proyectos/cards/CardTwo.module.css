@@ -37,6 +37,10 @@
   line-height: 80px;
   text-align: center;
   text-wrap: balance;
+  overflow: hidden;
+  width: 0px;
+  white-space: nowrap;
+  padding: 0px 3px;
 }
 
 .containerCards {
@@ -120,7 +124,7 @@
 @media (max-width: 750px) {
   .containerCards {
     margin-top: 30px;
-    margin-bottom: 200px;
+    margin-bottom: 80px;
     transform: translateX(0px);
   }
 
@@ -150,6 +154,7 @@
   .containerTitle h1 {
     font-size: 40px;
     letter-spacing: -1.5px;
+    line-height: 50px;
   }
 
   .containerTitle span {
@@ -157,7 +162,7 @@
   }
 
   .containerCards {
-    margin-top: 10px;
-    margin-bottom: 200px;
+    margin-top: 20px;
+    margin-bottom: 210px;
   }
 }

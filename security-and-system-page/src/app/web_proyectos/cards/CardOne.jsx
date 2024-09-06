@@ -2,14 +2,13 @@
 import { poppins } from "@/Fonts/fonts";
 import styles from "./CardOne.module.css";
 import web1 from "./../../../../public/proyectos/cinq_capital_optimizada.jpg";
-import web2 from "./../../../../public/proyectos/fest_club.jpg";
+import web2 from "./../../../../public/proyectos/fest_club_optimizada.jpg";
 import web3 from "./../../../../public/proyectos/fiestas_optimizada.jpg";
 import web4 from "./../../../../public/proyectos/sdp_optimizada.jpg";
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 
 const CardOne = () => {
-  const subtitleRef = useRef(null);
   const titleRef = useRef(null);
   const containerCard = useRef(null);
   const card_one = useRef(null);
@@ -46,9 +45,29 @@ const CardOne = () => {
     const tl = gsap.timeline();
     if (window.innerWidth > 768) {
       tl.fromTo(
+        titleRef.current,
+        { width: "0%", border: "none" },
+        {
+          width: "100%",
+          borderRight: "2px solid white",
+          duration: 1.2,
+          ease: "power2.inOut",
+        },
+        "<"
+      );
+      tl.to(
+        titleRef.current,
+        {
+          borderRightColor: "white",
+          duration: 0.4,
+          ease: "power1.inOut",
+          yoyo: true,
+          repeat: -1,
+        },
+        "<"
+      );
+      tl.fromTo(
         [
-          subtitleRef.current,
-          titleRef.current,
           containerCard.current,
           card_one.current,
           card_two.current,
@@ -112,7 +131,29 @@ const CardOne = () => {
         );
     } else {
       tl.fromTo(
-        [subtitleRef.current, titleRef.current, containerCard.current],
+        titleRef.current,
+        { width: "0%", border: "none" },
+        {
+          width: "100%",
+          borderRight: "2px solid white",
+          duration: 1.2,
+          ease: "power2.inOut",
+        },
+        "<"
+      );
+      tl.to(
+        titleRef.current,
+        {
+          borderRightColor: "white",
+          duration: 0.4,
+          ease: "power1.inOut",
+          yoyo: true,
+          repeat: -1,
+        },
+        "<"
+      );
+      tl.fromTo(
+        containerCard.current,
         { opacity: 0, y: 100, visibility: "hidden" },
         {
           opacity: 1,
@@ -219,9 +260,6 @@ const CardOne = () => {
   return (
     <div className={`${styles.container} ${poppins.className}`}>
       <div className={styles.containerTitle}>
-        <span className={poppins.className} ref={subtitleRef}>
-          Trabajos Destacados
-        </span>
         <h1 className={poppins.className} ref={titleRef}>
           Proyectos Web
         </h1>
