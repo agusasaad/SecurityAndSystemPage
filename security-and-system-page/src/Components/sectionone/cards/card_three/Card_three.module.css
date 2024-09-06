@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   padding: 50px;
   overflow-x: hidden;
-  border: 1px solid rgb(34, 34, 34);
+  border: 1px solid rgb(22, 22, 22);
 }
 
 .containerText {
@@ -141,8 +141,8 @@
     padding: 40px;
     border-radius: 20px;
     background-repeat: no-repeat;
-    background-size: 230%;
-    background-position: top;
+    background-size: 200%;
+    background-position: center;
   }
   .containerText {
     padding: 0px;
