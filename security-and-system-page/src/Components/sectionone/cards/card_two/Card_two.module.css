@@ -9,7 +9,7 @@
   top: 170px;
   border-radius: 30px;
   background-image: url("./../../../../../public/background\ 1.svg");
-  background-size: 250%;
+  background-size: 140%;
   background-position: center;
   background-repeat: no-repeat;
   padding: 50px;
@@ -111,6 +111,7 @@
     position: relative;
     top: 0px;
     padding-bottom: 70px !important;
+    background-size: 200%;
   }
 
   .containerText {
@@ -129,13 +130,20 @@
   }
 }
 
+@media (max-width: 650px) {
+  .card {
+    background-size: 250%;
+  }
+}
+
 @media (max-width: 550px) {
   .card {
     gap: 20px;
     padding: 40px;
     border-radius: 20px;
     background-repeat: no-repeat;
-    background-size: 400%;
+    background-size: 230%;
+    background-position: right;
   }
   .containerText {
     padding: 0px;
