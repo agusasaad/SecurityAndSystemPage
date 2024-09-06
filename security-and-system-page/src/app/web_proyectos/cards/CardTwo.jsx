@@ -6,6 +6,7 @@ import web2 from "./../../../../public/proyectos/tu_voz_suma_optimizada.jpg";
 import web3 from "./../../../../public/proyectos/dni_optimizado.jpg";
 import web4 from "./../../../../public/proyectos/que_dj_optimizada.jpg";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 
 const CardTwo = () => {
@@ -41,6 +42,7 @@ const CardTwo = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     const tl = gsap.timeline();
     if (window.innerWidth > 768) {
@@ -130,49 +132,56 @@ const CardTwo = () => {
           "<"
         );
     } else {
-      tl.fromTo(
-        titleRef.current,
-        { width: "0%", border: "none" },
-        {
-          width: "100%",
-          borderRight: "2px solid white",
-          duration: 1.2,
-          ease: "power2.inOut",
-        },
-        "<"
-      );
-      tl.to(
-        titleRef.current,
-        {
-          borderRightColor: "white",
-          duration: 0.4,
-          ease: "power1.inOut",
-          yoyo: true,
-          repeat: -1,
-        },
-        "<"
-      );
-      tl.fromTo(
-        containerCard.current,
-        { opacity: 0, y: 100, visibility: "hidden" },
-        {
-          opacity: 1,
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerCard.current,
+            start: "top 90%",
+            end: "bottom top",
+          },
+        })
+        .fromTo(
+          titleRef.current,
+          { width: "0%", border: "none" },
+          {
+            width: "100%",
+            borderRight: "2px solid white",
+            duration: 1.2,
+            ease: "power2.inOut",
+          }
+        )
+        .to(
+          titleRef.current,
+          {
+            borderRightColor: "white",
+            duration: 0.4,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: -1,
+          },
+          "<"
+        )
+        .fromTo(
+          containerCard.current,
+          { opacity: 0, y: 100, visibility: "hidden" },
+          {
+            opacity: 1,
+            y: 0,
+            visibility: "visible",
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power3.out",
+            delay: 0.5,
+          }
+        )
+        .to(card_one.current, {
+          rotation: 0,
+          x: 0,
           y: 0,
-          visibility: "visible",
-          duration: 0.8,
-          stagger: 0.1,
+          boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+          duration: 0.5,
           ease: "power3.out",
-          delay: 0.5,
-        }
-      );
-      tl.to(card_one.current, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-        boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
-        duration: 0.5,
-        ease: "power3.out",
-      })
+        })
         .to(
           card_two.current,
           {
