@@ -143,9 +143,9 @@
     will-change: transform, opacity;
   }
 
-  .containerCards .card .title {
+  /* .containerCards .card .title {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 550px) {
