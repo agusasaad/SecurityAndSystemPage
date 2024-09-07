@@ -1,0 +1,196 @@
+.container {
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.575);
+  display: flex;
+  flex-direction: column;
+  padding-top: 170px;
+}
+
+.detailContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.infoProyecto {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  max-height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 40px 60px;
+  position: sticky;
+  top: 170px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.title h1 {
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: -4px;
+  color: white;
+  margin-left: -3px;
+  line-height: 90px;
+}
+
+.title span {
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: rgb(218, 218, 218);
+}
+
+.title button {
+  border: 1px solid white;
+  padding: 8px 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 5px;
+  letter-spacing: 0.3px;
+}
+
+.parrafo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.parrafo h5 {
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: rgb(218, 218, 218);
+}
+
+.parrafo p {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: rgb(138, 138, 138);
+}
+
+.containerImg {
+  width: 90%;
+  max-width: 1250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 10px;
+}
+
+.containerImg img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.controlButtons {
+  width: 100%;
+  padding: 70px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controlButtons button {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: rgb(177, 177, 177);
+}
+
+@media (max-width: 1600px) {
+  .containerImg img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1400px) {
+  .infoProyecto {
+    max-width: 700px;
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .detailContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoProyecto {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    gap: 50px;
+  }
+
+  .containerImg {
+    width: 100%;
+    padding: 0px 30px;
+  }
+}
+
+@media (max-width: 750px) {
+  .controlButtons {
+    padding: 40px 20px;
+  }
+
+  .controlButtons button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0px;
+    padding-top: 100px;
+  }
+  .infoProyecto {
+    gap: 40px;
+    padding: 20px 20px;
+  }
+
+  .title h1 {
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: -2px;
+  }
+
+  .title span {
+    font-size: 18px;
+  }
+
+  .parrafo h5 {
+    font-size: 18px;
+  }
+
+  .parrafo p {
+    font-size: 16px;
+  }
+
+  .containerImg {
+    padding: 0px 10px;
+  }
+  .title button {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
