@@ -2,11 +2,12 @@
 import { poppins } from "@/Fonts/fonts";
 import styles from "./CardOne.module.css";
 import web1 from "./../../../../public/proyectos/cinq_capital_optimizada.jpg";
-import web2 from "./../../../../public/proyectos/fest_club.jpg";
+import web2 from "./../../../../public/proyectos/fest_club_optimizada.jpg";
 import web3 from "./../../../../public/proyectos/fiestas_optimizada.jpg";
 import web4 from "./../../../../public/proyectos/sdp_optimizada.jpg";
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const CardOne = () => {
   const titleRef = useRef(null);
@@ -15,6 +16,9 @@ const CardOne = () => {
   const card_two = useRef(null);
   const card_three = useRef(null);
   const card_four = useRef(null);
+
+  //router
+  const router = useRouter();
 
   const initialCards = [
     { id: 1, title: "Cinq Capital", imageSrc: web1.src, ref: card_one },
@@ -257,6 +261,10 @@ const CardOne = () => {
       : desktopTransformations[index];
   };
 
+  const handleDetailsClick = (id) => {
+    router.push(`/web_proyectos/${id}`); // Redirige a la ruta dinámica con el ID
+  };
+
   return (
     <div className={`${styles.container} ${poppins.className}`}>
       <div className={styles.containerTitle}>
@@ -275,7 +283,9 @@ const CardOne = () => {
             <img src={card.imageSrc} alt={card.title} />
             <div className={styles.title}>
               <h5 className={poppins.className}>{card.title}</h5>
-              <button>Detalles</button>
+              <button onClick={() => handleDetailsClick(card.id)}>
+                Detalles
+              </button>
             </div>
           </div>
         ))}

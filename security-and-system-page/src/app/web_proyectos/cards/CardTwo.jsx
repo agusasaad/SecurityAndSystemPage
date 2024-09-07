@@ -8,6 +8,7 @@ import web4 from "./../../../../public/proyectos/que_dj_optimizada.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const CardTwo = () => {
   const titleRef = useRef(null);
@@ -17,11 +18,14 @@ const CardTwo = () => {
   const card_three = useRef(null);
   const card_four = useRef(null);
 
+  //router
+  const router = useRouter();
+
   const initialCards = [
-    { id: 1, title: "Net Expertos", imageSrc: web1.src, ref: card_one },
-    { id: 2, title: "Tu voz Suma", imageSrc: web2.src, ref: card_two },
-    { id: 3, title: "DNI Logistica", imageSrc: web3.src, ref: card_three },
-    { id: 4, title: "Que DJ", imageSrc: web4.src, ref: card_four },
+    { id: 5, title: "Net Expertos", imageSrc: web1.src, ref: card_one },
+    { id: 6, title: "Tu voz Suma", imageSrc: web2.src, ref: card_two },
+    { id: 7, title: "DNI Logistica", imageSrc: web3.src, ref: card_three },
+    { id: 8, title: "Que DJ", imageSrc: web4.src, ref: card_four },
   ];
 
   const [cards, setCards] = useState(initialCards);
@@ -266,6 +270,10 @@ const CardTwo = () => {
       : desktopTransformations[index];
   };
 
+  const handleDetailsClick = (id) => {
+    router.push(`/web_proyectos/${id}`); // Redirige a la ruta dinámica con el ID
+  };
+
   return (
     <div className={`${styles.container} ${poppins.className}`}>
       <div className={styles.containerTitle}>
@@ -284,7 +292,9 @@ const CardTwo = () => {
             <img src={card.imageSrc} alt={card.title} />
             <div className={styles.title}>
               <h5 className={poppins.className}>{card.title}</h5>
-              <button>Detalles</button>
+              <button onClick={() => handleDetailsClick(card.id)}>
+                Detalles
+              </button>
             </div>
           </div>
         ))}
