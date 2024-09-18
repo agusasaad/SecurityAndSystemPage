@@ -4,6 +4,7 @@
   background-color: rgba(0, 0, 0, 0.575);
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 170px;
 }
 
@@ -12,20 +13,19 @@
   height: auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .infoProyecto {
   width: 100%;
   max-width: 750px;
   height: auto;
-  max-height: 750px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
   padding: 40px 60px;
-  position: sticky;
-  top: 170px;
 }
 
 .title {
@@ -52,13 +52,13 @@
 }
 
 .title button {
-  border: 1px solid white;
-  padding: 8px 10px;
+  background: #008df1;
+  padding: 10px 25px;
   margin-top: 10px;
   font-size: 16px;
-  font-weight: 300;
-  border-radius: 5px;
-  letter-spacing: 0.3px;
+  font-weight: 500;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
 }
 
 .parrafo {
@@ -76,32 +76,65 @@
 
 .parrafo p {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.5px;
   color: rgb(138, 138, 138);
 }
 
 .containerImg {
-  width: 90%;
-  max-width: 1250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 0px 10px;
+  flex: 2;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 700px;
+  overflow: hidden;
+  position: relative;
+  padding: 15px;
 }
 
+.images {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 .containerImg img {
   width: 100%;
   height: auto;
   border-radius: 30px;
 }
 
-.controlButtons {
+.buttons {
   width: 100%;
-  padding: 70px 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
+  padding: 0px 70px;
+  align-items: center;
+  z-index: 1;
+}
+
+.buttons button {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+}
+
+.buttons button .icon {
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.controlButtons {
+  width: 90%;
+  max-width: 1800px;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0px;
 }
 
 .controlButtons button {
@@ -114,83 +147,75 @@
   color: rgb(177, 177, 177);
 }
 
-@media (max-width: 1600px) {
-  .containerImg img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-width: 1400px) {
+@media (max-width: 1450px) {
   .infoProyecto {
-    max-width: 700px;
-    padding: 40px 30px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .detailContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .infoProyecto {
-    position: relative;
-    top: 0;
-    width: 100%;
+    padding: 15px 30px;
     max-width: 100%;
-    gap: 50px;
+    gap: 30px;
   }
 
   .containerImg {
     width: 100%;
-    padding: 0px 30px;
+    max-width: 100%;
+    padding: 15px 30px;
   }
 }
 
 @media (max-width: 750px) {
-  .controlButtons {
-    padding: 40px 20px;
+  .container {
+    padding-top: 120px;
+    overflow: hidden;
   }
 
-  .controlButtons button {
-    font-size: 20px;
+  .containerImg img {
+    width: 90vw;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .buttons {
+    width: 100vw;
+    padding: 0px 25px;
   }
 }
 
-@media (max-width: 500px) {
-  .container {
-    padding: 0px;
-    padding-top: 100px;
+@media (max-width: 600px) {
+  .title {
+    gap: 5px;
   }
-  .infoProyecto {
-    gap: 40px;
-    padding: 20px 20px;
-  }
-
   .title h1 {
     font-size: 50px;
-    line-height: 60px;
-    letter-spacing: -2px;
+    line-height: 65px;
+    letter-spacing: -1.5px;
   }
-
   .title span {
     font-size: 18px;
+    letter-spacing: 0.5px;
   }
 
   .parrafo h5 {
     font-size: 18px;
+    letter-spacing: 0.2px;
+  }
+  .parrafo p {
+    font-size: 17px;
   }
 
-  .parrafo p {
-    font-size: 16px;
+  .infoProyecto {
+    padding: 15px 20px;
   }
 
   .containerImg {
     padding: 0px 10px;
   }
-  .title button {
-    font-size: 14px;
-    margin-top: 5px;
+
+  .controlButtons {
+    margin: 0px;
+    padding: 15px 20px;
+    width: 100%;
+  }
+
+  .controlButtons button {
+    font-size: 18px;
   }
 }
