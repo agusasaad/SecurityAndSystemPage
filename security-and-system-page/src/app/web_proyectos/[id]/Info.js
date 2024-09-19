@@ -17,19 +17,6 @@ export const desarrolloWeb = [
 
   {
     id: '2',
-    title: 'Fest Club',
-    banner: 'Expande tu universo',
-    infoText:
-      'Fest Club es una plataforma digital para la compra de entradas a eventos en la discoteca. Permite a los usuarios explorar eventos, seleccionar fechas y adquirir boletos de forma rápida y sencilla, proporcionando una experiencia de compra eficiente y sin complicaciones.',
-    images: [
-      cinq_capital_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
-    ],
-  },
-
-  {
-    id: '3',
     title: 'Salon Plaza',
     banner: 'Expande tu universo',
     infoText:
@@ -41,6 +28,18 @@ export const desarrolloWeb = [
     ],
   },
 
+  {
+    id: '3',
+    title: 'Fest Club',
+    banner: 'Expande tu universo',
+    infoText:
+      'Fest Club es una plataforma digital para la compra de entradas a eventos en la discoteca. Permite a los usuarios explorar eventos, seleccionar fechas y adquirir boletos de forma rápida y sencilla, proporcionando una experiencia de compra eficiente y sin complicaciones.',
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
+  },
   {
     id: '4',
     title: 'SDP Revestimientos',

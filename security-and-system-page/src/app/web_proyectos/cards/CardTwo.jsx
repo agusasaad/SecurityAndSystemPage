@@ -1,77 +1,77 @@
-"use client";
-import { poppins } from "@/Fonts/fonts";
-import styles from "./CardTwo.module.css";
-import web1 from "./../../../../public/proyectos/net_expertos_optimizada.jpg";
-import web2 from "./../../../../public/proyectos/tu_voz_suma_optimizada.jpg";
-import web3 from "./../../../../public/proyectos/dni_optimizado.jpg";
-import web4 from "./../../../../public/proyectos/que_dj_optimizada.jpg";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+'use client'
+import { poppins } from '@/Fonts/fonts'
+import styles from './CardTwo.module.css'
+import web1 from './../../../../public/proyectos/net_expertos_optimizada.jpg'
+import web2 from './../../../../public/proyectos/tu_voz_suma_optimizada.jpg'
+import web3 from './../../../../public/proyectos/dni_optimizado.jpg'
+import web4 from './../../../../public/proyectos/que_dj_optimizada.jpg'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 const CardTwo = () => {
-  const titleRef = useRef(null);
-  const containerCard = useRef(null);
-  const card_one = useRef(null);
-  const card_two = useRef(null);
-  const card_three = useRef(null);
-  const card_four = useRef(null);
+  const titleRef = useRef(null)
+  const containerCard = useRef(null)
+  const card_one = useRef(null)
+  const card_two = useRef(null)
+  const card_three = useRef(null)
+  const card_four = useRef(null)
 
   //router
-  const router = useRouter();
+  const router = useRouter()
 
   const initialCards = [
-    { id: 5, title: "Net Expertos", imageSrc: web1.src, ref: card_one },
-    { id: 6, title: "Tu voz Suma", imageSrc: web2.src, ref: card_two },
-    { id: 7, title: "DNI Logistica", imageSrc: web3.src, ref: card_three },
-    { id: 8, title: "Que DJ", imageSrc: web4.src, ref: card_four },
-  ];
+    { id: 8, title: 'Que DJ', imageSrc: web4.src, ref: card_one },
+    { id: 7, title: 'DNI Logistica', imageSrc: web3.src, ref: card_two },
+    { id: 6, title: 'Tu voz Suma', imageSrc: web2.src, ref: card_three },
+    { id: 5, title: 'Net Expertos', imageSrc: web1.src, ref: card_four },
+  ]
 
-  const [cards, setCards] = useState(initialCards);
-  const [isMobile, setIsMobile] = useState(false); // Nuevo estado para móvil
+  const [cards, setCards] = useState(initialCards)
+  const [isMobile, setIsMobile] = useState(false) // Nuevo estado para móvil
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Detecta si la pantalla es móvil
-    };
+      setIsMobile(window.innerWidth <= 768) // Detecta si la pantalla es móvil
+    }
 
     // Llama a la función para inicializar al montar
-    handleResize();
+    handleResize()
 
     // Listener para detectar cambios en el tamaño de la ventana
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize)
 
     // Cleanup del listener cuando se desmonta el componente
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger)
   useEffect(() => {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline()
     if (window.innerWidth > 768) {
       tl.fromTo(
         titleRef.current,
-        { width: "0%", border: "none" },
+        { width: '0%', border: 'none' },
         {
-          width: "100%",
-          borderRight: "2px solid white",
+          width: '100%',
+          borderRight: '2px solid white',
           duration: 1.2,
-          ease: "power2.inOut",
+          ease: 'power2.inOut',
         },
-        "<"
-      );
+        '<'
+      )
       tl.to(
         titleRef.current,
         {
-          borderRightColor: "white",
+          borderRightColor: 'white',
           duration: 0.4,
-          ease: "power1.inOut",
+          ease: 'power1.inOut',
           yoyo: true,
           repeat: -1,
         },
-        "<"
-      );
+        '<'
+      )
       tl.fromTo(
         [
           containerCard.current,
@@ -80,24 +80,24 @@ const CardTwo = () => {
           card_three.current,
           card_four.current,
         ],
-        { opacity: 0, y: 100, visibility: "hidden" },
+        { opacity: 0, y: 100, visibility: 'hidden' },
         {
           opacity: 1,
           y: 0,
-          visibility: "visible",
+          visibility: 'visible',
           duration: 0.8,
           stagger: 0.2,
-          ease: "power3.out",
+          ease: 'power3.out',
           delay: 0.5,
         }
-      );
+      )
       tl.to(card_one.current, {
         rotation: -45,
         x: -170,
         y: 50,
-        boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+        boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
         duration: 0.5,
-        ease: "power3.out",
+        ease: 'power3.out',
       })
         .to(
           card_two.current,
@@ -105,11 +105,11 @@ const CardTwo = () => {
             rotation: -30,
             x: -120,
             y: 23,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
             duration: 0.5,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          "<"
+          '<'
         )
         .to(
           card_three.current,
@@ -117,11 +117,11 @@ const CardTwo = () => {
             rotation: -15,
             x: -60,
             y: 5,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
             duration: 0.5,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          "<"
+          '<'
         )
         .to(
           card_four.current,
@@ -129,52 +129,52 @@ const CardTwo = () => {
             rotation: 0,
             x: 0,
             y: 0,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
             duration: 0.5,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          "<"
-        );
+          '<'
+        )
     } else {
       gsap
         .timeline({
           scrollTrigger: {
             trigger: containerCard.current,
-            start: "top 90%",
-            end: "bottom top",
+            start: 'top 90%',
+            end: 'bottom top',
           },
         })
         .fromTo(
           titleRef.current,
-          { width: "0%", border: "none" },
+          { width: '0%', border: 'none' },
           {
-            width: "100%",
-            borderRight: "2px solid white",
+            width: '100%',
+            borderRight: '2px solid white',
             duration: 1.2,
-            ease: "power2.inOut",
+            ease: 'power2.inOut',
           }
         )
         .to(
           titleRef.current,
           {
-            borderRightColor: "white",
+            borderRightColor: 'white',
             duration: 0.4,
-            ease: "power1.inOut",
+            ease: 'power1.inOut',
             yoyo: true,
             repeat: -1,
           },
-          "<"
+          '<'
         )
         .fromTo(
           containerCard.current,
-          { opacity: 0, y: 100, visibility: "hidden" },
+          { opacity: 0, y: 100, visibility: 'hidden' },
           {
             opacity: 1,
             y: 0,
-            visibility: "visible",
+            visibility: 'visible',
             duration: 0.8,
             stagger: 0.1,
-            ease: "power3.out",
+            ease: 'power3.out',
             delay: 0.5,
           }
         )
@@ -182,9 +182,9 @@ const CardTwo = () => {
           rotation: 0,
           x: 0,
           y: 0,
-          boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+          boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
           duration: 0.5,
-          ease: "power3.out",
+          ease: 'power3.out',
         })
         .to(
           card_two.current,
@@ -192,11 +192,11 @@ const CardTwo = () => {
             rotation: 0,
             x: 0,
             y: 50,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
             duration: 0.5,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          "<"
+          '<'
         )
         .to(
           card_three.current,
@@ -204,11 +204,11 @@ const CardTwo = () => {
             rotation: 0,
             x: 0,
             y: 100,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
             duration: 0.5,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          "<"
+          '<'
         )
         .to(
           card_four.current,
@@ -216,36 +216,36 @@ const CardTwo = () => {
             rotation: 0,
             x: 0,
             y: 150,
-            boxShadow: "0px 0px 19px 0px rgba(0, 0, 0, 0.808)",
+            boxShadow: '0px 0px 19px 0px rgba(0, 0, 0, 0.808)',
             duration: 0.5,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          "<"
-        );
+          '<'
+        )
     }
-  }, []);
+  }, [])
 
   const moveCardToBack = (cardId) => {
-    const selectedCard = cards.find((card) => card.id === cardId);
+    const selectedCard = cards.find((card) => card.id === cardId)
     const reorderedCards = [
       ...cards.filter((card) => card.id !== cardId),
       selectedCard,
-    ];
-    setCards(reorderedCards);
+    ]
+    setCards(reorderedCards)
 
     reorderedCards.forEach((card, index) => {
-      const { x, y, rotation } = getCardTransform(index, isMobile); // Pasar isMobile
+      const { x, y, rotation } = getCardTransform(index, isMobile) // Pasar isMobile
       gsap.to(card.ref.current, {
         rotation,
         x,
         y,
         duration: 0.7,
-        ease: "power1",
-      });
+        ease: 'power1',
+      })
 
-      card.ref.current.style.zIndex = index + 1; // Mantiene el z-index correcto
-    });
-  };
+      card.ref.current.style.zIndex = index + 1 // Mantiene el z-index correcto
+    })
+  }
 
   const getCardTransform = (index, isMobile) => {
     // Transformaciones para escritorio
@@ -254,7 +254,7 @@ const CardTwo = () => {
       { rotation: -30, x: -120, y: 23 }, // Card 2
       { rotation: -15, x: -60, y: 5 }, // Card 3
       { rotation: 0, x: 0, y: 0 }, // Card 4
-    ];
+    ]
 
     // Transformaciones para móvil
     const mobileTransformations = [
@@ -262,17 +262,17 @@ const CardTwo = () => {
       { rotation: 0, x: 0, y: 50 }, // Card 2
       { rotation: 0, x: 0, y: 100 }, // Card 3
       { rotation: 0, x: 0, y: 150 }, // Card 4
-    ];
+    ]
 
     // Retorna las transformaciones dependiendo si es móvil o no
     return isMobile
       ? mobileTransformations[index]
-      : desktopTransformations[index];
-  };
+      : desktopTransformations[index]
+  }
 
   const handleDetailsClick = (id) => {
-    router.push(`/web_proyectos/${id}`); // Redirige a la ruta dinámica con el ID
-  };
+    router.push(`/web_proyectos/${id}`) // Redirige a la ruta dinámica con el ID
+  }
 
   return (
     <div className={`${styles.container} ${poppins.className}`}>
@@ -300,7 +300,7 @@ const CardTwo = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CardTwo;
+export default CardTwo
