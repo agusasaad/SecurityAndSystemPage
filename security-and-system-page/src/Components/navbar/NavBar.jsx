@@ -1,41 +1,41 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import styles from "./NavBar.module.css";
-import Image from "next/image";
-import logoSAS from "../../../public/logoSAS.png";
-import logoSAS_Mobile from "../../../public/logo_mobile.png";
-import { TbMenuDeep } from "react-icons/tb";
-import { IoClose } from "react-icons/io5";
-import { CiHome } from "react-icons/ci";
-import { GrServices } from "react-icons/gr";
-import { PiUsersThreeLight } from "react-icons/pi";
-import { GrProjects } from "react-icons/gr";
-import { poppins } from "@/Fonts/fonts";
-import gsap from "gsap";
-import Link from "next/link";
+'use client'
+import { useEffect, useRef, useState } from 'react'
+import styles from './NavBar.module.css'
+import Image from 'next/image'
+import logoSAS from '../../../public/logoSAS.png'
+import logoSAS_Mobile from '../../../public/logo_mobile.png'
+import { TbMenuDeep } from 'react-icons/tb'
+import { IoClose } from 'react-icons/io5'
+import { CiHome } from 'react-icons/ci'
+import { GrServices } from 'react-icons/gr'
+import { PiUsersThreeLight } from 'react-icons/pi'
+import { GrProjects } from 'react-icons/gr'
+import { poppins } from '@/Fonts/fonts'
+import gsap from 'gsap'
+import Link from 'next/link'
 
 const NavBar = () => {
-  const navBarAnimate = useRef(null);
+  const navBarAnimate = useRef(null)
 
-  const [showMenu, setShowMenu] = useState(false);
-  const [showMenuServices, setShowMenuServices] = useState(false);
+  const [showMenu, setShowMenu] = useState(false)
+  const [showMenuServices, setShowMenuServices] = useState(false)
 
   //Animaciones GSAP
   useEffect(() => {
     gsap.set(navBarAnimate.current, {
       y: 100,
       opacity: 0,
-      visibility: "hidden",
-    });
+      visibility: 'hidden',
+    })
     gsap.to(navBarAnimate.current, {
       opacity: 1,
       y: 0,
       duration: 0.9,
-      ease: "back.inOut",
+      ease: 'power1',
       stagger: 0.5,
-      visibility: "visible",
-    });
-  }, []);
+      visibility: 'visible',
+    })
+  }, [])
 
   return (
     <div className={styles.containerNav} ref={navBarAnimate}>
@@ -47,7 +47,7 @@ const NavBar = () => {
               alt="Logo de la empresa Security And System"
               className={styles.LogoNav}
               width={40}
-              height={"auto"}
+              height={'auto'}
             />
 
             <Image
@@ -55,11 +55,11 @@ const NavBar = () => {
               alt="Logo de la empresa Security And System"
               className={styles.LogoNavMobile}
               width={150}
-              height={"auto"}
+              height={'auto'}
             />
           </Link>
         </div>
-        <div className={`${styles.center} ${showMenu ? styles.show : ""}`}>
+        <div className={`${styles.center} ${showMenu ? styles.show : ''}`}>
           <div className={styles.onClose}>
             <button onClick={() => setShowMenu(false)}>
               <IoClose />
@@ -69,7 +69,7 @@ const NavBar = () => {
             <Link
               href="/"
               onClick={() => {
-                setShowMenu(false), setShowMenuServices(false);
+                setShowMenu(false), setShowMenuServices(false)
               }}
             >
               <li>
@@ -81,7 +81,7 @@ const NavBar = () => {
               <GrServices className={styles.icon} />
               Servicios
               <svg
-                className={showMenuServices ? styles.rotate : ""}
+                className={showMenuServices ? styles.rotate : ''}
                 viewBox="0 0 1024 1024"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="white"
@@ -107,7 +107,7 @@ const NavBar = () => {
                 <Link
                   href="/desarrollo_web"
                   onClick={() => {
-                    setShowMenu(false), setShowMenuServices(false);
+                    setShowMenu(false), setShowMenuServices(false)
                   }}
                 >
                   <li>Desarrollo Web</li>
@@ -115,7 +115,7 @@ const NavBar = () => {
                 <Link
                   href="/aplicaciones_moviles"
                   onClick={() => {
-                    setShowMenu(false), setShowMenuServices(false);
+                    setShowMenu(false), setShowMenuServices(false)
                   }}
                 >
                   <li>Aplicaciones Móviles</li>
@@ -123,7 +123,7 @@ const NavBar = () => {
                 <Link
                   href="/servidores_soluciones_cloud"
                   onClick={() => {
-                    setShowMenu(false), setShowMenuServices(false);
+                    setShowMenu(false), setShowMenuServices(false)
                   }}
                 >
                   <li>Servidores y Soluciones Cloud</li>
@@ -131,7 +131,7 @@ const NavBar = () => {
                 <Link
                   href="/consultoria_it"
                   onClick={() => {
-                    setShowMenu(false), setShowMenuServices(false);
+                    setShowMenu(false), setShowMenuServices(false)
                   }}
                 >
                   <li>Consultoria IT</li>
@@ -139,9 +139,9 @@ const NavBar = () => {
               </ul>
             )}
             <Link
-              href={"/sobre_nosotros"}
+              href={'/sobre_nosotros'}
               onClick={() => {
-                setShowMenu(false), setShowMenuServices(false);
+                setShowMenu(false), setShowMenuServices(false)
               }}
             >
               <li>
@@ -150,9 +150,9 @@ const NavBar = () => {
               </li>
             </Link>
             <Link
-              href={"/web_proyectos"}
+              href={'/web_proyectos'}
               onClick={() => {
-                setShowMenu(false), setShowMenuServices(false);
+                setShowMenu(false), setShowMenuServices(false)
               }}
             >
               <li>
@@ -176,7 +176,7 @@ const NavBar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
