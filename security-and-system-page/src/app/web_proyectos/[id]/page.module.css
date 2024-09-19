@@ -5,27 +5,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-top: 170px;
+  position: relative;
 }
 
 .detailContainer {
   width: 100%;
+  max-width: 1800px;
   height: auto;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0px 30px;
+  gap: 30px;
 }
 
 .infoProyecto {
-  width: 100%;
-  max-width: 750px;
+  width: 40%;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
-  padding: 40px 60px;
+  padding: 50px 0px;
 }
 
 .title {
@@ -37,28 +40,37 @@
 
 .title h1 {
   font-size: 70px;
-  font-weight: 500;
-  letter-spacing: -4px;
+  font-weight: 600;
+  letter-spacing: -2px;
   color: white;
   margin-left: -3px;
   line-height: 90px;
 }
 
 .title span {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 400;
-  letter-spacing: -0.5px;
   color: rgb(218, 218, 218);
 }
 
 .title button {
-  background: #008df1;
+  --border-color: hsla(0, 0%, 100%, 0.15);
+  --border-left-width: 1px;
+  --border-right-width: 1px;
+  --border-style: solid;
+  --border-top-width: 1px;
+  background: linear-gradient(
+    180deg,
+    var(--token-ea6fc18e-a362-469e-a9a9-c07a4203099e, #4080ff) 0,
+    var(--token-85f808c6-fcb2-4863-a51d-7c829c3d8dd3, #004bdd) 100%
+  );
   padding: 10px 25px;
   margin-top: 10px;
   font-size: 16px;
   font-weight: 500;
   border-radius: 30px;
   letter-spacing: 0.5px;
+  display: none;
 }
 
 .parrafo {
@@ -76,65 +88,34 @@
 
 .parrafo p {
   font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.5px;
-  color: rgb(138, 138, 138);
+  font-weight: 400;
+  color: rgb(184, 184, 184);
 }
 
 .containerImg {
-  flex: 2;
-  width: 100%;
-  max-width: 1000px;
-  min-width: 700px;
-  overflow: hidden;
+  width: 70%;
+  max-width: 900px;
   position: relative;
-  padding: 15px;
 }
 
-.images {
+.carousel {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+  border-radius: 30px;
+  overflow: hidden;
 }
+
 .containerImg img {
   width: 100%;
   height: auto;
-  border-radius: 30px;
-}
-
-.buttons {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 70px;
-  align-items: center;
-  z-index: 1;
-}
-
-.buttons button {
-  font-size: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(255, 255, 255);
-}
-
-.buttons button .icon {
-  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 .controlButtons {
-  width: 90%;
+  width: 100%;
   max-width: 1800px;
   display: flex;
   justify-content: space-between;
   margin: 50px 0px;
+  padding: 0px 20px;
 }
 
 .controlButtons button {
@@ -147,75 +128,196 @@
   color: rgb(177, 177, 177);
 }
 
-@media (max-width: 1450px) {
+/* Modal  */
+
+.containerModal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.705);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.Modal {
+  width: 90%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(100px);
+  background-color: rgba(13, 13, 14, 0.7);
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.Modal h1 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.Modal p {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(184, 184, 184);
+  line-height: 29px;
+  text-wrap: balance;
+}
+
+.Modal .containerButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.Modal button {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: rgb(228, 228, 228);
+  background: rgb(66, 66, 66);
+  padding: 3px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1500px) {
+  .container {
+    padding-top: 200px;
+  }
+  .detailContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    padding: 0px;
+  }
+
   .infoProyecto {
-    padding: 15px 30px;
-    max-width: 100%;
-    gap: 30px;
+    width: 100%;
+    max-width: 90%;
+    padding: 30px 0px;
+    gap: 20px;
   }
 
   .containerImg {
-    width: 100%;
-    max-width: 100%;
-    padding: 15px 30px;
+    width: 100% !important;
+    max-width: 90%;
+  }
+
+  .parrafo h5 {
+    display: none;
+  }
+
+  .controlButtons {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding-top: 110px;
+  }
+  .carousel {
+    border-radius: 10px;
+  }
+
+  .controlButtons {
+    padding: 0px;
   }
 }
 
 @media (max-width: 750px) {
-  .container {
-    padding-top: 120px;
-    overflow: hidden;
+  /* .container {
+    min-height: 100vh;
+    padding-top: 40px;
+  } */
+  .infoProyecto {
+    padding: 0px;
   }
-
-  .containerImg img {
-    width: 90vw;
-    height: auto;
-    border-radius: 20px;
-  }
-
-  .buttons {
-    width: 100vw;
-    padding: 0px 25px;
-  }
-}
-
-@media (max-width: 600px) {
   .title {
-    gap: 5px;
+    gap: 0px;
   }
   .title h1 {
     font-size: 50px;
-    line-height: 65px;
-    letter-spacing: -1.5px;
+    line-height: 60px;
   }
   .title span {
-    font-size: 18px;
-    letter-spacing: 0.5px;
-  }
-
-  .parrafo h5 {
-    font-size: 18px;
-    letter-spacing: 0.2px;
-  }
-  .parrafo p {
     font-size: 17px;
   }
-
-  .infoProyecto {
-    padding: 15px 20px;
+  .title button {
+    display: flex;
   }
 
-  .containerImg {
-    padding: 0px 10px;
+  .parrafo p {
+    font-size: 18px;
+    display: none;
   }
 
   .controlButtons {
-    margin: 0px;
-    padding: 15px 20px;
-    width: 100%;
+    margin: 15px 0px;
   }
 
   .controlButtons button {
     font-size: 18px;
+    padding: 5px 0px;
+    letter-spacing: -0.5px;
+  }
+
+  .containerModal {
+    display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  .title button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Modal h1 {
+    font-size: 30px;
+    line-height: 45px;
   }
 }

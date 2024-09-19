@@ -5,12 +5,14 @@ export const desarrolloWeb = [
   {
     id: '1',
     title: 'Cinq Capital',
-    banner: 'Invierte y maximiza tu capital.',
+    banner: 'Invierte y maximiza tu capital',
     infoText:
-      'Cinq Capital es una plataforma de inversiones diseñada para ofrecer soluciones financieras avanzadas. Facilita el acceso a oportunidades de inversión, brindando herramientas y recursos para gestionar y optimizar tu cartera de forma eficaz.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+      'Cinq Cinq Capital es una plataforma de inversiones que ofrece soluciones financieras avanzadas, facilitando el acceso a oportunidades de inversión y proporcionando herramientas para gestionar y optimizar tu cartera de manera eficaz.',
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 
   {
@@ -19,19 +21,24 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Fest Club es una plataforma digital para la compra de entradas a eventos en la discoteca. Permite a los usuarios explorar eventos, seleccionar fechas y adquirir boletos de forma rápida y sencilla, proporcionando una experiencia de compra eficiente y sin complicaciones.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 
   {
     id: '3',
     title: 'Salon Plaza',
+    banner: 'Expande tu universo',
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 
   {
@@ -40,9 +47,11 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
   {
     id: '5',
@@ -50,9 +59,11 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 
   {
@@ -61,9 +72,11 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 
   {
@@ -72,9 +85,11 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 
   {
@@ -83,8 +98,10 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    img: cinq_capital_mockup_1.src,
-    img_2: cinq_capital_mockup_2.src,
-    img_3: cinq_capital_mockup_3.src,
+    images: [
+      cinq_capital_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 ]
