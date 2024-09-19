@@ -1,6 +1,11 @@
 import cinq_capital_mockup_1 from './../../../../public/proyectos/detail_Cinq_capital/mockup_1.jpeg'
 import cinq_capital_mockup_2 from './../../../../public/proyectos/detail_Cinq_capital/mockup_2.png'
 import cinq_capital_mockup_3 from './../../../../public/proyectos/detail_Cinq_capital/mockup_3.png'
+
+import salon_plaza_mockup_1 from './../../../../public/proyectos/detail_Salon_plaza/mockup_1.jpeg'
+
+import fest_club_mockup_1 from './../../../../public/proyectos/detail_Fest_club/mockup_1.jpeg'
+import fest_club_mockup_2 from './../../../../public/proyectos/detail_Fest_club/mockup_2.jpeg'
 export const desarrolloWeb = [
   {
     id: '1',
@@ -18,14 +23,10 @@ export const desarrolloWeb = [
   {
     id: '2',
     title: 'Salon Plaza',
-    banner: 'Expande tu universo',
+    banner: 'Armamos la fiesta de tus sueños',
     infoText:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    images: [
-      cinq_capital_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
-    ],
+      'Esta landing page promociona servicios de organización de eventos, con una galería visual destacada, información sobre los servicios disponibles y un formulario de contacto, todo diseñado para atraer clientes y facilitar la planificación de su evento ideal.',
+    images: [salon_plaza_mockup_1.src],
   },
 
   {
@@ -34,18 +35,14 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Fest Club es una plataforma digital para la compra de entradas a eventos en la discoteca. Permite a los usuarios explorar eventos, seleccionar fechas y adquirir boletos de forma rápida y sencilla, proporcionando una experiencia de compra eficiente y sin complicaciones.',
-    images: [
-      cinq_capital_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
-    ],
+    images: [fest_club_mockup_1.src, fest_club_mockup_2.src],
   },
   {
     id: '4',
     title: 'SDP Revestimientos',
-    banner: 'Expande tu universo',
+    banner: 'Transformando tu hogar',
     infoText:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
+      'Esta landing page ofrece servicios de revestimientos especializados, con una galería destacando proyectos anteriores y una sección detallada sobre las soluciones disponibles. Además, incluye un formulario de contacto para consultas y cotizaciones, proporcionando una experiencia clara y directa para clientes interesados en renovar sus espacios.',
     images: [
       cinq_capital_mockup_1.src,
       cinq_capital_mockup_2.src,
