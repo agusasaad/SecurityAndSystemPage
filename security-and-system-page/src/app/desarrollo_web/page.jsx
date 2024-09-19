@@ -11,8 +11,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
 import Modal from './modal_desarrollo_web/Modal'
-import cinq_capital from './../../../public/proyectos/cinq_capital_optimizada.jpg'
-import fest_club from './../../../public/proyectos/fest_club_optimizada.jpg'
 import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
