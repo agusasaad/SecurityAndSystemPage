@@ -1,43 +1,41 @@
-"use client";
-import styles from "./page.module.css";
-import { poppins } from "@/Fonts/fonts";
-import { PiCodeBold } from "react-icons/pi";
-import { TbSettingsCode } from "react-icons/tb";
-import { TbDeviceMobileCode } from "react-icons/tb";
-import { BsDatabaseCheck } from "react-icons/bs";
-import { IoArrowForward } from "react-icons/io5";
-import { IoArrowBack } from "react-icons/io5";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef, useState } from "react";
-import Modal from "./modal_desarrollo_web/Modal";
-import cinq_capital from "./../../../public/proyectos/cinq_capital_optimizada.jpg";
-import fest_club from "./../../../public/proyectos/fest_club_optimizada.jpg";
-import Link from "next/link";
+'use client'
+import styles from './page.module.css'
+import { poppins } from '@/Fonts/fonts'
+import { PiCodeBold } from 'react-icons/pi'
+import { TbSettingsCode } from 'react-icons/tb'
+import { TbDeviceMobileCode } from 'react-icons/tb'
+import { BsDatabaseCheck } from 'react-icons/bs'
+import { IoArrowForward } from 'react-icons/io5'
+import { IoArrowBack } from 'react-icons/io5'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef, useState } from 'react'
+import Modal from './modal_desarrollo_web/Modal'
+import cinq_capital from './../../../public/proyectos/cinq_capital_optimizada.jpg'
+import fest_club from './../../../public/proyectos/fest_club_optimizada.jpg'
+import Link from 'next/link'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 const DesarrolloWeb = () => {
-  const titleRef = useRef(null);
-  const cardOne = useRef(null);
-  const cardTwo = useRef(null);
-  const cardThree = useRef(null);
-  const cardFour = useRef(null);
-  const cardFive = useRef(null);
-  const cardSix = useRef(null);
-  const buttonControl = useRef(null);
-  const gradientRef = useRef(null);
+  const titleRef = useRef(null)
+  const cardOne = useRef(null)
+  const cardTwo = useRef(null)
+  const cardThree = useRef(null)
+  const cardFour = useRef(null)
+  const buttonControl = useRef(null)
+  const gradientRef = useRef(null)
 
-  const [showModal, setShowModal] = useState(false);
-  const [showComponent, setShowComponent] = useState("");
+  const [showModal, setShowModal] = useState(false)
+  const [showComponent, setShowComponent] = useState('')
 
   const handleModal = (component) => {
-    setShowComponent(component);
-    setShowModal(true);
-  };
+    setShowComponent(component)
+    setShowModal(true)
+  }
 
   useEffect(() => {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline()
 
     tl.fromTo(
       [
@@ -48,59 +46,28 @@ const DesarrolloWeb = () => {
         cardFour.current,
         buttonControl.current,
       ],
-      { opacity: 0, y: 100, visibility: "hidden" },
+      { opacity: 0, y: 100, visibility: 'hidden' },
       {
         opacity: 1,
         y: 0,
-        visibility: "visible",
+        visibility: 'visible',
         duration: 0.8,
         stagger: 0.1,
-        animation: "power3",
+        animation: 'power3',
         delay: 0.5,
       }
     ).fromTo(
       gradientRef.current,
-      { scale: 0, opacity: 0, visibility: "hidden" },
+      { scale: 0, opacity: 0, visibility: 'hidden' },
       {
         scale: 1,
         opacity: 0.9,
-        visibility: "visible",
+        visibility: 'visible',
         duration: 1,
-        ease: "power3",
+        ease: 'power3',
       }
-    );
-
-    // Animación para las últimas dos cards
-    gsap.fromTo(
-      cardFive.current,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: cardFive.current,
-          start: "top-=10% 80%",
-          end: "bottom top",
-        },
-      }
-    );
-
-    gsap.fromTo(
-      cardSix.current,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: cardSix.current,
-          start: "top-=10% 80%",
-          end: "bottom top",
-        },
-      }
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <div className={styles.service}>
@@ -116,11 +83,11 @@ const DesarrolloWeb = () => {
           <div className={styles.personalizado} ref={cardOne}>
             <span
               style={{
-                background: "rgba(0, 189, 87, 0.1)",
-                color: "rgb(0, 189, 87)",
+                background: 'rgba(0, 189, 87, 0.1)',
+                color: 'rgb(0, 189, 87)',
               }}
             >
-              <PiCodeBold style={{ fontSize: "15px" }} />
+              <PiCodeBold style={{ fontSize: '15px' }} />
               Personalización
             </span>
             <h2 className={poppins.className}>
@@ -134,7 +101,7 @@ const DesarrolloWeb = () => {
             <div className={styles.containerButton}>
               <button
                 className={poppins.className}
-                onClick={() => handleModal("Personalizado")}
+                onClick={() => handleModal('Personalizado')}
               >
                 Ver Más
               </button>
@@ -144,11 +111,11 @@ const DesarrolloWeb = () => {
           <div className={styles.personalizado} ref={cardTwo}>
             <span
               style={{
-                background: "#9162c025",
-                color: "#c084fd",
+                background: '#9162c025',
+                color: '#c084fd',
               }}
             >
-              <TbSettingsCode style={{ fontSize: "15px" }} />
+              <TbSettingsCode style={{ fontSize: '15px' }} />
               Eficiencia
             </span>
             <h2 className={poppins.className}>
@@ -162,7 +129,7 @@ const DesarrolloWeb = () => {
             <div className={styles.containerButton}>
               <button
                 className={poppins.className}
-                onClick={() => handleModal("ProgramacionCodificacion")}
+                onClick={() => handleModal('ProgramacionCodificacion')}
               >
                 Ver Más
               </button>
@@ -172,11 +139,11 @@ const DesarrolloWeb = () => {
           <div className={styles.personalizado} ref={cardThree}>
             <span
               style={{
-                background: "#3b88e925",
-                color: "#4e9eff",
+                background: '#3b88e925',
+                color: '#4e9eff',
               }}
             >
-              <TbDeviceMobileCode style={{ fontSize: "15px" }} />
+              <TbDeviceMobileCode style={{ fontSize: '15px' }} />
               Adaptabilidad
             </span>
             <h2 className={poppins.className}>Diseño responsive mobile.</h2>
@@ -188,7 +155,7 @@ const DesarrolloWeb = () => {
             <div className={styles.containerButton}>
               <button
                 className={poppins.className}
-                onClick={() => handleModal("DiseñoResponsiveMovile")}
+                onClick={() => handleModal('DiseñoResponsiveMovile')}
               >
                 Ver Más
               </button>
@@ -198,11 +165,11 @@ const DesarrolloWeb = () => {
           <div className={styles.personalizado} ref={cardFour}>
             <span
               style={{
-                background: "#d1772425",
-                color: "#ff9a3c",
+                background: '#d1772425',
+                color: '#ff9a3c',
               }}
             >
-              <BsDatabaseCheck style={{ fontSize: "15px" }} />
+              <BsDatabaseCheck style={{ fontSize: '15px' }} />
               Gestión
             </span>
             <h2 className={poppins.className}>
@@ -216,122 +183,27 @@ const DesarrolloWeb = () => {
             <div className={styles.containerButton}>
               <button
                 className={poppins.className}
-                onClick={() => handleModal("BaseDeDatos")}
+                onClick={() => handleModal('BaseDeDatos')}
               >
                 Ver Más
               </button>
             </div>
           </div>
         </section>
-
-        <section className={styles.sectionTwo}>
-          <div className={styles.cardProyect} ref={cardFive}>
-            <img src={cinq_capital.src} alt="" width={"100%"} height={"auto"} />
-            <div className={styles.containerInfo}>
-              <h4 className={poppins.className}>Cinq Capital</h4>
-              <p className={poppins.className}>
-                Cinq Capital es una plataforma de inversiones diseñada para
-                ofrecer soluciones financieras avanzadas. Facilita el acceso a
-                oportunidades de inversión, brindando herramientas y recursos
-                para gestionar y optimizar tu cartera de forma eficaz.
-              </p>
-              <div className={styles.containerService}>
-                <span
-                  style={{
-                    background: "rgba(0, 189, 87, 0.1)",
-                    color: "rgb(0, 189, 87)",
-                  }}
-                >
-                  <PiCodeBold style={{ fontSize: "15px" }} />
-                  Personalización
-                </span>
-                <span
-                  style={{
-                    background: "#9162c025",
-                    color: "#c084fd",
-                  }}
-                >
-                  <TbSettingsCode style={{ fontSize: "15px" }} />
-                  Eficiencia
-                </span>
-                <span
-                  style={{
-                    background: "#3b88e925",
-                    color: "#4e9eff",
-                  }}
-                >
-                  <TbDeviceMobileCode style={{ fontSize: "15px" }} />
-                  Adaptabilidad
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className={styles.cardProyect} ref={cardSix}>
-            <img src={fest_club.src} alt="" width={"600px"} height={"auto"} />
-            <div className={styles.containerInfo}>
-              <h4 className={poppins.className}>Fest Club</h4>
-              <p className={poppins.className}>
-                Fest Club es una plataforma digital para la compra de entradas a
-                eventos en la discoteca. Permite a los usuarios explorar
-                eventos, seleccionar fechas y adquirir boletos de forma rápida y
-                sencilla, proporcionando una experiencia de compra eficiente y
-                sin complicaciones.
-              </p>
-              <div className={styles.containerService}>
-                <span
-                  style={{
-                    background: "rgba(0, 189, 87, 0.1)",
-                    color: "rgb(0, 189, 87)",
-                  }}
-                >
-                  <PiCodeBold style={{ fontSize: "15px" }} />
-                  Personalización
-                </span>
-                <span
-                  style={{
-                    background: "#9162c025",
-                    color: "#c084fd",
-                  }}
-                >
-                  <TbSettingsCode style={{ fontSize: "15px" }} />
-                  Eficiencia
-                </span>
-                <span
-                  style={{
-                    background: "#3b88e925",
-                    color: "#4e9eff",
-                  }}
-                >
-                  <TbDeviceMobileCode style={{ fontSize: "15px" }} />
-                  Adaptabilidad
-                </span>
-                <span
-                  style={{
-                    background: "#d1772425",
-                    color: "#ff9a3c",
-                  }}
-                >
-                  <BsDatabaseCheck style={{ fontSize: "15px" }} />
-                  Gestión
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className={styles.controlButtons} ref={buttonControl}>
-            <button
-              className={poppins.className}
-              disabled
-              style={{ opacity: 0.5, pointerEvents: "none" }}
-            >
-              <IoArrowBack /> Atras
+        <div className={styles.controlButtons} ref={buttonControl}>
+          <button
+            className={poppins.className}
+            disabled
+            style={{ opacity: 0.5, pointerEvents: 'none' }}
+          >
+            <IoArrowBack /> Atras
+          </button>
+          <Link href={'/aplicaciones_moviles'}>
+            <button className={poppins.className}>
+              Siguiente <IoArrowForward />
             </button>
-            <Link href={"/aplicaciones_moviles"}>
-              <button className={poppins.className}>
-                Siguiente <IoArrowForward />
-              </button>
-            </Link>
-          </div>
-        </section>
+          </Link>
+        </div>
       </div>
       <Modal
         showModal={showModal}
@@ -339,7 +211,7 @@ const DesarrolloWeb = () => {
         showComponent={showComponent}
       />
     </div>
-  );
-};
+  )
+}
 
-export default DesarrolloWeb;
+export default DesarrolloWeb
