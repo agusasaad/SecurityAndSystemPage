@@ -267,15 +267,11 @@
 }
 
 @media (max-width: 750px) {
-  /* .container {
-    min-height: 100vh;
-    padding-top: 40px;
-  } */
   .infoProyecto {
     padding: 0px;
   }
   .title {
-    gap: 0px;
+    gap: 5px;
   }
   .title h1 {
     font-size: 50px;
