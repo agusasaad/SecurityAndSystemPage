@@ -6,6 +6,9 @@ import salon_plaza_mockup_1 from './../../../../public/proyectos/detail_Salon_pl
 
 import fest_club_mockup_1 from './../../../../public/proyectos/detail_Fest_club/mockup_1.jpeg'
 import fest_club_mockup_2 from './../../../../public/proyectos/detail_Fest_club/mockup_2.jpeg'
+
+import sdp_revestimientos_mockup_1 from './../../../../public/proyectos/datail_sdp_revestimientos/mockup_1.jpeg'
+
 export const desarrolloWeb = [
   {
     id: '1',
@@ -14,9 +17,9 @@ export const desarrolloWeb = [
     infoText:
       'Cinq Cinq Capital es una plataforma de inversiones que ofrece soluciones financieras avanzadas, facilitando el acceso a oportunidades de inversión y proporcionando herramientas para gestionar y optimizar tu cartera de manera eficaz.',
     images: [
+      cinq_capital_mockup_3.src,
       cinq_capital_mockup_1.src,
       cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
     ],
   },
 
@@ -26,7 +29,11 @@ export const desarrolloWeb = [
     banner: 'Armamos la fiesta de tus sueños',
     infoText:
       'Esta landing page promociona servicios de organización de eventos, con una galería visual destacada, información sobre los servicios disponibles y un formulario de contacto, todo diseñado para atraer clientes y facilitar la planificación de su evento ideal.',
-    images: [salon_plaza_mockup_1.src],
+    images: [
+      salon_plaza_mockup_1.src,
+      cinq_capital_mockup_2.src,
+      cinq_capital_mockup_3.src,
+    ],
   },
 
   {
@@ -44,7 +51,7 @@ export const desarrolloWeb = [
     infoText:
       'Esta landing page ofrece servicios de revestimientos especializados, con una galería destacando proyectos anteriores y una sección detallada sobre las soluciones disponibles. Además, incluye un formulario de contacto para consultas y cotizaciones, proporcionando una experiencia clara y directa para clientes interesados en renovar sus espacios.',
     images: [
-      cinq_capital_mockup_1.src,
+      sdp_revestimientos_mockup_1.src,
       cinq_capital_mockup_2.src,
       cinq_capital_mockup_3.src,
     ],
