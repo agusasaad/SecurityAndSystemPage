@@ -9,8 +9,8 @@ const Instagram = () => {
       role="img"
       viewBox="0 0 512 512"
       fill="#000000"
-      width={20}
-      height={20}
+      width={30}
+      height={30}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth={0} />
       <g
