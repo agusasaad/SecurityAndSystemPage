@@ -1,37 +1,20 @@
-"use client";
-import styles from "./ButtonOpenModal.module.css";
-import { poppins } from "@/Fonts/fonts";
-import { useEffect, useRef } from "react";
-import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
-import gsap from "gsap";
-import gifBlubble from "./../../../../public/mecanografia.gif";
-import fondo from "./../../../../public/fondoBotton.png";
+'use client'
+import styles from './ButtonOpenModal.module.css'
+import { poppins } from '@/Fonts/fonts'
+import { HiChatBubbleLeftRight } from 'react-icons/hi2'
 
 const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
   const handleClick = () => {
-    setModalOpen(!isModalOpen);
-  };
+    setModalOpen(!isModalOpen)
+  }
 
   return (
     <div className={styles.containerButton}>
       <button className={poppins.className} onClick={handleClick}>
-        <img
-          src={fondo.src}
-          alt="fondo"
-          width={100}
-          height={100}
-          className={styles.buttonFondo}
-        />
-        <img
-          className={styles.buttonGif}
-          src={gifBlubble.src}
-          alt=""
-          width={90}
-          height={100}
-        />
+        <HiChatBubbleLeftRight />
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default ButtonOpenModal;
+export default ButtonOpenModal

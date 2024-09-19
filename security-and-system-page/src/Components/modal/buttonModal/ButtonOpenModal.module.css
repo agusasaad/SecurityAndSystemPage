@@ -5,8 +5,8 @@
   align-items: center;
   z-index: 12000;
   position: fixed;
-  right: 5px;
-  bottom: 5px;
+  right: 10px;
+  bottom: 10px;
   margin: 5px;
 }
 
@@ -19,6 +19,14 @@
   color: rgb(240, 240, 240);
   transition: all 0.3s ease;
   position: relative;
+  background: rgb(184, 91, 254);
+  background: linear-gradient(
+    0deg,
+    rgb(160, 35, 255) 0%,
+    rgb(107, 0, 189) 100%
+  );
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .containerButton button .buttonFondo {
@@ -37,7 +45,6 @@
   .containerButton {
     transition: none;
     margin: 0px;
-    margin-bottom: -3px;
   }
 
   .containerButton button:hover {
