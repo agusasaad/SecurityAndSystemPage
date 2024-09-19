@@ -1,3 +1,4 @@
+'use client'
 import { poppins } from '@/Fonts/fonts'
 import styles from './page.module.css'
 import { CgClose } from 'react-icons/cg'
