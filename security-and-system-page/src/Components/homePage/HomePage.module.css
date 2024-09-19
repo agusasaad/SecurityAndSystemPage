@@ -60,7 +60,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   position: relative;
   margin-top: 30px;
 }
@@ -69,12 +69,10 @@
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  padding: 10px 0px;
-  padding-left: 15px;
-  padding-right: 5px;
   cursor: pointer;
   background-color: rgb(0, 0, 0);
   height: 100%;
+  padding: 10px;
   box-shadow: rgba(255, 255, 255, 0.062) 0px 1px 0px 0px inset,
     rgba(61, 61, 61, 0.342) 0px 2px 8px 0px inset;
   opacity: 1;
@@ -83,7 +81,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   will-change: transform, opacity;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .containerButton .buttonFolow {
@@ -105,77 +111,6 @@
     rgba(0, 0, 0, 0.16) 0px 2px 8px 0px;
   opacity: 1;
   will-change: transform, opacity;
-}
-
-.socials {
-  width: 255px;
-  height: auto;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  z-index: 1000;
-  border-radius: 10px;
-  background-color: rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(15, 15, 15);
-  box-shadow: rgba(255, 255, 255, 0.062) 0px 1px 0px 0px inset,
-    rgba(61, 61, 61, 0.342) 0px 2px 8px 0px inset;
-  -webkit-animation: swing-in-top-fwd 0.5s
-    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-}
-
-@-webkit-keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-    transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    opacity: 1;
-  }
-}
-@keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-    transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    opacity: 1;
-  }
-}
-
-.socials ul {
-  height: auto;
-  padding: 10px 7px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.socials li {
-  padding: 10px 7px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 5px;
-  font-weight: 300;
-}
-
-.socials li:hover {
-  background: #3131316c;
 }
 
 @media (max-width: 1500px) {
@@ -264,10 +199,6 @@
   .buttonFolow {
     order: 3;
   }
-
-  .button {
-    padding: 8px 15px !important;
-  }
 }
 
 @media (max-width: 500px) {
@@ -285,17 +216,7 @@
   }
 
   .containerButton {
-    flex-direction: column;
-    gap: 5px;
-  }
-  .containerButton .buttonFolow {
-    margin-top: 10px;
-  }
-
-  .socials {
-    position: relative;
-    top: 0;
-    left: 0;
+    flex-direction: column-reverse;
   }
 }
 

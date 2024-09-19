@@ -10,7 +10,6 @@ import Instagram from "@/svg/Instagram";
 import Link from "next/link";
 
 const HomePage = () => {
-  const [showMenu, setShowMenu] = useState(false);
   const titleRef1 = useRef(null);
   const titleRef2 = useRef(null);
   const subtitleRef = useRef(null);
@@ -124,40 +123,20 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
-        <button
-          className={`${poppins.className} ${styles.button}`}
-          onClick={() => setShowMenu(!showMenu)}
-        >
-          <span>Nuestras Redes Sociales</span>
-          <ArrowWhite />
+        <button className={`${poppins.className} ${styles.button}`}>
+          <Link href="/" className={styles.link}>
+            <Linkedin />
+          </Link>
+          <Link href="/" className={styles.link}>
+            <Facebook />
+          </Link>
+          <Link href="/" className={styles.link}>
+            <Instagram />
+          </Link>
         </button>
         <button className={`${poppins.className} ${styles.buttonFolow}`}>
           Solicitar Cotización
         </button>
-        {showMenu && (
-          <div className={styles.socials}>
-            <ul>
-              <Link href="/">
-                <li>
-                  <Linkedin />
-                  Linkedin
-                </li>
-              </Link>
-              <Link href="/">
-                <li>
-                  <Facebook />
-                  Facebook
-                </li>
-              </Link>
-              <Link href="/">
-                <li>
-                  <Instagram />
-                  Instragram
-                </li>
-              </Link>
-            </ul>
-          </div>
-        )}
       </div>
     </div>
   );
