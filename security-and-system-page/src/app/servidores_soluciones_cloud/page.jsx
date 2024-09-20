@@ -1,26 +1,27 @@
-"use client";
-import styles from "./page.module.css";
-import { poppins } from "@/Fonts/fonts";
-import { TbCloudComputing } from "react-icons/tb";
-import { TbArrowsTransferUp } from "react-icons/tb";
-import { BsBarChartFill } from "react-icons/bs";
-import { BiCheckShield } from "react-icons/bi";
-import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+'use client'
+import styles from './page.module.css'
+import { poppins } from '@/Fonts/fonts'
+import { gsap } from 'gsap'
+import { useEffect, useRef } from 'react'
+import Link from 'next/link'
+import ArrowBack from '@/svg/ArrowBack'
+import ArrowNext from '@/svg/ArrowNext'
+import Escalabilidad from '@/svg/Escalabilidad'
+import Transicion from '@/svg/Transicion'
+import Rendimiento from '@/svg/Rendimiento'
+import Seguridad from '@/svg/Seguridad'
 
 const ServidoresSolucionesCloud = () => {
-  const titleRef = useRef(null);
-  const cardOne = useRef(null);
-  const cardTwo = useRef(null);
-  const cardThree = useRef(null);
-  const cardFour = useRef(null);
-  const buttonControl = useRef(null);
-  const gradientRef = useRef(null);
+  const titleRef = useRef(null)
+  const cardOne = useRef(null)
+  const cardTwo = useRef(null)
+  const cardThree = useRef(null)
+  const cardFour = useRef(null)
+  const buttonControl = useRef(null)
+  const gradientRef = useRef(null)
 
   useEffect(() => {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline()
 
     tl.fromTo(
       [
@@ -31,28 +32,28 @@ const ServidoresSolucionesCloud = () => {
         cardFour.current,
         buttonControl.current,
       ],
-      { opacity: 0, y: 100, visibility: "hidden" },
+      { opacity: 0, y: 100, visibility: 'hidden' },
       {
         opacity: 1,
         y: 0,
-        visibility: "visible",
+        visibility: 'visible',
         duration: 0.8,
         stagger: 0.1,
-        animation: "power3",
+        animation: 'power3',
         delay: 0.5,
       }
     ).fromTo(
       gradientRef.current,
-      { scale: 0, opacity: 0, visibility: "hidden" },
+      { scale: 0, opacity: 0, visibility: 'hidden' },
       {
         scale: 1,
         opacity: 0.9,
-        visibility: "visible",
+        visibility: 'visible',
         duration: 1,
-        ease: "power3",
+        ease: 'power3',
       }
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <div className={styles.service}>
@@ -68,11 +69,11 @@ const ServidoresSolucionesCloud = () => {
           <div className={styles.personalizado} ref={cardOne}>
             <span
               style={{
-                background: "rgba(0, 189, 87, 0.1)",
-                color: "rgb(0, 189, 87)",
+                background: 'rgba(0, 189, 87, 0.1)',
+                color: 'rgb(0, 189, 87)',
               }}
             >
-              <TbCloudComputing style={{ fontSize: "15px" }} />
+              <Escalabilidad />
               Escalabilidad
             </span>
             <h2 className={poppins.className}>
@@ -88,11 +89,11 @@ const ServidoresSolucionesCloud = () => {
           <div className={styles.personalizado} ref={cardTwo}>
             <span
               style={{
-                background: "#9162c025",
-                color: "#c084fd",
+                background: '#9162c025',
+                color: '#c084fd',
               }}
             >
-              <TbArrowsTransferUp style={{ fontSize: "15px" }} />
+              <Transicion />
               Transición
             </span>
             <h2 className={poppins.className}>Migración a la Nube</h2>
@@ -106,11 +107,11 @@ const ServidoresSolucionesCloud = () => {
           <div className={styles.personalizado} ref={cardThree}>
             <span
               style={{
-                background: "#3b88e925",
-                color: "#4e9eff",
+                background: '#3b88e925',
+                color: '#4e9eff',
               }}
             >
-              <BsBarChartFill style={{ fontSize: "15px" }} />
+              <Rendimiento />
               Rendimiento
             </span>
             <h2 className={poppins.className}>
@@ -126,11 +127,11 @@ const ServidoresSolucionesCloud = () => {
           <div className={styles.personalizado} ref={cardFour}>
             <span
               style={{
-                background: "#d1772425",
-                color: "#ff9a3c",
+                background: '#d1772425',
+                color: '#ff9a3c',
               }}
             >
-              <BiCheckShield style={{ fontSize: "15px" }} />
+              <Seguridad />
               Seguridad
             </span>
             <h2 className={poppins.className}>
@@ -145,20 +146,20 @@ const ServidoresSolucionesCloud = () => {
           </div>
         </section>
         <div className={styles.controlButtons} ref={buttonControl}>
-          <Link href={"/aplicaciones_moviles"}>
+          <Link href={'/aplicaciones_moviles'}>
             <button className={poppins.className}>
-              <IoArrowBack /> Atras
+              <ArrowBack /> Atras
             </button>
           </Link>
-          <Link href={"/consultoria_it"}>
+          <Link href={'/consultoria_it'}>
             <button className={poppins.className}>
-              Siguiente <IoArrowForward />
+              Siguiente <ArrowNext />
             </button>
           </Link>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ServidoresSolucionesCloud;
+export default ServidoresSolucionesCloud
