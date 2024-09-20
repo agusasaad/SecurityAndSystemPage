@@ -1,7 +1,7 @@
 'use client'
 import { poppins } from '@/Fonts/fonts'
 import styles from './page.module.css'
-import { CgClose } from 'react-icons/cg'
+import OnCloseButton from '@/svg/OnCloseButton'
 const Modal = ({ showProject, showModal, setShowModal }) => {
   if (!showModal) return
   return (
@@ -9,7 +9,7 @@ const Modal = ({ showProject, showModal, setShowModal }) => {
       <div className={styles.Modal}>
         <div className={styles.containerButton}>
           <button onClick={() => setShowModal(false)}>
-            <CgClose />
+            <OnCloseButton />
           </button>
         </div>
         <h1 className={poppins.className}>Información</h1>
