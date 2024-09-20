@@ -123,7 +123,13 @@ const ContactUs = () => {
             rel="noopener noreferrer"
           >
             <span ref={locationRef}>
-              <Image src={location.src} alt="map" width={50} height={50} />
+              <Image
+                src={location.src}
+                alt="map"
+                width={50}
+                height={50}
+                unoptimized={true}
+              />
             </span>
           </Link>
           <Image src={map.src} alt="map" width={500} height={500} />
