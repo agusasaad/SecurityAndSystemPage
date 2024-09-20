@@ -1,6 +1,7 @@
 'use client'
 import './loader.css'
 import logo from './../../../public/logoSAS.png'
+import Image from 'next/image'
 const Loader = () => {
   return (
     <div className="loader-container">
