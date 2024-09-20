@@ -4,15 +4,15 @@ import styles from './NavBar.module.css'
 import Image from 'next/image'
 import logoSAS from '../../../public/logoSAS.png'
 import logoSAS_Mobile from '../../../public/logo_mobile.png'
-import { TbMenuDeep } from 'react-icons/tb'
-import { IoClose } from 'react-icons/io5'
-import { CiHome } from 'react-icons/ci'
-import { GrServices } from 'react-icons/gr'
-import { PiUsersThreeLight } from 'react-icons/pi'
-import { GrProjects } from 'react-icons/gr'
 import { poppins } from '@/Fonts/fonts'
 import gsap from 'gsap'
 import Link from 'next/link'
+import Home from '@/svg/Home'
+import Servicios from '@/svg/Servicios'
+import SobreNosotros from '@/svg/SobreNosotros'
+import NuestrosProyectos from '@/svg/NuestrosProyectos'
+import OnCloseButton from '@/svg/OnCloseButton'
+import HamburgerMenu from '@/svg/HamburgerMenu'
 
 const NavBar = () => {
   const navBarAnimate = useRef(null)
@@ -62,7 +62,7 @@ const NavBar = () => {
         <div className={`${styles.center} ${showMenu ? styles.show : ''}`}>
           <div className={styles.onClose}>
             <button onClick={() => setShowMenu(false)}>
-              <IoClose />
+              <OnCloseButton />
             </button>
           </div>
           <ul className={poppins.className}>
@@ -73,12 +73,12 @@ const NavBar = () => {
               }}
             >
               <li>
-                <CiHome className={styles.icon} />
+                <Home />
                 Inicio
               </li>
             </Link>
             <li onClick={() => setShowMenuServices(!showMenuServices)}>
-              <GrServices className={styles.icon} />
+              <Servicios />
               Servicios
               <svg
                 className={showMenuServices ? styles.rotate : ''}
@@ -145,7 +145,7 @@ const NavBar = () => {
               }}
             >
               <li>
-                <PiUsersThreeLight className={styles.icon} />
+                <SobreNosotros />
                 Sobre Nosotros
               </li>
             </Link>
@@ -156,7 +156,7 @@ const NavBar = () => {
               }}
             >
               <li>
-                <GrProjects className={styles.icon} />
+                <NuestrosProyectos />
                 Nuestros Trabajos
               </li>
             </Link>
@@ -171,7 +171,7 @@ const NavBar = () => {
         </div>
         <div className={styles.hamburguerButton}>
           <button onClick={() => setShowMenu(!showMenu)}>
-            <TbMenuDeep />
+            <HamburgerMenu />
           </button>
         </div>
       </div>
