@@ -1,22 +1,22 @@
-"use client";
-import { useEffect, useRef } from "react";
-import styles from "./Modal.module.css";
-import { IoLogoWhatsapp } from "react-icons/io5";
-import { FaTelegram } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
-import { FaSignalMessenger } from "react-icons/fa6";
-import gsap from "gsap";
+'use client'
+import { useEffect, useRef } from 'react'
+import styles from './Modal.module.css'
+import gsap from 'gsap'
+import Whatsapp from '@/svg/Whatsapp'
+import Telegram from '@/svg/Telegram'
+import EmailModal from '@/svg/EmailModal'
+import Signal from '@/svg/Signal'
 
 const Modal = ({ isModalOpen, setModalOpen }) => {
-  const modal = useRef(null);
-  const content = useRef(null);
-  const titleRef1 = useRef(null);
-  const titleRef2 = useRef(null);
-  const subtitleRef = useRef(null);
-  const buttonRef1 = useRef(null);
-  const buttonRef2 = useRef(null);
-  const buttonRef3 = useRef(null);
-  const buttonRef4 = useRef(null);
+  const modal = useRef(null)
+  const content = useRef(null)
+  const titleRef1 = useRef(null)
+  const titleRef2 = useRef(null)
+  const subtitleRef = useRef(null)
+  const buttonRef1 = useRef(null)
+  const buttonRef2 = useRef(null)
+  const buttonRef3 = useRef(null)
+  const buttonRef4 = useRef(null)
 
   useEffect(() => {
     if (isModalOpen) {
@@ -24,15 +24,15 @@ const Modal = ({ isModalOpen, setModalOpen }) => {
         y: -100,
         opacity: 0.8,
         scale: 0,
-        visibility: "hidden",
-      });
+        visibility: 'hidden',
+      })
       gsap.to(modal.current, {
         opacity: 1,
         scale: 1,
         y: 0,
         duration: 0.4,
-        ease: "power1",
-        visibility: "visible",
+        ease: 'power1',
+        visibility: 'visible',
         onComplete: () => {
           gsap.fromTo(
             [
@@ -52,23 +52,23 @@ const Modal = ({ isModalOpen, setModalOpen }) => {
               duration: 0.5,
               stagger: 0.1,
             }
-          );
+          )
         },
-      });
+      })
     }
-  }, [isModalOpen]);
+  }, [isModalOpen])
 
   const onClose = () => {
-    setModalOpen(false);
-  };
+    setModalOpen(false)
+  }
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      onClose()
     }
-  };
+  }
 
-  if (!isModalOpen) return null;
+  if (!isModalOpen) return null
 
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>
@@ -85,22 +85,22 @@ const Modal = ({ isModalOpen, setModalOpen }) => {
           </p>
           <ul>
             <li ref={buttonRef1}>
-              <IoLogoWhatsapp />
+              <Whatsapp />
             </li>
             <li ref={buttonRef2}>
-              <FaTelegram />
+              <Telegram />
             </li>
             <li ref={buttonRef3}>
-              <IoIosMail />
+              <EmailModal />
             </li>
             <li ref={buttonRef4}>
-              <FaSignalMessenger />
+              <Signal />
             </li>
           </ul>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal
