@@ -3,10 +3,10 @@ import { useEffect, useRef } from 'react'
 import styles from './HomePage.module.css'
 import { poppins } from '@/Fonts/fonts'
 import gsap from 'gsap'
-import Linkedin from '@/svg/Linkedin'
-import Facebook from '@/svg/Facebook'
-import Instagram from '@/svg/Instagram'
 import Link from 'next/link'
+import Facebook from './redesSociales/Facebook'
+import Instagram from './redesSociales/Instagram'
+import Linkedin from './redesSociales/Linkedin'
 
 const HomePage = () => {
   const titleRef1 = useRef(null)
@@ -122,19 +122,10 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
-        <button className={`${poppins.className} ${styles.buttonFolow}`}>
-          Solicitar Cotización
-        </button>
         <div className={styles.containerSocial}>
-          <Link href="/" className={styles.link}>
-            <Linkedin />
-          </Link>
-          <Link href="/" className={styles.link}>
-            <Facebook />
-          </Link>
-          <Link href="/" className={styles.link}>
-            <Instagram />
-          </Link>
+          <Facebook />
+          <Instagram />
+          <Linkedin />
         </div>
       </div>
     </div>
