@@ -1,10 +1,10 @@
-"use client";
-import Image from "next/image";
-import styles from "./Footer.module.css";
-import { FaLinkedin } from "react-icons/fa6";
-import { RiInstagramFill } from "react-icons/ri";
-import { FaFacebookSquare } from "react-icons/fa";
-import Link from "next/link";
+'use client'
+import Image from 'next/image'
+import styles from './Footer.module.css'
+import Link from 'next/link'
+import InstagramFooter from '@/svg/InstagramFooter'
+import LinkedinFooter from '@/svg/LinkedinFooter'
+import FacebookFooter from '@/svg/FacebookFooter'
 
 const Footer = () => {
   return (
@@ -23,13 +23,13 @@ const Footer = () => {
           </p>
           <div className={styles.social}>
             <span>
-              <RiInstagramFill />
+              <InstagramFooter />
             </span>
             <span>
-              <FaLinkedin />
+              <LinkedinFooter />
             </span>
             <span>
-              <FaFacebookSquare />
+              <FacebookFooter />
             </span>
           </div>
         </div>
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
