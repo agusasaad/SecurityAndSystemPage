@@ -47,7 +47,7 @@ const NavBar = () => {
               alt="Logo de la empresa Security And System"
               className={styles.LogoNav}
               width={40}
-              height={'auto'}
+              height={40}
             />
 
             <Image
@@ -55,7 +55,7 @@ const NavBar = () => {
               alt="Logo de la empresa Security And System"
               className={styles.LogoNavMobile}
               width={150}
-              height={'auto'}
+              height={150}
             />
           </Link>
         </div>

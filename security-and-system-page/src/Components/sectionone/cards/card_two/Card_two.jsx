@@ -1,28 +1,29 @@
-import { poppins } from "@/Fonts/fonts";
-import styles from "./Card_two.module.css";
-import Checked from "@/svg/Checked";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import foto_1 from "./../../../../../public/aplicaciones_mobiles/00_0000_Capa-2.png";
-import foto_2 from "./../../../../../public/aplicaciones_mobiles/00_0001_Capa-3.png";
-import foto_3 from "./../../../../../public/aplicaciones_mobiles/00_0002_Capa-4.png";
-import Link from "next/link";
+import { poppins } from '@/Fonts/fonts'
+import styles from './Card_two.module.css'
+import Checked from '@/svg/Checked'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import foto_1 from './../../../../../public/aplicaciones_mobiles/00_0000_Capa-2.png'
+import foto_2 from './../../../../../public/aplicaciones_mobiles/00_0001_Capa-3.png'
+import foto_3 from './../../../../../public/aplicaciones_mobiles/00_0002_Capa-4.png'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Card_two = () => {
-  const containerRef = useRef(null);
-  const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const tip_oneRef = useRef(null);
-  const tip_twoRef = useRef(null);
-  const tip_threeRef = useRef(null);
-  const button_container = useRef(null);
-  const img_oneRef = useRef(null);
-  const img_twoRef = useRef(null);
-  const img_threeRef = useRef(null);
+  const containerRef = useRef(null)
+  const titleRef = useRef(null)
+  const descriptionRef = useRef(null)
+  const tip_oneRef = useRef(null)
+  const tip_twoRef = useRef(null)
+  const tip_threeRef = useRef(null)
+  const button_container = useRef(null)
+  const img_oneRef = useRef(null)
+  const img_twoRef = useRef(null)
+  const img_threeRef = useRef(null)
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
 
     const elements = [
       titleRef.current,
@@ -33,7 +34,7 @@ const Card_two = () => {
       img_oneRef.current,
       img_twoRef.current,
       img_threeRef.current,
-    ];
+    ]
 
     gsap.fromTo(
       elements,
@@ -45,15 +46,15 @@ const Card_two = () => {
         opacity: 1,
         x: 0,
         duration: 0.7,
-        ease: "power1",
+        ease: 'power1',
         stagger: 0.1,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top+=200 80%",
-          end: "bottom 20%",
+          start: 'top+=200 80%',
+          end: 'bottom 20%',
         },
       }
-    );
+    )
 
     gsap.fromTo(
       [img_oneRef.current, img_twoRef.current, img_threeRef.current],
@@ -63,11 +64,11 @@ const Card_two = () => {
       {
         translateY: 0,
         duration: 1,
-        ease: "power1.inOut",
+        ease: 'power1.inOut',
         repeat: -1,
         yoyo: true,
       }
-    );
+    )
 
     gsap.fromTo(
       button_container.current,
@@ -79,16 +80,16 @@ const Card_two = () => {
         opacity: 1,
         scale: 1,
         duration: 0.7,
-        ease: "power1",
+        ease: 'power1',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top+=200 80%",
-          end: "bottom 20%",
+          start: 'top+=200 80%',
+          end: 'bottom 20%',
         },
         delay: 1.5,
       }
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <div className={styles.card} ref={containerRef}>
@@ -127,12 +128,30 @@ const Card_two = () => {
         </div>
       </div>
       <div className={styles.containerImg}>
-        <img src={foto_1.src} alt={"Aplicaciones Móviles"} ref={img_oneRef} />
-        <img src={foto_2.src} alt={"Aplicaciones Móviles"} ref={img_twoRef} />
-        <img src={foto_3.src} alt={"Aplicaciones Móviles"} ref={img_threeRef} />
+        <Image
+          src={foto_1}
+          width={140}
+          height={300}
+          alt={'Aplicaciones Móviles'}
+          ref={img_oneRef}
+        />
+        <Image
+          src={foto_2}
+          width={140}
+          height={300}
+          alt={'Aplicaciones Móviles'}
+          ref={img_twoRef}
+        />
+        <Image
+          src={foto_3}
+          width={140}
+          height={300}
+          alt={'Aplicaciones Móviles'}
+          ref={img_threeRef}
+        />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Card_two;
+export default Card_two

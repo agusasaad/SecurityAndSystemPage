@@ -1,13 +1,13 @@
-"use client";
-import "./loader.css";
-import logo from "./../../../public/logoSAS.png";
+'use client'
+import './loader.css'
+import logo from './../../../public/logoSAS.png'
 const Loader = () => {
   return (
     <div className="loader-container">
       <div className="loader">
         <div className="box">
           <div className="logo">
-            <img src={logo.src} alt="" width={25} height={"auto"} />
+            <Image src={logo.src} alt="" width={25} height={25} />
           </div>
         </div>
         <div className="box" />
@@ -16,7 +16,7 @@ const Loader = () => {
         <div className="box" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

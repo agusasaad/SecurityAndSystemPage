@@ -20,6 +20,8 @@
 
 .containerCarrucel img {
   border-radius: 10px;
+  width: 450px;
+  height: auto;
 }
 
 .containerSectionThree > :first-child {

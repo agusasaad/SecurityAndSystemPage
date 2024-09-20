@@ -10,6 +10,7 @@ import Link from 'next/link'
 import Location from '@/svg/Location'
 import Phone from '@/svg/Phone'
 import Email from '@/svg/Email'
+import Image from 'next/image'
 
 const ContactUs = () => {
   const containerRef = useRef(null)
@@ -122,10 +123,10 @@ const ContactUs = () => {
             rel="noopener noreferrer"
           >
             <span ref={locationRef}>
-              <img src={location.src} alt="map" width={50} height={50} />
+              <Image src={location.src} alt="map" width={50} height={50} />
             </span>
           </Link>
-          <img src={map.src} alt="map" width={500} height={500} />
+          <Image src={map.src} alt="map" width={500} height={500} />
         </div>
       </div>
     </div>

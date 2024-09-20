@@ -8,6 +8,7 @@ import web4 from './../../../../public/proyectos/sdp_optimizada.jpg'
 import { gsap } from 'gsap'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const CardOne = () => {
   const titleRef = useRef(null)
@@ -280,7 +281,12 @@ const CardOne = () => {
             ref={card.ref}
             onClick={() => moveCardToBack(card.id)}
           >
-            <img src={card.imageSrc} alt={card.title} />
+            <Image
+              src={card.imageSrc}
+              alt={card.title}
+              width={400}
+              height={400}
+            />
             <div className={styles.title}>
               <h5 className={poppins.className}>{card.title}</h5>
               <button onClick={() => handleDetailsClick(card.id)}>

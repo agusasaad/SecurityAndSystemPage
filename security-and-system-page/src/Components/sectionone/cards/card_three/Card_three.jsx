@@ -1,33 +1,34 @@
-"use client";
-import { poppins } from "@/Fonts/fonts";
-import styles from "./Card_three.module.css";
-import Checked from "@/svg/Checked";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import foto_SYC_01 from "./../../../../../public/servidoresCloud/ELEMENTO_01.png";
-import foto_SYC_02 from "./../../../../../public/servidoresCloud/ELEMENTO_02.png";
-import foto_SYC_03 from "./../../../../../public/servidoresCloud/ELEMENTO_03.png";
-import foto_SYC_04 from "./../../../../../public/servidoresCloud/ELEMENTO_04.png";
-import foto_SYC_05 from "./../../../../../public/servidoresCloud/ELEMENTO_06.png";
-import Link from "next/link";
+'use client'
+import { poppins } from '@/Fonts/fonts'
+import styles from './Card_three.module.css'
+import Checked from '@/svg/Checked'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import foto_SYC_01 from './../../../../../public/servidoresCloud/ELEMENTO_01.png'
+import foto_SYC_02 from './../../../../../public/servidoresCloud/ELEMENTO_02.png'
+import foto_SYC_03 from './../../../../../public/servidoresCloud/ELEMENTO_03.png'
+import foto_SYC_04 from './../../../../../public/servidoresCloud/ELEMENTO_04.png'
+import foto_SYC_05 from './../../../../../public/servidoresCloud/ELEMENTO_06.png'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Card_three = () => {
-  const containerRef = useRef(null);
-  const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const tip_oneRef = useRef(null);
-  const tip_twoRef = useRef(null);
-  const tip_threeRef = useRef(null);
-  const button_container = useRef(null);
-  const img_oneRef = useRef(null);
-  const img_twoRef = useRef(null);
-  const img_threeRef = useRef(null);
-  const img_fourRef = useRef(null);
-  const img_fiveRef = useRef(null);
+  const containerRef = useRef(null)
+  const titleRef = useRef(null)
+  const descriptionRef = useRef(null)
+  const tip_oneRef = useRef(null)
+  const tip_twoRef = useRef(null)
+  const tip_threeRef = useRef(null)
+  const button_container = useRef(null)
+  const img_oneRef = useRef(null)
+  const img_twoRef = useRef(null)
+  const img_threeRef = useRef(null)
+  const img_fourRef = useRef(null)
+  const img_fiveRef = useRef(null)
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
     gsap.fromTo(
       [
         titleRef.current,
@@ -49,15 +50,15 @@ const Card_three = () => {
         opacity: 1,
         x: 0,
         duration: 0.7,
-        ease: "power1",
+        ease: 'power1',
         stagger: 0.2,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top+=200 80%",
-          end: "bottom 20%",
+          start: 'top+=200 80%',
+          end: 'bottom 20%',
         },
       }
-    );
+    )
 
     // Retrasa la animación del botón con 2 segundos
     gsap.fromTo(
@@ -70,15 +71,15 @@ const Card_three = () => {
         opacity: 1,
         scale: 1,
         duration: 0.7,
-        ease: "power1",
+        ease: 'power1',
         delay: 3,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top+=200 80%",
-          end: "bottom 20%",
+          start: 'top+=200 80%',
+          end: 'bottom 20%',
         },
       }
-    );
+    )
 
     gsap.fromTo(
       img_fourRef.current,
@@ -88,12 +89,12 @@ const Card_three = () => {
       {
         translateY: 0,
         duration: 1,
-        ease: "power1.inOut",
+        ease: 'power1.inOut',
         repeat: -1,
         yoyo: true,
       }
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <div className={styles.card} ref={containerRef}>
@@ -132,34 +133,44 @@ const Card_three = () => {
         </div>
       </div>
       <div className={styles.containerImg}>
-        <img
+        <Image
+          width={400}
+          height={400}
           src={foto_SYC_01.src}
-          alt={"Servidores y Soluciones Cloud"}
+          alt={'Servidores y Soluciones Cloud'}
           ref={img_oneRef}
         />
-        <img
+        <Image
+          width={400}
+          height={400}
           src={foto_SYC_02.src}
-          alt={"Servidores y Soluciones Cloud"}
+          alt={'Servidores y Soluciones Cloud'}
           ref={img_twoRef}
         />
-        <img
+        <Image
+          width={400}
+          height={400}
           src={foto_SYC_03.src}
-          alt={"Servidores y Soluciones Cloud"}
+          alt={'Servidores y Soluciones Cloud'}
           ref={img_threeRef}
         />
-        <img
+        <Image
+          width={400}
+          height={400}
           src={foto_SYC_04.src}
-          alt={"Servidores y Soluciones Cloud"}
+          alt={'Servidores y Soluciones Cloud'}
           ref={img_fourRef}
         />
-        <img
+        <Image
+          width={400}
+          height={400}
           src={foto_SYC_05.src}
-          alt={"Servidores y Soluciones Cloud"}
+          alt={'Servidores y Soluciones Cloud'}
           ref={img_fiveRef}
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Card_three;
+export default Card_three

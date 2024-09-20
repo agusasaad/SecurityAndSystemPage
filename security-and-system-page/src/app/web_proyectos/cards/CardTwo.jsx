@@ -9,6 +9,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const CardTwo = () => {
   const titleRef = useRef(null)
@@ -289,7 +290,12 @@ const CardTwo = () => {
             ref={card.ref}
             onClick={() => moveCardToBack(card.id)}
           >
-            <img src={card.imageSrc} alt={card.title} />
+            <Image
+              src={card.imageSrc}
+              alt={card.title}
+              width={400}
+              height={400}
+            />
             <div className={styles.title}>
               <h5 className={poppins.className}>{card.title}</h5>
               <button onClick={() => handleDetailsClick(card.id)}>

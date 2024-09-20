@@ -1,57 +1,58 @@
-"use client";
-import styles from "./SectionThree.module.css";
-import web1 from "./../../../public/project_1.jpg";
-import web2 from "./../../../public/project_2.jpg";
-import web3 from "./../../../public/project_3.jpg";
-import web4 from "./../../../public/project_4.jpg";
-import web5 from "./../../../public/project_5.jpg";
-import { poppins } from "@/Fonts/fonts";
-import Link from "next/link";
+'use client'
+import styles from './SectionThree.module.css'
+import web1 from './../../../public/project_1.jpg'
+import web2 from './../../../public/project_2.jpg'
+import web3 from './../../../public/project_3.jpg'
+import web4 from './../../../public/project_4.jpg'
+import web5 from './../../../public/project_5.jpg'
+import { poppins } from '@/Fonts/fonts'
+import Link from 'next/link'
+import Image from 'next/image'
 const SectionThree = () => {
-  const imageCarrucel = [web1, web2, web3, web4, web5];
+  const imageCarrucel = [web1, web2, web3, web4, web5]
 
   const copyImageCarrucel = [
     ...imageCarrucel,
     ...imageCarrucel,
     ...imageCarrucel,
-  ];
+  ]
 
   return (
     <div className={styles.containerSectionThree}>
       <div className={styles.containerCarrucel}>
         {copyImageCarrucel.map((image, index) => (
-          <img
+          <Image
             key={index}
             src={image.src}
             width={450}
-            height={"auto"}
+            height={450}
             alt="imagen proyecto"
-          ></img>
+          ></Image>
         ))}
       </div>
       <div
         className={styles.containerCarrucel}
-        style={{ flexDirection: "column-reverse" }}
+        style={{ flexDirection: 'column-reverse' }}
       >
         {copyImageCarrucel.map((image, index) => (
-          <img
+          <Image
             key={index}
             src={image.src}
             width={450}
-            height={"auto"}
+            height={450}
             alt="imagen proyecto"
-          ></img>
+          ></Image>
         ))}
       </div>
       <div className={styles.containerCarrucel}>
         {copyImageCarrucel.map((image, index) => (
-          <img
+          <Image
             key={index}
             src={image.src}
             width={450}
-            height={"auto"}
+            height={450}
             alt="imagen proyecto"
-          ></img>
+          ></Image>
         ))}
       </div>
       <div className={styles.containerText}>
@@ -61,13 +62,13 @@ const SectionThree = () => {
             Explora nuestros proyectos realizados y descubre cómo hemos ayudado
             a nuestros clientes a alcanzar sus objetivos en línea.
           </p>
-          <Link href={"/web_proyectos"}>
+          <Link href={'/web_proyectos'}>
             <button className={poppins.className}>Ver Proyectos</button>
           </Link>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SectionThree;
+export default SectionThree

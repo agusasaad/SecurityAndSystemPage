@@ -10,6 +10,7 @@ import gsap from 'gsap'
 import Modal from './Modal'
 import ArrowBack from '@/svg/ArrowBack'
 import ArrowNext from '@/svg/ArrowNext'
+import Image from 'next/image'
 
 const Detail = () => {
   const titleRef = useRef(null)
@@ -81,7 +82,13 @@ const Detail = () => {
         <div className={styles.containerImg} ref={imgRef}>
           <Carousel {...carouselSettings} className={styles.carousel}>
             {showProject?.images.map((image, index) => (
-              <img key={index} src={image} alt={image}></img>
+              <Image
+                key={index}
+                src={image}
+                alt={image}
+                width={900}
+                height={600}
+              ></Image>
             ))}
           </Carousel>
         </div>
