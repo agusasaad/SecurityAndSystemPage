@@ -1,7 +1,7 @@
 'use client'
 import { poppins } from '@/Fonts/fonts'
 import styles from './CardOne.module.css'
-import web1 from './../../../../public/proyectos/cinq_capital_optimizada.jpg'
+import web1 from './../../../../public/proyectos/cinq_capital_optimizada.jpeg'
 import web2 from './../../../../public/proyectos/fest_club_optimizada.jpg'
 import web3 from './../../../../public/proyectos/fiestas_optimizada.jpg'
 import web4 from './../../../../public/proyectos/sdp_optimizada.jpg'
