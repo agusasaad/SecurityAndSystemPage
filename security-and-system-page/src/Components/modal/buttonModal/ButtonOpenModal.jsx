@@ -1,7 +1,7 @@
 'use client'
 import styles from './ButtonOpenModal.module.css'
 import { poppins } from '@/Fonts/fonts'
-import { HiChatBubbleLeftRight } from 'react-icons/hi2'
+import Bubbles from '@/svg/Bubbles'
 
 const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
   const handleClick = () => {
@@ -11,7 +11,7 @@ const ButtonOpenModal = ({ isModalOpen, setModalOpen }) => {
   return (
     <div className={styles.containerButton}>
       <button className={poppins.className} onClick={handleClick}>
-        <HiChatBubbleLeftRight />
+        <Bubbles />
       </button>
     </div>
   )

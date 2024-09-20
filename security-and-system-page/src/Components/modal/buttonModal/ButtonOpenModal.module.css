@@ -11,22 +11,17 @@
 }
 
 .containerButton button {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(240, 240, 240);
   transition: all 0.3s ease;
-  position: relative;
-  background: rgb(184, 91, 254);
-  background: linear-gradient(
-    0deg,
-    rgb(160, 35, 255) 0%,
-    rgb(107, 0, 189) 100%
-  );
-  padding: 10px;
-  border-radius: 10px;
+}
+
+.icon {
+  filter: drop-shadow(0 0 0.75rem rgb(202, 202, 202));
 }
 
 .containerButton button .buttonFondo {
@@ -44,7 +39,6 @@
 @media (max-width: 500px) {
   .containerButton {
     transition: none;
-    margin: 0px;
   }
 
   .containerButton button:hover {
