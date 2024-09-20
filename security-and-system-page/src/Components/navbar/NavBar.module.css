@@ -35,10 +35,14 @@
 .LogoNav {
   animation: shadowPulse 2s ease-in-out infinite;
   cursor: pointer;
+  width: 40px;
+  height: auto;
 }
 
 .LogoNavMobile {
   display: none;
+  width: 150px;
+  height: auto;
 }
 
 .start {
