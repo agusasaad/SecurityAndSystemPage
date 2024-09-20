@@ -8,6 +8,22 @@ import fest_club_mockup_1 from './../../../../public/proyectos/detail_Fest_club/
 import fest_club_mockup_2 from './../../../../public/proyectos/detail_Fest_club/mockup_2.jpeg'
 
 import sdp_revestimientos_mockup_1 from './../../../../public/proyectos/datail_sdp_revestimientos/mockup_1.jpeg'
+import sdp_revestimientos_mockup_2 from './../../../../public/proyectos/datail_sdp_revestimientos/mockup_2.jpeg'
+import sdp_revestimientos_mockup_3 from './../../../../public/proyectos/datail_sdp_revestimientos/mockup_3.jpeg'
+
+import net_expertos_mockup_1 from './../../../../public/proyectos/deatil_net_expertos/mockup_1.jpeg'
+import net_expertos_mockup_2 from './../../../../public/proyectos/deatil_net_expertos/mockup_2.jpeg'
+import net_expertos_mockup_3 from './../../../../public/proyectos/deatil_net_expertos/mockup_3.jpeg'
+
+import tu_voz_suma_mockup_1 from './../../../../public/proyectos/detail_tu_voz_suma/mockup_1.jpeg'
+import tu_voz_suma_mockup_2 from './../../../../public/proyectos/detail_tu_voz_suma/mockup_2.jpeg'
+
+import dni_logistica_mockup_1 from './../../../../public/proyectos/detail_dni_logisticas/mockup_1.jpeg'
+// import dni_logistica_mockup_2 from './../../../../public/proyectos/detail_dni_logisticas/mockup_2.jpeg'
+
+import que_dj_mockup_1 from './../../../../public/proyectos/datail_que_dj/mockup_1.jpeg'
+import que_dj_mockup_2 from './../../../../public/proyectos/datail_que_dj/mockup_2.jpeg'
+import que_dj_mockup_3 from './../../../../public/proyectos/datail_que_dj/mockup_3.jpeg'
 
 export const desarrolloWeb = [
   {
@@ -52,34 +68,30 @@ export const desarrolloWeb = [
       'Esta landing page ofrece servicios de revestimientos especializados, con una galería destacando proyectos anteriores y una sección detallada sobre las soluciones disponibles. Además, incluye un formulario de contacto para consultas y cotizaciones, proporcionando una experiencia clara y directa para clientes interesados en renovar sus espacios.',
     images: [
       sdp_revestimientos_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
+      sdp_revestimientos_mockup_2.src,
+      sdp_revestimientos_mockup_3.src,
     ],
   },
   {
     id: '5',
     title: 'Net Expertos',
-    banner: 'Expande tu universo',
+    banner: 'Conectamos tu necesidad con el experto ideal.',
     infoText:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
+      'NetExpertos es una plataforma que conecta clientes con profesionales de diversas áreas, brindando una experiencia segura, intuitiva y de alta calidad en la búsqueda y contratación de servicios especializados.',
     images: [
-      cinq_capital_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
+      net_expertos_mockup_1.src,
+      net_expertos_mockup_2.src,
+      net_expertos_mockup_3.src,
     ],
   },
 
   {
     id: '6',
     title: 'Tu voz Suma',
-    banner: 'Expande tu universo',
+    banner: 'Donde las palabras se convierten en acciones',
     infoText:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    images: [
-      cinq_capital_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
-    ],
+      'Tu Voz Suma es una aplicación que facilita la gestión de reclamos ciudadanos. Permite reportar problemas, clasificarlos, priorizarlos y enviarlos al departamento municipal correspondiente. Con integración de mapas y opción de adjuntar imágenes, asegura precisión y eficiencia en la resolución de incidentes. Juntos, mejoramos la seguridad y armonía de la comunidad.',
+    images: [tu_voz_suma_mockup_1.src, tu_voz_suma_mockup_2.src],
   },
 
   {
@@ -89,7 +101,7 @@ export const desarrolloWeb = [
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
     images: [
-      cinq_capital_mockup_1.src,
+      dni_logistica_mockup_1.src,
       cinq_capital_mockup_2.src,
       cinq_capital_mockup_3.src,
     ],
@@ -101,10 +113,6 @@ export const desarrolloWeb = [
     banner: 'Expande tu universo',
     infoText:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    images: [
-      cinq_capital_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
-    ],
+    images: [que_dj_mockup_1.src, que_dj_mockup_2.src, que_dj_mockup_3.src],
   },
 ]
