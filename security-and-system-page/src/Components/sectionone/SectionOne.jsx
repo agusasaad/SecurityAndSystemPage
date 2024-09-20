@@ -1,20 +1,20 @@
-"use client";
-import styles from "./SectionOne.module.css";
-import { poppins } from "@/Fonts/fonts";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import Card_one from "./cards/card_one/Card_one";
-import Card_two from "./cards/card_two/Card_two";
-import Card_three from "./cards/card_three/Card_three";
-import Card_four from "./cards/card_four/Card_four";
+'use client'
+import styles from './SectionOne.module.css'
+import { poppins } from '@/Fonts/fonts'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from 'react'
+import Card_one from './cards/card_one/Card_one'
+import Card_two from './cards/card_two/Card_two'
+import Card_three from './cards/card_three/Card_three'
+import Card_four from './cards/card_four/Card_four'
 
 const SectionOne = () => {
-  const containerRef = useRef(null);
-  const titleRef = useRef(null);
+  const containerRef = useRef(null)
+  const titleRef = useRef(null)
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
 
     if (window.innerWidth > 700) {
       gsap.fromTo(
@@ -22,23 +22,23 @@ const SectionOne = () => {
         {
           x: 50,
           opacity: 0,
-          visibility: "hidden",
+          visibility: 'hidden',
         },
         {
           opacity: 1,
           x: 0,
-          visibility: "visible",
-          ease: "power3.out",
+          visibility: 'visible',
+          ease: 'power3.out',
           duration: 0.8,
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 50%",
-            end: "top 20%",
+            start: 'top 50%',
+            end: 'top 20%',
           },
         }
-      );
+      )
     }
-  }, []);
+  }, [])
 
   return (
     <div className={styles.container} ref={containerRef}>
@@ -55,7 +55,7 @@ const SectionOne = () => {
       <Card_three />
       <Card_four />
     </div>
-  );
-};
+  )
+}
 
-export default SectionOne;
+export default SectionOne
