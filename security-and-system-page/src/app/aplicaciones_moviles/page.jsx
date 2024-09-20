@@ -1,15 +1,15 @@
 'use client'
 import styles from './page.module.css'
 import { poppins } from '@/Fonts/fonts'
-import { BsFillLightningChargeFill } from 'react-icons/bs'
-import { TbDeviceMobileCog } from 'react-icons/tb'
-import { FaCircleNodes } from 'react-icons/fa6'
-import { PiArrowsCounterClockwiseBold } from 'react-icons/pi'
-import { IoArrowForward } from 'react-icons/io5'
-import { IoArrowBack } from 'react-icons/io5'
 import { gsap } from 'gsap'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import ArrowBack from '@/svg/ArrowBack'
+import ArrowNext from '@/svg/ArrowNext'
+import Optimizacion from '@/svg/Optimizacion'
+import Versatilidad from '@/svg/Versatilidad'
+import Continuidad from '@/svg/Continuidad'
+import Conectividad from '@/svg/Conectividad'
 
 const AplicacionesMoviles = () => {
   const titleRef = useRef(null)
@@ -73,7 +73,7 @@ const AplicacionesMoviles = () => {
                 color: 'rgb(0, 189, 87)',
               }}
             >
-              <BsFillLightningChargeFill style={{ fontSize: '15px' }} />
+              <Optimizacion />
               Optimización
             </span>
             <h2 className={poppins.className}>Infraestructura en la Nube</h2>
@@ -95,7 +95,7 @@ const AplicacionesMoviles = () => {
                 color: '#c084fd',
               }}
             >
-              <TbDeviceMobileCog style={{ fontSize: '15px' }} />
+              <Versatilidad />
               Versatilidad
             </span>
             <h2 className={poppins.className}>
@@ -118,7 +118,7 @@ const AplicacionesMoviles = () => {
                 color: '#4e9eff',
               }}
             >
-              <PiArrowsCounterClockwiseBold style={{ fontSize: '15px' }} />
+              <Continuidad />
               Continuidad
             </span>
             <h2 className={poppins.className}>Mantenimiento y Actualización</h2>
@@ -140,7 +140,7 @@ const AplicacionesMoviles = () => {
                 color: '#ff9a3c',
               }}
             >
-              <FaCircleNodes style={{ fontSize: '15px' }} />
+              <Conectividad />
               Conectividad
             </span>
             <h2 className={poppins.className}>
@@ -159,12 +159,12 @@ const AplicacionesMoviles = () => {
           <div className={styles.controlButtons} ref={buttonControl}>
             <Link href={'/desarrollo_web'}>
               <button className={poppins.className}>
-                <IoArrowBack /> Atras
+                <ArrowBack /> Atras
               </button>
             </Link>
             <Link href={'/servidores_soluciones_cloud'}>
               <button className={poppins.className}>
-                Siguiente <IoArrowForward />
+                Siguiente <ArrowNext />
               </button>
             </Link>
           </div>
