@@ -1,25 +1,26 @@
-"use client";
-import styles from "./ContactUs.module.css";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { poppins } from "@/Fonts/fonts";
-import { useEffect, useRef } from "react";
-import { FaLocationDot } from "react-icons/fa6";
-import { MdOutlinePhone, MdOutlineEmail } from "react-icons/md";
-import map from "./../../../public/map.png";
-import location from "./../../../public/location.gif";
-import Link from "next/link";
+'use client'
+import styles from './ContactUs.module.css'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { poppins } from '@/Fonts/fonts'
+import { useEffect, useRef } from 'react'
+import map from './../../../public/map.png'
+import location from './../../../public/location.gif'
+import Link from 'next/link'
+import Location from '@/svg/Location'
+import Phone from '@/svg/Phone'
+import Email from '@/svg/Email'
 
 const ContactUs = () => {
-  const containerRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const spanRef = useRef(null);
-  const locationRef = useRef(null);
+  const containerRef = useRef(null)
+  const subtitleRef = useRef(null)
+  const titleRef = useRef(null)
+  const descriptionRef = useRef(null)
+  const spanRef = useRef(null)
+  const locationRef = useRef(null)
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
 
     gsap.fromTo(
       [
@@ -37,14 +38,14 @@ const ContactUs = () => {
         x: 0,
         stagger: 0.2,
         duration: 0.5,
-        ease: "power1.out",
+        ease: 'power1.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top+=200 80%",
-          end: "top 20%",
+          start: 'top+=200 80%',
+          end: 'top 20%',
         },
       }
-    );
+    )
 
     gsap.fromTo(
       locationRef.current,
@@ -53,17 +54,17 @@ const ContactUs = () => {
       },
       {
         scale: 1,
-        ease: "power1.out",
+        ease: 'power1.out',
         delay: 0.5,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top+=200 50%",
-          end: "top 20%",
+          start: 'top+=200 50%',
+          end: 'top 20%',
           // markers: true,
         },
       }
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <div className={styles.container} id="contact">
@@ -87,7 +88,7 @@ const ContactUs = () => {
               target="_blank"
             >
               <span className={poppins.className}>
-                <FaLocationDot className={styles.icon} />
+                <Location />
                 Juan José paso 1353, Morón
               </span>
             </Link>
@@ -97,7 +98,7 @@ const ContactUs = () => {
               rel="noopener noreferrer"
             >
               <span className={poppins.className}>
-                <MdOutlinePhone className={styles.icon} />
+                <Phone />
                 11 5626-0023
               </span>
             </Link>
@@ -107,7 +108,7 @@ const ContactUs = () => {
               rel="noopener noreferrer"
             >
               <span className={poppins.className}>
-                <MdOutlineEmail className={styles.icon} />
+                <Email className={styles.icon} />
                 contact@securityandsystem.com
               </span>
             </Link>
@@ -128,7 +129,7 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ContactUs;
+export default ContactUs
