@@ -2,13 +2,14 @@
 import styles from './page.module.css'
 import { desarrolloWeb } from './Info'
 import { useParams, useRouter } from 'next/navigation'
-import { IoArrowBack, IoArrowForward } from 'react-icons/io5'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { poppins } from '@/Fonts/fonts'
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import Modal from './Modal'
+import ArrowBack from '@/svg/ArrowBack'
+import ArrowNext from '@/svg/ArrowNext'
 
 const Detail = () => {
   const titleRef = useRef(null)
@@ -95,7 +96,7 @@ const Detail = () => {
             cursor: Number(id) === 1 ? 'default' : 'pointer',
           }}
         >
-          <IoArrowBack /> Atras
+          <ArrowBack /> Atras
         </button>
         <button
           className={poppins.className}
@@ -106,7 +107,7 @@ const Detail = () => {
             cursor: Number(id) === 8 ? 'default' : 'pointer',
           }}
         >
-          Siguiente <IoArrowForward />
+          Siguiente <ArrowNext />
         </button>
       </div>
       <Modal
