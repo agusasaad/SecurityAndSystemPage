@@ -1,7 +1,7 @@
-import styles from "./DesarrolloWebInfo.module.css";
-import { poppins } from "@/Fonts/fonts";
-import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import { PiCodeBold } from "react-icons/pi";
+import styles from './DesarrolloWebInfo.module.css'
+import { poppins } from '@/Fonts/fonts'
+import ChaketModalServices from '@/svg/ChaketModalServices'
+import Personalizacion from '@/svg/Personalizacion'
 
 const DesarrolloWebInfo = () => {
   return (
@@ -10,19 +10,19 @@ const DesarrolloWebInfo = () => {
         <span
           className={styles.span}
           style={{
-            background: "rgba(0, 189, 87, 0.1)",
-            color: "rgb(0, 189, 87)",
+            background: 'rgba(0, 189, 87, 0.1)',
+            color: 'rgb(0, 189, 87)',
           }}
         >
-          <PiCodeBold style={{ fontSize: "15px" }} />
+          <Personalizacion />
           Personalización
         </span>
         <h2 className={poppins.className}>Desarrollo web Personalizado</h2>
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline
-            style={{ color: "rgb(0, 189, 87)" }}
+          <ChaketModalServices
+            style={{ color: 'rgb(0, 189, 87)' }}
             className={styles.icon}
           />
           Entendiendo tu Visión
@@ -35,8 +35,8 @@ const DesarrolloWebInfo = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline
-            style={{ color: "rgb(0, 189, 87)" }}
+          <ChaketModalServices
+            style={{ color: 'rgb(0, 189, 87)' }}
             className={styles.icon}
           />
           Diseño Intuitivo y Eficiente
@@ -48,7 +48,7 @@ const DesarrolloWebInfo = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DesarrolloWebInfo;
+export default DesarrolloWebInfo

@@ -1,7 +1,7 @@
-import styles from "./Codificacion.module.css";
-import { poppins } from "@/Fonts/fonts";
-import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import { TbSettingsCode } from "react-icons/tb";
+import ChaketModalServices from '@/svg/ChaketModalServices'
+import styles from './Codificacion.module.css'
+import { poppins } from '@/Fonts/fonts'
+import Eficiencia from '@/svg/Eficiencia'
 
 const Codificacion = () => {
   return (
@@ -10,11 +10,11 @@ const Codificacion = () => {
         <span
           className={styles.span}
           style={{
-            background: "#9162c025",
-            color: "#c084fd",
+            background: '#9162c025',
+            color: '#c084fd',
           }}
         >
-          <TbSettingsCode style={{ fontSize: "15px" }} />
+          <Eficiencia />
           Eficiencia
         </span>
         <h2 className={poppins.className}>
@@ -23,10 +23,7 @@ const Codificacion = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline
-            style={{ color: "#c084fd" }}
-            className={styles.icon}
-          />
+          <ChaketModalServices />
           Programación Optimizada y Eficiente
         </span>
         <p className={poppins.className}>
@@ -38,10 +35,7 @@ const Codificacion = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline
-            style={{ color: "#c084fd" }}
-            className={styles.icon}
-          />
+          <ChaketModalServices />
           Enfoque en Escalabilidad y Futuras Necesidades
         </span>
         <p className={poppins.className}>
@@ -52,7 +46,7 @@ const Codificacion = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Codificacion;
+export default Codificacion

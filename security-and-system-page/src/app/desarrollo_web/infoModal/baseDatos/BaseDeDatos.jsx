@@ -1,7 +1,7 @@
-import styles from "./BaseDeDatos.module.css";
-import { poppins } from "@/Fonts/fonts";
-import { BsDatabaseCheck } from "react-icons/bs";
-import { IoCheckmarkCircleOutline } from "react-icons/io5";
+import ChaketModalServices from '@/svg/ChaketModalServices'
+import styles from './BaseDeDatos.module.css'
+import { poppins } from '@/Fonts/fonts'
+import Gestion from '@/svg/Gestion'
 const BaseDeDatos = () => {
   return (
     <div className={styles.desarrolloWebInfo}>
@@ -9,11 +9,11 @@ const BaseDeDatos = () => {
         <span
           className={styles.span}
           style={{
-            background: "#d1772425",
-            color: "#ff9a3c",
+            background: '#d1772425',
+            color: '#ff9a3c',
           }}
         >
-          <BsDatabaseCheck style={{ fontSize: "15px" }} />
+          <Gestion />
           Gestión
         </span>
         <h2 className={poppins.className}>
@@ -22,10 +22,7 @@ const BaseDeDatos = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline
-            style={{ color: "#ff9a3c" }}
-            className={styles.icon}
-          />
+          <ChaketModalServices />
           Estructuras de Datos Seguras
         </span>
         <p className={poppins.className}>
@@ -37,10 +34,7 @@ const BaseDeDatos = () => {
       </div>
       <div className={styles.parrafo}>
         <span className={poppins.className}>
-          <IoCheckmarkCircleOutline
-            style={{ color: "#ff9a3c" }}
-            className={styles.icon}
-          />
+          <ChaketModalServices />
           Bases de Datos Adaptadas a tus Necesidades
         </span>
         <p className={poppins.className}>
@@ -51,7 +45,7 @@ const BaseDeDatos = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BaseDeDatos;
+export default BaseDeDatos
