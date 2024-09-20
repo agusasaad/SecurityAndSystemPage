@@ -122,6 +122,9 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
+        <button className={`${poppins.className} ${styles.buttonFolow}`}>
+          Solicitar Cotización
+        </button>
         <div className={styles.containerSocial}>
           <Facebook />
           <Instagram />
