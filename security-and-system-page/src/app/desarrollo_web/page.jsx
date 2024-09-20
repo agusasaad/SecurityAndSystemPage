@@ -1,17 +1,17 @@
 'use client'
 import styles from './page.module.css'
 import { poppins } from '@/Fonts/fonts'
-import { PiCodeBold } from 'react-icons/pi'
-import { TbSettingsCode } from 'react-icons/tb'
-import { TbDeviceMobileCode } from 'react-icons/tb'
-import { BsDatabaseCheck } from 'react-icons/bs'
-import { IoArrowForward } from 'react-icons/io5'
-import { IoArrowBack } from 'react-icons/io5'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
 import Modal from './modal_desarrollo_web/Modal'
 import Link from 'next/link'
+import ArrowBack from '@/svg/ArrowBack'
+import ArrowNext from '@/svg/ArrowNext'
+import Personalizacion from '@/svg/Personalizacion'
+import Eficiencia from '@/svg/Eficiencia'
+import Adaptabilidad from '@/svg/Adaptabilidad'
+import Gestion from '@/svg/Gestion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -85,7 +85,7 @@ const DesarrolloWeb = () => {
                 color: 'rgb(0, 189, 87)',
               }}
             >
-              <PiCodeBold style={{ fontSize: '15px' }} />
+              <Personalizacion />
               Personalización
             </span>
             <h2 className={poppins.className}>
@@ -113,7 +113,7 @@ const DesarrolloWeb = () => {
                 color: '#c084fd',
               }}
             >
-              <TbSettingsCode style={{ fontSize: '15px' }} />
+              <Eficiencia />
               Eficiencia
             </span>
             <h2 className={poppins.className}>
@@ -141,7 +141,7 @@ const DesarrolloWeb = () => {
                 color: '#4e9eff',
               }}
             >
-              <TbDeviceMobileCode style={{ fontSize: '15px' }} />
+              <Adaptabilidad />
               Adaptabilidad
             </span>
             <h2 className={poppins.className}>Diseño responsive mobile.</h2>
@@ -167,7 +167,7 @@ const DesarrolloWeb = () => {
                 color: '#ff9a3c',
               }}
             >
-              <BsDatabaseCheck style={{ fontSize: '15px' }} />
+              <Gestion />
               Gestión
             </span>
             <h2 className={poppins.className}>
@@ -194,11 +194,11 @@ const DesarrolloWeb = () => {
             disabled
             style={{ opacity: 0.5, pointerEvents: 'none' }}
           >
-            <IoArrowBack /> Atras
+            <ArrowBack /> Atras
           </button>
           <Link href={'/aplicaciones_moviles'}>
             <button className={poppins.className}>
-              Siguiente <IoArrowForward />
+              Siguiente <ArrowNext />
             </button>
           </Link>
         </div>
