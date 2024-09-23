@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Facebook from './redesSociales/Facebook'
 import Instagram from './redesSociales/Instagram'
 import Linkedin from './redesSociales/Linkedin'
+import ArrowButton from '@/svg/ArrowButton'
 
 const HomePage = () => {
   const titleRef1 = useRef(null)
@@ -123,12 +124,30 @@ const HomePage = () => {
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
         <button className={`${poppins.className} ${styles.buttonFolow}`}>
+          <span>
+            <ArrowButton />
+          </span>
           Solicitar Cotización
         </button>
         <div className={styles.containerSocial}>
-          <Facebook />
-          <Instagram />
-          <Linkedin />
+          <Link
+            href="https://www.facebook.com/profile.php?id=61552143027658&sk=about"
+            target="_blank"
+          >
+            <Facebook />
+          </Link>
+          <Link
+            href="https://www.instagram.com/security_and_system/"
+            target="_blank"
+          >
+            <Instagram />
+          </Link>
+          {/* <Link
+            href="https://www.instagram.com/security_and_system/"
+            target="_blank"
+          >
+            <Linkedin />
+          </Link> */}
         </div>
       </div>
     </div>
