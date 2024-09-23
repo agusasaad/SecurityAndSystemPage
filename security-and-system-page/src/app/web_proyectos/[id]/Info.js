@@ -3,6 +3,7 @@ import cinq_capital_mockup_2 from './../../../../public/proyectos/detail_Cinq_ca
 import cinq_capital_mockup_3 from './../../../../public/proyectos/detail_Cinq_capital/mockup_3.png'
 
 import salon_plaza_mockup_1 from './../../../../public/proyectos/detail_Salon_plaza/mockup_1.jpeg'
+import salon_plaza_mockup_2 from './../../../../public/proyectos/detail_Salon_plaza/mockup_2.jpeg'
 
 import fest_club_mockup_1 from './../../../../public/proyectos/detail_Fest_club/mockup_1.jpeg'
 import fest_club_mockup_2 from './../../../../public/proyectos/detail_Fest_club/mockup_2.jpeg'
@@ -45,11 +46,7 @@ export const desarrolloWeb = [
     banner: 'Armamos la fiesta de tus sueños',
     infoText:
       'Esta landing page promociona servicios de organización de eventos, con una galería visual destacada, información sobre los servicios disponibles y un formulario de contacto, todo diseñado para atraer clientes y facilitar la planificación de su evento ideal.',
-    images: [
-      salon_plaza_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
-    ],
+    images: [salon_plaza_mockup_1.src, salon_plaza_mockup_2.src],
   },
 
   {
@@ -99,12 +96,8 @@ export const desarrolloWeb = [
     title: 'DNI Logistica',
     banner: 'Expande tu universo',
     infoText:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
-    images: [
-      dni_logistica_mockup_1.src,
-      cinq_capital_mockup_2.src,
-      cinq_capital_mockup_3.src,
-    ],
+      'DNI Logística & Transporte SA, es una plataforma dedicada a la gestión eficiente de choferes y viajes. La aplicacion permite registrar y administrar conductores, así como organizar y monitorear los viajes asignados a cada uno.',
+    images: [dni_logistica_mockup_1.src],
   },
 
   {
@@ -112,7 +105,7 @@ export const desarrolloWeb = [
     title: 'Que DJ',
     banner: 'Expande tu universo',
     infoText:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit.laboriosam quod debitis vitae repellendus eum. Fugiat laborumvoluptatibus architecto, labore distinctio et eos officia adipiscitempore exercitationem voluptates cupiditate in.',
+      'QueDJ! es una aplicación web que permite a los clientes de bares y locales agregar su canción favorita a la lista de reproducción del establecimiento por un monto específico. Los dueños del local controlan la experiencia musical, mientras los clientes interactúan de forma divertida y personalizada, eligiendo las canciones que desean escuchar en el momento.',
     images: [que_dj_mockup_1.src, que_dj_mockup_2.src, que_dj_mockup_3.src],
   },
 ]
