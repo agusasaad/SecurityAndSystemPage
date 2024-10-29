@@ -6,6 +6,7 @@ import Whatsapp from '@/svg/Whatsapp'
 import Telegram from '@/svg/Telegram'
 import EmailModal from '@/svg/EmailModal'
 import Signal from '@/svg/Signal'
+import Link from 'next/link'
 
 const Modal = ({ isModalOpen, setModalOpen }) => {
   const modal = useRef(null)
@@ -84,15 +85,23 @@ const Modal = ({ isModalOpen, setModalOpen }) => {
             ti.
           </p>
           <ul>
-            <li ref={buttonRef1}>
-              <Whatsapp />
-            </li>
+            <Link href='https://wa.me/5491156260023' target='_blank'>
+              <li ref={buttonRef1}>
+                <Whatsapp />
+              </li>
+            </Link>
             <li ref={buttonRef2}>
               <Telegram />
             </li>
-            <li ref={buttonRef3}>
-              <EmailModal />
-            </li>
+            <Link
+              href='mailto:contact@securityandsystem.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <li ref={buttonRef3}>
+                <EmailModal />
+              </li>
+            </Link>
             <li ref={buttonRef4}>
               <Signal />
             </li>
