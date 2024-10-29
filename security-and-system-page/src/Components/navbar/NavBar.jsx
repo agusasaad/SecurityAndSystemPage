@@ -41,10 +41,10 @@ const NavBar = () => {
     <div className={styles.containerNav} ref={navBarAnimate}>
       <div className={styles.nav}>
         <div className={styles.start}>
-          <Link href="/">
+          <Link href='/'>
             <Image
               src={logoSAS}
-              alt="Logo de la empresa Security And System"
+              alt='Logo de la empresa Security And System'
               className={styles.LogoNav}
               width={40}
               height={40}
@@ -52,7 +52,7 @@ const NavBar = () => {
 
             <Image
               src={logoSAS_Mobile}
-              alt="Logo de la empresa Security And System"
+              alt='Logo de la empresa Security And System'
               className={styles.LogoNavMobile}
               width={150}
               height={150}
@@ -67,7 +67,7 @@ const NavBar = () => {
           </div>
           <ul className={poppins.className}>
             <Link
-              href="/"
+              href='/'
               onClick={() => {
                 setShowMenu(false), setShowMenuServices(false)
               }}
@@ -82,22 +82,22 @@ const NavBar = () => {
               Servicios
               <svg
                 className={showMenuServices ? styles.rotate : ''}
-                viewBox="0 0 1024 1024"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="white"
+                viewBox='0 0 1024 1024'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='white'
                 width={13}
                 height={13}
               >
-                <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                <g id='SVGRepo_bgCarrier' strokeWidth={0} />
                 <g
-                  id="SVGRepo_tracerCarrier"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  id='SVGRepo_tracerCarrier'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
-                <g id="SVGRepo_iconCarrier">
+                <g id='SVGRepo_iconCarrier'>
                   <path
-                    fill="white"
-                    d="M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8 316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496z"
+                    fill='white'
+                    d='M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8 316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496z'
                   />
                 </g>
               </svg>
@@ -105,7 +105,7 @@ const NavBar = () => {
             {showMenuServices && (
               <ul className={styles.menuServices}>
                 <Link
-                  href="/desarrollo_web"
+                  href='/desarrollo_web'
                   onClick={() => {
                     setShowMenu(false), setShowMenuServices(false)
                   }}
@@ -113,7 +113,7 @@ const NavBar = () => {
                   <li>Desarrollo Web</li>
                 </Link>
                 <Link
-                  href="/aplicaciones_moviles"
+                  href='/aplicaciones_moviles'
                   onClick={() => {
                     setShowMenu(false), setShowMenuServices(false)
                   }}
@@ -121,7 +121,7 @@ const NavBar = () => {
                   <li>Aplicaciones Móviles</li>
                 </Link>
                 <Link
-                  href="/servidores_soluciones_cloud"
+                  href='/servidores_soluciones_cloud'
                   onClick={() => {
                     setShowMenu(false), setShowMenuServices(false)
                   }}
@@ -129,7 +129,7 @@ const NavBar = () => {
                   <li>Servidores y Soluciones Cloud</li>
                 </Link>
                 <Link
-                  href="/consultoria_it"
+                  href='/consultoria_it'
                   onClick={() => {
                     setShowMenu(false), setShowMenuServices(false)
                   }}
@@ -138,17 +138,6 @@ const NavBar = () => {
                 </Link>
               </ul>
             )}
-            <Link
-              href={'/sobre_nosotros'}
-              onClick={() => {
-                setShowMenu(false), setShowMenuServices(false)
-              }}
-            >
-              <li>
-                <SobreNosotros />
-                Sobre Nosotros
-              </li>
-            </Link>
             <Link
               href={'/web_proyectos'}
               onClick={() => {
@@ -163,7 +152,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div className={styles.end}>
-          <Link href="#contact">
+          <Link href='#contact'>
             <button className={`${poppins.className} ${styles.button}`}>
               Contactanos
             </button>
