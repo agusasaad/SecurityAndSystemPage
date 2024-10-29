@@ -15,6 +15,13 @@ const HomePage = () => {
   const subtitleRef = useRef(null)
   const buttonRef = useRef(null)
 
+  const numeroWhatsApp = '5491156260023'
+  const mensaje = '¡Hola! Quisiera solicitar una cotización.'
+
+  const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+    mensaje
+  )}`
+
   useEffect(() => {
     const tl = gsap.timeline()
 
@@ -123,22 +130,24 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
-        <button className={`${poppins.className} ${styles.buttonFolow}`}>
-          <span>
-            <ArrowButton />
-          </span>
-          Solicitar Cotización
-        </button>
+        <Link href={enlaceWhatsApp} target='_blank' rel='noopener noreferrer'>
+          <button className={`${poppins.className} ${styles.buttonFolow}`}>
+            <span>
+              <ArrowButton />
+            </span>
+            Solicitar Cotización
+          </button>
+        </Link>
         <div className={styles.containerSocial}>
           <Link
-            href="https://www.facebook.com/profile.php?id=61552143027658&sk=about"
-            target="_blank"
+            href='https://www.facebook.com/profile.php?id=61552143027658&sk=about'
+            target='_blank'
           >
             <Facebook />
           </Link>
           <Link
-            href="https://www.instagram.com/security_and_system/"
-            target="_blank"
+            href='https://www.instagram.com/security_and_system/'
+            target='_blank'
           >
             <Instagram />
           </Link>
