@@ -1,5 +1,5 @@
 .footer {
-  position: relative; /* Asegura que el z-index funcione */
+  position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(24px);
   background-color: rgb(35 35 43 / 51%);
@@ -81,7 +81,7 @@
   margin: 30px 0px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   color: #c3c3c3;
   padding-top: 20px;

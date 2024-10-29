@@ -12,8 +12,8 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Image
-            src="/logo_mobile.png"
-            alt="Logo de la empresa Security And System"
+            src='/logo_mobile.png'
+            alt='Logo de la empresa Security And System'
             width={150}
             height={200}
           />
@@ -22,30 +22,34 @@ const Footer = () => {
             funcionalidad, para llevar tu presencia en línea al siguiente nivel.
           </p>
           <div className={styles.social}>
-            <span>
-              <InstagramFooter />
-            </span>
-            <span>
-              <LinkedinFooter />
-            </span>
-            <span>
-              <FacebookFooter />
-            </span>
+            <Link
+              href='https://www.instagram.com/security_and_system/'
+              target='_blank'
+            >
+              <span>
+                <InstagramFooter />
+              </span>
+            </Link>
+            <Link
+              href='https://www.facebook.com/profile.php?id=61552143027658&sk=about'
+              target='_blank'
+            >
+              <span>
+                <FacebookFooter />
+              </span>
+            </Link>
           </div>
         </div>
         <div className={styles.routes}>
           <ul>
             <li>
-              <Link href="/">INICIO</Link>
+              <Link href='/'>INICIO</Link>
             </li>
             <li>
-              <Link href="/desarrollo_web">NUESTROS SERVICIOS</Link>
+              <Link href='/desarrollo_web'>NUESTROS SERVICIOS</Link>
             </li>
             <li>
-              <Link href="/">SOBRE NOSOTROS</Link>
-            </li>
-            <li>
-              <Link href="/">NUESTROS TRABAJOS</Link>
+              <Link href='/'>NUESTROS TRABAJOS</Link>
             </li>
           </ul>
         </div>
