@@ -92,22 +92,17 @@
     rgba(0, 0, 0, 0.711922268907563) 16%,
     rgba(0, 0, 0, 0.47102591036414565) 100%
   );
-  opacity: 0;
+  opacity: 0.8;
   transition: opacity 0.4s;
   z-index: 1;
 }
 
 .containerCards .card:nth-child(4) .title {
-  animation: fadeIn 0.6s ease-in-out forwards; /* Animación para hacer la entrada */
+  opacity: 0;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.containerCards .card:nth-child(4):hover .title {
+  opacity: 1;
 }
 
 .containerCards .card .title h5 {
