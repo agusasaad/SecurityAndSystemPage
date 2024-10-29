@@ -117,7 +117,7 @@ const Card_two = () => {
           </p>
         </div>
         <div className={styles.containerButton}>
-          <Link href="/aplicaciones_moviles">
+          <Link href='/aplicaciones_moviles'>
             <button
               className={`${poppins.className} ${styles.button_black}`}
               ref={button_container}
@@ -128,27 +128,37 @@ const Card_two = () => {
         </div>
       </div>
       <div className={styles.containerImg}>
-        <Image
-          src={foto_1}
-          width={140}
-          height={300}
-          alt={'Aplicaciones Móviles'}
-          ref={img_oneRef}
-        />
-        <Image
-          src={foto_2}
-          width={140}
-          height={300}
-          alt={'Aplicaciones Móviles'}
-          ref={img_twoRef}
-        />
-        <Image
-          src={foto_3}
-          width={140}
-          height={300}
-          alt={'Aplicaciones Móviles'}
-          ref={img_threeRef}
-        />
+        <Link className={styles.div} href={'/web_proyectos/6'}>
+          <span>Tu voz Suma</span>
+          <Image
+            src={foto_1}
+            width={140}
+            height={300}
+            alt={'Aplicaciones Móviles'}
+            ref={img_oneRef}
+          />
+        </Link>
+        <Link className={styles.div} href={'/web_proyectos/8'}>
+          <span>Que Dj!</span>
+
+          <Image
+            src={foto_2}
+            width={140}
+            height={300}
+            alt={'Aplicaciones Móviles'}
+            ref={img_twoRef}
+          />
+        </Link>
+        <Link className={styles.div} href={'/web_proyectos/5'}>
+          <span>Net Expertos</span>
+          <Image
+            src={foto_3}
+            width={140}
+            height={300}
+            alt={'Aplicaciones Móviles'}
+            ref={img_threeRef}
+          />
+        </Link>
       </div>
     </div>
   )

@@ -8,7 +8,7 @@
   position: sticky;
   top: 170px;
   border-radius: 30px;
-  background-image: url("./../../../../../public/background\ 1.svg");
+  background-image: url('./../../../../../public/background\ 1.svg');
   background-size: 140%;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,10 +96,44 @@
   gap: 20px;
 }
 
-.containerImg img {
-  width: 28%;
+.containerImg .div {
+  width: 30%;
   height: auto;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.containerImg .div span {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  background-color: rgb(35 35 43 / 26%);
+  padding: 10px 0;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.containerImg .div:hover span {
+  top: -20%;
+  opacity: 1;
+}
+
+.containerImg img {
+  width: 100%;
+  height: auto;
   will-change: transform, opacity;
 }
 
@@ -133,6 +167,10 @@
 @media (max-width: 650px) {
   .card {
     background-size: 250%;
+  }
+
+  .containerImg .div span {
+    display: none;
   }
 }
 
