@@ -83,9 +83,6 @@ const AplicacionesMoviles = () => {
               integración de características avanzadas como notificaciones push,
               geolocalización y servicios en la nube.
             </p>
-            <div className={styles.containerButton}>
-              <button className={poppins.className}>Ver Más</button>
-            </div>
           </div>
 
           <div className={styles.personalizado} ref={cardTwo}>
@@ -106,9 +103,6 @@ const AplicacionesMoviles = () => {
               eficiente en diversas plataformas, permitiendo a los clientes
               ahorrar costos y tiempo de desarrollo con una sola base de código.
             </p>
-            <div className={styles.containerButton}>
-              <button className={poppins.className}>Ver Más</button>
-            </div>
           </div>
 
           <div className={styles.personalizado} ref={cardThree}>
@@ -128,9 +122,6 @@ const AplicacionesMoviles = () => {
               con mejoras de seguridad, corrección de errores y adición de
               nuevas funcionalidades según las necesidades del cliente.
             </p>
-            <div className={styles.containerButton}>
-              <button className={poppins.className}>Ver Más</button>
-            </div>
           </div>
 
           <div className={styles.personalizado} ref={cardFour}>
@@ -152,9 +143,6 @@ const AplicacionesMoviles = () => {
               plataformas de redes sociales, para enriquecer la funcionalidad y
               mejorar la experiencia del usuario.
             </p>
-            <div className={styles.containerButton}>
-              <button className={poppins.className}>Ver Más</button>
-            </div>
           </div>
           <div className={styles.controlButtons} ref={buttonControl}>
             <Link href={'/desarrollo_web'}>
