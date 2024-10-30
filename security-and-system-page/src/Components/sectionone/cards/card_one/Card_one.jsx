@@ -11,12 +11,18 @@ import DesarrolloWebImg_3 from './../../../../../public/desarrolloWeb/desarrollo
 import DesarrolloWebImg_4 from './../../../../../public/desarrolloWeb/desarrolloWeb_4.png'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const images = [
-  DesarrolloWebImg_1,
-  DesarrolloWebImg_2,
-  DesarrolloWebImg_3,
-  DesarrolloWebImg_4,
+  { img: DesarrolloWebImg_1, name: 'Fest Club', url: '/web_proyectos/3' },
+  { img: DesarrolloWebImg_2, name: 'Cinq Capital', url: '/web_proyectos/1' },
+  { img: DesarrolloWebImg_3, name: 'Salon Plaza', url: '/web_proyectos/2' },
+  {
+    img: DesarrolloWebImg_4,
+    name: 'Revestimiento SDP',
+    url: '/web_proyectos/4',
+  },
 ]
 
 const Card_one = () => {
@@ -28,7 +34,6 @@ const Card_one = () => {
   const tip_threeRef = useRef(null)
   const button_container = useRef(null)
   const img_oneRef = useRef(null)
-  const [currentImage, setCurrentImage] = useState(0)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -79,13 +84,15 @@ const Card_one = () => {
       )
   }, [])
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length)
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [])
+  const carouselSettings = {
+    autoPlay: true,
+    showArrows: true,
+    showThumbs: false,
+    showStatus: false,
+    infiniteLoop: true,
+    showIndicators: true,
+    interval: 4000,
+  }
 
   return (
     <div className={styles.card} ref={containerRef}>
@@ -112,7 +119,7 @@ const Card_one = () => {
           </p>
         </div>
         <div className={styles.containerButton}>
-          <Link href="/desarrollo_web">
+          <Link href='/desarrollo_web'>
             <button
               className={`${poppins.className} ${styles.button_black}`}
               ref={button_container}
@@ -123,23 +130,19 @@ const Card_one = () => {
         </div>
       </div>
       <div className={styles.containerImg} ref={img_oneRef}>
-        <div className={styles.carousel}>
-          <div
-            className={styles.carouselImages}
-            style={{ transform: `translateX(-${currentImage * 100}%)` }}
-          >
-            {images.map((src, index) => (
-              <Image
-                width={500}
-                height={500}
-                key={index}
-                src={src}
-                alt={`Desarrollo de aplicaciones Web ${index + 1}`}
-                className={styles.image}
-              />
-            ))}
-          </div>
-        </div>
+        <Carousel {...carouselSettings}>
+          {images.map((image, index) => (
+            <div key={index} className={styles.img}>
+              <Image src={image.img} alt={`Imagen ${index}`} />
+              <div className={styles.name_project}>
+                <h5>{image.name}</h5>
+                <Link href={image.url}>
+                  <button>Ver proyecto</button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   )
