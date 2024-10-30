@@ -2,23 +2,30 @@
 import styles from './page.module.css'
 import { poppins } from '@/Fonts/fonts'
 import { gsap } from 'gsap'
-import { useEffect, useRef } from 'react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import ArrowBack from '@/svg/ArrowBack'
 import ArrowNext from '@/svg/ArrowNext'
-import Escalabilidad from '@/svg/Escalabilidad'
-import Transicion from '@/svg/Transicion'
-import Rendimiento from '@/svg/Rendimiento'
-import Seguridad from '@/svg/Seguridad'
+import Modal from '@/modalServices/Modal'
+import { dataServidores_soluciones_cloud } from './dataServidores_soluciones_cloud'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const ServidoresSolucionesCloud = () => {
   const titleRef = useRef(null)
-  const cardOne = useRef(null)
-  const cardTwo = useRef(null)
-  const cardThree = useRef(null)
-  const cardFour = useRef(null)
   const buttonControl = useRef(null)
   const gradientRef = useRef(null)
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [itemSelected, setItemSelected] = useState(null)
+
+  const openModal = (item) => {
+    setIsModalOpen(true)
+    setItemSelected(item)
+  }
+
+  const closeModal = () => setIsModalOpen(false)
 
   useEffect(() => {
     const tl = gsap.timeline()
@@ -26,10 +33,10 @@ const ServidoresSolucionesCloud = () => {
     tl.fromTo(
       [
         titleRef.current,
-        cardOne.current,
-        cardTwo.current,
-        cardThree.current,
-        cardFour.current,
+        '#card0',
+        '#card1',
+        '#card2',
+        '#card3',
         buttonControl.current,
       ],
       { opacity: 0, y: 100, visibility: 'hidden' },
@@ -66,84 +73,33 @@ const ServidoresSolucionesCloud = () => {
               Todos nuestros servicios de Servidores y Soluciones Cloud incluyen
             </p>
           </div>
-          <div className={styles.personalizado} ref={cardOne}>
-            <span
-              style={{
-                background: 'rgba(0, 189, 87, 0.1)',
-                color: 'rgb(0, 189, 87)',
-              }}
+          {dataServidores_soluciones_cloud.map((item, index) => (
+            <div
+              className={styles.personalizado}
+              key={index}
+              id={`card${index}`}
             >
-              <Escalabilidad />
-              Escalabilidad
-            </span>
-            <h2 className={poppins.className}>
-              Implementación de Infraestructura en la Nube
-            </h2>
-            <p className={poppins.className}>
-              Configuración y despliegue de entornos de servidores en la nube,
-              asegurando escalabilidad, seguridad y alta disponibilidad para
-              aplicaciones y datos críticos.
-            </p>
-          </div>
-
-          <div className={styles.personalizado} ref={cardTwo}>
-            <span
-              style={{
-                background: '#9162c025',
-                color: '#c084fd',
-              }}
-            >
-              <Transicion />
-              Transición
-            </span>
-            <h2 className={poppins.className}>Migración a la Nube</h2>
-            <p className={poppins.className}>
-              Asistencia para la transición de sistemas locales a entornos de
-              nube, minimizando el tiempo de inactividad y asegurando una
-              migración fluida y segura de datos y aplicaciones.
-            </p>
-          </div>
-
-          <div className={styles.personalizado} ref={cardThree}>
-            <span
-              style={{
-                background: '#3b88e925',
-                color: '#4e9eff',
-              }}
-            >
-              <Rendimiento />
-              Rendimiento
-            </span>
-            <h2 className={poppins.className}>
-              Optimización y Mantenimiento de Servidores
-            </h2>
-            <p className={poppins.className}>
-              Monitoreo continuo, optimización de recursos y mantenimiento
-              proactivo de servidores para asegurar un rendimiento óptimo y
-              minimizar tiempos de inactividad.
-            </p>
-          </div>
-
-          <div className={styles.personalizado} ref={cardFour}>
-            <span
-              style={{
-                background: '#d1772425',
-                color: '#ff9a3c',
-              }}
-            >
-              <Seguridad />
-              Seguridad
-            </span>
-            <h2 className={poppins.className}>
-              Soluciones de Backup y Recuperación
-            </h2>
-            <p className={poppins.className}>
-              Implementación de sistemas de backup automatizados y soluciones de
-              recuperación ante desastres, garantizando la seguridad y
-              disponibilidad de datos en caso de fallos o pérdida de
-              información.
-            </p>
-          </div>
+              <span
+                style={{
+                  background: `${item.background}`,
+                  color: `${item.color}`,
+                }}
+              >
+                {item.icon}
+                {item.subtitle}
+              </span>
+              <h2 className={poppins.className}>{item.title}</h2>
+              <p className={poppins.className}>{item.description}</p>
+              <div className={styles.containerButton}>
+                <button
+                  className={poppins.className}
+                  onClick={() => openModal(item)}
+                >
+                  Ver Más
+                </button>
+              </div>
+            </div>
+          ))}
         </section>
         <div className={styles.controlButtons} ref={buttonControl}>
           <Link href={'/aplicaciones_moviles'}>
@@ -158,6 +114,43 @@ const ServidoresSolucionesCloud = () => {
           </Link>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {itemSelected && (
+          <div className={styles.desarrolloWebInfo}>
+            <div>
+              <span
+                className={styles.span}
+                style={{
+                  background: `${itemSelected?.background}`,
+                  color: `${itemSelected?.color}`,
+                }}
+              >
+                {itemSelected?.icon}
+                {itemSelected?.subtitle}
+              </span>
+              <h2 className={poppins.className}>{itemSelected?.title}</h2>
+            </div>
+            <div className={styles.parrafo}>
+              <span className={poppins.className}>
+                {itemSelected?.infoModal.icon_modal}
+                {itemSelected?.infoModal.subtitle_one}
+              </span>
+              <p className={poppins.className}>
+                {itemSelected?.infoModal.description_one}
+              </p>
+            </div>
+            <div className={styles.parrafo}>
+              <span className={poppins.className}>
+                {itemSelected?.infoModal.icon_modal}
+                {itemSelected?.infoModal.subtitle_two}
+              </span>
+              <p className={poppins.className}>
+                {itemSelected?.infoModal.description_two}
+              </p>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   )
 }
