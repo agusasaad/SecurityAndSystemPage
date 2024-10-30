@@ -4,7 +4,6 @@ import { poppins } from '@/Fonts/fonts'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
-import Modal from './modal_desarrollo_web/Modal'
 import Link from 'next/link'
 import ArrowBack from '@/svg/ArrowBack'
 import ArrowNext from '@/svg/ArrowNext'
@@ -12,25 +11,25 @@ import Personalizacion from '@/svg/Personalizacion'
 import Eficiencia from '@/svg/Eficiencia'
 import Adaptabilidad from '@/svg/Adaptabilidad'
 import Gestion from '@/svg/Gestion'
+import Modal from '@/modalServices/Modal'
+import { dataDesarrolloWeb } from './dataDesarrolloWeb'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const DesarrolloWeb = () => {
   const titleRef = useRef(null)
-  const cardOne = useRef(null)
-  const cardTwo = useRef(null)
-  const cardThree = useRef(null)
-  const cardFour = useRef(null)
   const buttonControl = useRef(null)
   const gradientRef = useRef(null)
 
-  const [showModal, setShowModal] = useState(false)
-  const [showComponent, setShowComponent] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [itemSelected, setItemSelected] = useState(null)
 
-  const handleModal = (component) => {
-    setShowComponent(component)
-    setShowModal(true)
+  const openModal = (item) => {
+    setIsModalOpen(true)
+    setItemSelected(item)
   }
+
+  const closeModal = () => setIsModalOpen(false)
 
   useEffect(() => {
     const tl = gsap.timeline()
@@ -38,10 +37,10 @@ const DesarrolloWeb = () => {
     tl.fromTo(
       [
         titleRef.current,
-        cardOne.current,
-        cardTwo.current,
-        cardThree.current,
-        cardFour.current,
+        '#card0',
+        '#card1',
+        '#card2',
+        '#card3',
         buttonControl.current,
       ],
       { opacity: 0, y: 100, visibility: 'hidden' },
@@ -78,115 +77,33 @@ const DesarrolloWeb = () => {
               Todos nuestros servicios de Desarrollo Web incluyen
             </p>
           </div>
-          <div className={styles.personalizado} ref={cardOne}>
-            <span
-              style={{
-                background: 'rgba(0, 189, 87, 0.1)',
-                color: 'rgb(0, 189, 87)',
-              }}
+          {dataDesarrolloWeb.map((item, index) => (
+            <div
+              className={styles.personalizado}
+              key={index}
+              id={`card${index}`}
             >
-              <Personalizacion />
-              Personalización
-            </span>
-            <h2 className={poppins.className}>
-              Desarrollo de sitios web personalizados.
-            </h2>
-            <p className={poppins.className}>
-              Creamos sitios web personalizados que reflejan tu marca, enfocados
-              en un diseño intuitivo y un rendimiento optimizado para ofrecer
-              una experiencia excepcional y cumplir tus objetivos.
-            </p>
-            <div className={styles.containerButton}>
-              <button
-                className={poppins.className}
-                onClick={() => handleModal('Personalizado')}
+              <span
+                style={{
+                  background: `${item.background}`,
+                  color: `${item.color}`,
+                }}
               >
-                Ver Más
-              </button>
+                {item.icon}
+                {item.subtitle}
+              </span>
+              <h2 className={poppins.className}>{item.title}</h2>
+              <p className={poppins.className}>{item.description}</p>
+              <div className={styles.containerButton}>
+                <button
+                  className={poppins.className}
+                  onClick={() => openModal(item)}
+                >
+                  Ver Más
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div className={styles.personalizado} ref={cardTwo}>
-            <span
-              style={{
-                background: '#9162c025',
-                color: '#c084fd',
-              }}
-            >
-              <Eficiencia />
-              Eficiencia
-            </span>
-            <h2 className={poppins.className}>
-              Programación y codificación eficientes.
-            </h2>
-            <p className={poppins.className}>
-              Implementamos soluciones de programación optimizadas que priorizan
-              la eficiencia y el rendimiento. Nuestro enfoque garantiza código
-              limpio, mantenible y escalable para proyectos.
-            </p>
-            <div className={styles.containerButton}>
-              <button
-                className={poppins.className}
-                onClick={() => handleModal('ProgramacionCodificacion')}
-              >
-                Ver Más
-              </button>
-            </div>
-          </div>
-
-          <div className={styles.personalizado} ref={cardThree}>
-            <span
-              style={{
-                background: '#3b88e925',
-                color: '#4e9eff',
-              }}
-            >
-              <Adaptabilidad />
-              Adaptabilidad
-            </span>
-            <h2 className={poppins.className}>Diseño responsive mobile.</h2>
-            <p className={poppins.className}>
-              Creamos interfaces que se adaptan perfectamente a cualquier
-              dispositivo, garantizando una experiencia de usuario fluida y
-              accesible desde smartphones, tablets y más.
-            </p>
-            <div className={styles.containerButton}>
-              <button
-                className={poppins.className}
-                onClick={() => handleModal('DiseñoResponsiveMovile')}
-              >
-                Ver Más
-              </button>
-            </div>
-          </div>
-
-          <div className={styles.personalizado} ref={cardFour}>
-            <span
-              style={{
-                background: '#d1772425',
-                color: '#ff9a3c',
-              }}
-            >
-              <Gestion />
-              Gestión
-            </span>
-            <h2 className={poppins.className}>
-              Integración de base de datos y gestión.
-            </h2>
-            <p className={poppins.className}>
-              Implementamos y gestionamos bases de datos seguras y optimizadas
-              para garantizar el acceso eficiente a la información crítica de tu
-              negocio.
-            </p>
-            <div className={styles.containerButton}>
-              <button
-                className={poppins.className}
-                onClick={() => handleModal('BaseDeDatos')}
-              >
-                Ver Más
-              </button>
-            </div>
-          </div>
+          ))}
         </section>
         <div className={styles.controlButtons} ref={buttonControl}>
           <button
@@ -203,11 +120,43 @@ const DesarrolloWeb = () => {
           </Link>
         </div>
       </div>
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        showComponent={showComponent}
-      />
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {itemSelected && (
+          <div className={styles.desarrolloWebInfo}>
+            <div>
+              <span
+                className={styles.span}
+                style={{
+                  background: `${itemSelected?.background}`,
+                  color: `${itemSelected?.color}`,
+                }}
+              >
+                {itemSelected?.icon}
+                {itemSelected?.subtitle}
+              </span>
+              <h2 className={poppins.className}>{itemSelected?.title}</h2>
+            </div>
+            <div className={styles.parrafo}>
+              <span className={poppins.className}>
+                {itemSelected?.infoModal.icon_modal}
+                {itemSelected?.infoModal.subtitle_one}
+              </span>
+              <p className={poppins.className}>
+                {itemSelected?.infoModal.description_one}
+              </p>
+            </div>
+            <div className={styles.parrafo}>
+              <span className={poppins.className}>
+                {itemSelected?.infoModal.icon_modal}
+                {itemSelected?.infoModal.subtitle_two}
+              </span>
+              <p className={poppins.className}>
+                {itemSelected?.infoModal.description_two}
+              </p>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   )
 }
