@@ -2,23 +2,30 @@
 import styles from './page.module.css'
 import { poppins } from '@/Fonts/fonts'
 import { gsap } from 'gsap'
-import { useEffect, useRef } from 'react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import ArrowBack from '@/svg/ArrowBack'
 import ArrowNext from '@/svg/ArrowNext'
-import Optimizacion from '@/svg/Optimizacion'
-import Versatilidad from '@/svg/Versatilidad'
-import Continuidad from '@/svg/Continuidad'
-import Conectividad from '@/svg/Conectividad'
+import Modal from '@/modalServices/Modal'
+import { dataAplicaciones_moviles } from './dataAplicaciones_moviles'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const AplicacionesMoviles = () => {
   const titleRef = useRef(null)
-  const cardOne = useRef(null)
-  const cardTwo = useRef(null)
-  const cardThree = useRef(null)
-  const cardFour = useRef(null)
   const buttonControl = useRef(null)
   const gradientRef = useRef(null)
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [itemSelected, setItemSelected] = useState(null)
+
+  const openModal = (item) => {
+    setIsModalOpen(true)
+    setItemSelected(item)
+  }
+
+  const closeModal = () => setIsModalOpen(false)
 
   useEffect(() => {
     const tl = gsap.timeline()
@@ -26,10 +33,10 @@ const AplicacionesMoviles = () => {
     tl.fromTo(
       [
         titleRef.current,
-        cardOne.current,
-        cardTwo.current,
-        cardThree.current,
-        cardFour.current,
+        '#card0',
+        '#card1',
+        '#card2',
+        '#card3',
         buttonControl.current,
       ],
       { opacity: 0, y: 100, visibility: 'hidden' },
@@ -66,98 +73,84 @@ const AplicacionesMoviles = () => {
               Todos nuestros servicios de Aplicaciones Móviles incluyen
             </p>
           </div>
-          <div className={styles.personalizado} ref={cardOne}>
-            <span
-              style={{
-                background: 'rgba(0, 189, 87, 0.1)',
-                color: 'rgb(0, 189, 87)',
-              }}
+          {dataAplicaciones_moviles.map((item, index) => (
+            <div
+              className={styles.personalizado}
+              key={index}
+              id={`card${index}`}
             >
-              <Optimizacion />
-              Optimización
-            </span>
-            <h2 className={poppins.className}>Infraestructura en la Nube</h2>
-            <p className={poppins.className}>
-              Creación de aplicaciones móviles personalizadas, enfocadas en
-              maximizar el rendimiento y la experiencia del usuario, con
-              integración de características avanzadas como notificaciones push,
-              geolocalización y servicios en la nube.
-            </p>
-          </div>
-
-          <div className={styles.personalizado} ref={cardTwo}>
-            <span
-              style={{
-                background: '#9162c025',
-                color: '#c084fd',
-              }}
-            >
-              <Versatilidad />
-              Versatilidad
-            </span>
-            <h2 className={poppins.className}>
-              Aplicaciones Híbridas y Multiplataforma
-            </h2>
-            <p className={poppins.className}>
-              Desarrollo de aplicaciones móviles que funcionen de manera
-              eficiente en diversas plataformas, permitiendo a los clientes
-              ahorrar costos y tiempo de desarrollo con una sola base de código.
-            </p>
-          </div>
-
-          <div className={styles.personalizado} ref={cardThree}>
-            <span
-              style={{
-                background: '#3b88e925',
-                color: '#4e9eff',
-              }}
-            >
-              <Continuidad />
-              Continuidad
-            </span>
-            <h2 className={poppins.className}>Mantenimiento y Actualización</h2>
-            <p className={poppins.className}>
-              Provisión de servicios continuos de mantenimiento y actualización
-              para asegurar que las aplicaciones móviles estén siempre al día,
-              con mejoras de seguridad, corrección de errores y adición de
-              nuevas funcionalidades según las necesidades del cliente.
-            </p>
-          </div>
-
-          <div className={styles.personalizado} ref={cardFour}>
-            <span
-              style={{
-                background: '#d1772425',
-                color: '#ff9a3c',
-              }}
-            >
-              <Conectividad />
-              Conectividad
-            </span>
-            <h2 className={poppins.className}>
-              Integración de APIs y Servicios de Terceros
-            </h2>
-            <p className={poppins.className}>
-              Implementación de servicios externos dentro de aplicaciones
-              móviles, como pasarelas de pago, sistemas de autenticación y
-              plataformas de redes sociales, para enriquecer la funcionalidad y
-              mejorar la experiencia del usuario.
-            </p>
-          </div>
-          <div className={styles.controlButtons} ref={buttonControl}>
-            <Link href={'/desarrollo_web'}>
-              <button className={poppins.className}>
-                <ArrowBack /> Atras
-              </button>
-            </Link>
-            <Link href={'/servidores_soluciones_cloud'}>
-              <button className={poppins.className}>
-                Siguiente <ArrowNext />
-              </button>
-            </Link>
-          </div>
+              <span
+                style={{
+                  background: `${item.background}`,
+                  color: `${item.color}`,
+                }}
+              >
+                {item.icon}
+                {item.subtitle}
+              </span>
+              <h2 className={poppins.className}>{item.title}</h2>
+              <p className={poppins.className}>{item.description}</p>
+              <div className={styles.containerButton}>
+                <button
+                  className={poppins.className}
+                  onClick={() => openModal(item)}
+                >
+                  Ver Más
+                </button>
+              </div>
+            </div>
+          ))}
         </section>
+        <div className={styles.controlButtons} ref={buttonControl}>
+          <Link href={'/desarrollo_web'}>
+            <button className={poppins.className}>
+              <ArrowBack /> Atras
+            </button>
+          </Link>
+          <Link href={'/servidores_soluciones_cloud'}>
+            <button className={poppins.className}>
+              Siguiente <ArrowNext />
+            </button>
+          </Link>
+        </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {itemSelected && (
+          <div className={styles.desarrolloWebInfo}>
+            <div>
+              <span
+                className={styles.span}
+                style={{
+                  background: `${itemSelected?.background}`,
+                  color: `${itemSelected?.color}`,
+                }}
+              >
+                {itemSelected?.icon}
+                {itemSelected?.subtitle}
+              </span>
+              <h2 className={poppins.className}>{itemSelected?.title}</h2>
+            </div>
+            <div className={styles.parrafo}>
+              <span className={poppins.className}>
+                {itemSelected?.infoModal.icon_modal}
+                {itemSelected?.infoModal.subtitle_one}
+              </span>
+              <p className={poppins.className}>
+                {itemSelected?.infoModal.description_one}
+              </p>
+            </div>
+            <div className={styles.parrafo}>
+              <span className={poppins.className}>
+                {itemSelected?.infoModal.icon_modal}
+                {itemSelected?.infoModal.subtitle_two}
+              </span>
+              <p className={poppins.className}>
+                {itemSelected?.infoModal.description_two}
+              </p>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   )
 }
