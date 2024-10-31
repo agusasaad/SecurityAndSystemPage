@@ -97,6 +97,7 @@
 .containerImg img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 .name_project {
@@ -118,6 +119,7 @@
     rgba(0, 0, 0, 0.711922268907563) 16%,
     rgba(0, 0, 0, 0.47102591036414565) 100%
   );
+  border-radius: 10px;
   opacity: 0;
   transition: opacity 0.4s;
 }

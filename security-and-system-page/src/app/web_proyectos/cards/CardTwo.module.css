@@ -83,12 +83,14 @@
   z-index: 1;
 }
 
-.containerCards .card:nth-child(4) .title {
+.containerCards .card:hover .title {
   opacity: 0;
+  pointer-events: none;
 }
 
-.containerCards .card:nth-child(4):hover .title {
-  opacity: 1;
+.containerCards .card:nth-child(4) .title {
+  opacity: 0;
+  pointer-events: all;
 }
 
 .containerCards .card .title h5 {
