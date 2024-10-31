@@ -6,7 +6,6 @@ import gsap from 'gsap'
 import Link from 'next/link'
 import Facebook from './redesSociales/Facebook'
 import Instagram from './redesSociales/Instagram'
-import Linkedin from './redesSociales/Linkedin'
 import ArrowButton from '@/svg/ArrowButton'
 
 const HomePage = () => {
