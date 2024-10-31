@@ -146,7 +146,7 @@ const NavBar = () => {
             >
               <li>
                 <NuestrosProyectos />
-                Nuestros Trabajos
+                Nuestros Proyectos
               </li>
             </Link>
           </ul>
