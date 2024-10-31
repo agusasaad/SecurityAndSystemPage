@@ -14,14 +14,14 @@ export const dataAplicaciones_moviles = [
     description:
       'Creación de aplicaciones móviles personalizadas, enfocadas en maximizar el rendimiento y la experiencia del usuario, con integración de características avanzadas como notificaciones push, geolocalización y servicios en la nube.',
     infoModal: {
-      subtitle_one: 'Entendiendo tu Visión',
+      subtitle_one: 'Despliegue Rápido de Aplicaciones',
       icon_modal: <ChaketModalServices />,
       color_one: 'rgb(0, 189, 87)',
       description_one:
-        'Trabajamos estrechamente contigo para entender tu visión y traducirla en un sitio web que no solo sea visualmente atractivo, sino también funcional y alineado con tus objetivos comerciales.',
-      subtitle_two: 'Diseño Intuitivo y Eficiente',
+        ' Utilizamos tecnologías como contenedores y microservicios para facilitar el despliegue y gestión de aplicaciones, permitiendo una entrega continua y ágil.',
+      subtitle_two: 'Soporte y Mantenimiento',
       description_two:
-        'Nuestro equipo de expertos en diseño y desarrollo se asegura de que cada detalle esté perfectamente optimizado para ofrecer una experiencia de usuario intuitiva.',
+        'Proporcionamos soporte técnico continuo y mantenimiento proactivo, asegurando que tu infraestructura en la nube funcione de manera óptima.',
     },
   },
   {
@@ -33,14 +33,14 @@ export const dataAplicaciones_moviles = [
     description:
       'Desarrollo de aplicaciones móviles que funcionen de manera eficiente en diversas plataformas, permitiendo a los clientes ahorrar costos y tiempo de desarrollo con una sola base de código.',
     infoModal: {
-      subtitle_one: 'Programación Optimizada y Eficiente',
+      subtitle_one: 'Rendimiento Optimizado',
       icon_modal: <ChaketModalServices />,
       color_one: 'rgb(0, 189, 87)',
       description_one:
-        'En nuestro equipo, nos especializamos en implementar soluciones de programación altamente optimizadas que priorizan la eficiencia y el rendimiento en cada proyecto. Nos enfocamos en escribir código limpio, legible y mantenible.',
-      subtitle_two: 'Enfoque en Escalabilidad y Futuras Necesidades',
+        'Nuestras aplicaciones están diseñadas para ofrecer un rendimiento comparable al de las aplicaciones nativas, asegurando una experiencia de usuario ágil y receptiva.',
+      subtitle_two: 'Interfaz de Usuario Adaptativa',
       description_two:
-        'Nuestro enfoque no solo se centra en cumplir con los requisitos actuales, sino también en anticipar futuras necesidades, lo que permite una integración fluida de nuevas funciones y una fácil escalabilidad del sistema.',
+        'Creamos interfaces intuitivas y atractivas que se adaptan a diferentes tamaños de pantalla y resoluciones, garantizando una experiencia consistente en todos los dispositivos.',
     },
   },
   {
@@ -52,14 +52,14 @@ export const dataAplicaciones_moviles = [
     description:
       'Provisión de servicios continuos de mantenimiento y actualización para asegurar que las aplicaciones móviles estén siempre al día, con mejoras de seguridad, corrección de errores y adición de nuevas funcionalidades según las necesidades del cliente.',
     infoModal: {
-      subtitle_one: 'Interfaz Adaptativa para Todos los Dispositivos',
+      subtitle_one: 'Actualizaciones Regulares',
       icon_modal: <ChaketModalServices />,
       color_one: 'rgb(0, 189, 87)',
       description_one:
-        'Nos especializamos en la creación de interfaces que se adaptan perfectamente a cualquier dispositivo, garantizando una experiencia de usuario fluida y consistente sin importar si se accede desde un smartphone, tablet, o cualquier otro dispositivo móvil.',
-      subtitle_two: 'Experiencia Óptima en Cualquier Dispositivo y Lugar',
+        'Implementamos actualizaciones periódicas para incorporar mejoras de rendimiento, nuevas funcionalidades y adaptaciones a cambios en las plataformas móviles',
+      subtitle_two: 'Escucha Activa del Cliente',
       description_two:
-        'Nos aseguramos de que su producto ofrezca la mejor experiencia posible, independientemente del dispositivo utilizado, permitiendo a los usuarios interactuar con su contenido de manera efectiva en cualquier lugar y en cualquier momento.',
+        'Trabajamos de cerca con nuestros clientes para entender sus necesidades y expectativas, ajustando las aplicaciones en función de la retroalimentación recibida',
     },
   },
   {
@@ -71,14 +71,14 @@ export const dataAplicaciones_moviles = [
     description:
       'Implementación de servicios externos dentro de aplicaciones móviles, como pasarelas de pago, sistemas de autenticación y plataformas de redes sociales, para enriquecer la funcionalidad y mejorar la experiencia del usuario.',
     infoModal: {
-      subtitle_one: 'Estructuras de Datos Seguras',
+      subtitle_one: 'Sistemas de Autenticación',
       icon_modal: <ChaketModalServices />,
       color_one: 'rgb(0, 189, 87)',
       description_one:
-        'Nuestra experiencia nos permite diseñar y mantener estructuras de datos que no solo aseguran la integridad y seguridad de la información, sino que también están preparadas para manejar grandes volúmenes de datos sin comprometer el rendimiento.',
-      subtitle_two: 'Bases de Datos Adaptadas a tus Necesidades',
+        'Implementamos métodos de autenticación avanzados, como inicio de sesión con redes sociales, autenticación biométrica y verificación en dos pasos, mejorando la seguridad y la accesibilidad para los usuarios.',
+      subtitle_two: 'Gestión de Datos en Tiempo Real',
       description_two:
-        'Nos aseguramos de que cada base de datos esté alineada con las necesidades específicas de tu empresa, permitiendo una gestión de datos eficiente y facilitando la toma de decisiones basada en información precisa y oportuna.',
+        'Implementamos soluciones que permiten la gestión y sincronización de datos en tiempo real, asegurando que la información se mantenga actualizada y accesible para los usuarios en todo momento.',
     },
   },
 ]
