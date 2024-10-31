@@ -287,12 +287,10 @@ const CardOne = () => {
               width={400}
               height={400}
             />
-            <div className={styles.title}>
-              <h5 className={poppins.className}>{card.title}</h5>
-              <button onClick={() => handleDetailsClick(card.id)}>
-                Detalles
-              </button>
-            </div>
+            <div
+              className={styles.title}
+              onClick={() => handleDetailsClick(card.id)}
+            ></div>
           </div>
         ))}
       </div>

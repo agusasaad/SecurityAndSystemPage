@@ -19,7 +19,6 @@ const CardTwo = () => {
   const card_three = useRef(null)
   const card_four = useRef(null)
 
-  //router
   const router = useRouter()
 
   const initialCards = [
@@ -30,25 +29,22 @@ const CardTwo = () => {
   ]
 
   const [cards, setCards] = useState(initialCards)
-  const [isMobile, setIsMobile] = useState(false) // Nuevo estado para móvil
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768) // Detecta si la pantalla es móvil
+      setIsMobile(window.innerWidth <= 768)
     }
 
-    // Llama a la función para inicializar al montar
     handleResize()
 
-    // Listener para detectar cambios en el tamaño de la ventana
     window.addEventListener('resize', handleResize)
 
-    // Cleanup del listener cuando se desmonta el componente
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  gsap.registerPlugin(ScrollTrigger)
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
     const tl = gsap.timeline()
     if (window.innerWidth > 768) {
       tl.fromTo(
@@ -235,7 +231,7 @@ const CardTwo = () => {
     setCards(reorderedCards)
 
     reorderedCards.forEach((card, index) => {
-      const { x, y, rotation } = getCardTransform(index, isMobile) // Pasar isMobile
+      const { x, y, rotation } = getCardTransform(index, isMobile)
       gsap.to(card.ref.current, {
         rotation,
         x,
@@ -244,35 +240,32 @@ const CardTwo = () => {
         ease: 'power1',
       })
 
-      card.ref.current.style.zIndex = index + 1 // Mantiene el z-index correcto
+      card.ref.current.style.zIndex = index + 1
     })
   }
 
   const getCardTransform = (index, isMobile) => {
-    // Transformaciones para escritorio
     const desktopTransformations = [
-      { rotation: -45, x: -170, y: 50 }, // Card 1
-      { rotation: -30, x: -120, y: 23 }, // Card 2
-      { rotation: -15, x: -60, y: 5 }, // Card 3
-      { rotation: 0, x: 0, y: 0 }, // Card 4
+      { rotation: -45, x: -170, y: 50 },
+      { rotation: -30, x: -120, y: 23 },
+      { rotation: -15, x: -60, y: 5 },
+      { rotation: 0, x: 0, y: 0 },
     ]
 
-    // Transformaciones para móvil
     const mobileTransformations = [
-      { rotation: 0, x: 0, y: 0 }, // Card 1
-      { rotation: 0, x: 0, y: 50 }, // Card 2
-      { rotation: 0, x: 0, y: 100 }, // Card 3
-      { rotation: 0, x: 0, y: 150 }, // Card 4
+      { rotation: 0, x: 0, y: 0 },
+      { rotation: 0, x: 0, y: 50 },
+      { rotation: 0, x: 0, y: 100 },
+      { rotation: 0, x: 0, y: 150 },
     ]
 
-    // Retorna las transformaciones dependiendo si es móvil o no
     return isMobile
       ? mobileTransformations[index]
       : desktopTransformations[index]
   }
 
   const handleDetailsClick = (id) => {
-    router.push(`/web_proyectos/${id}`) // Redirige a la ruta dinámica con el ID
+    router.push(`/web_proyectos/${id}`)
   }
 
   return (
@@ -296,12 +289,10 @@ const CardTwo = () => {
               width={400}
               height={400}
             />
-            <div className={styles.title}>
-              <h5 className={poppins.className}>{card.title}</h5>
-              <button onClick={() => handleDetailsClick(card.id)}>
-                Detalles
-              </button>
-            </div>
+            <div
+              className={styles.title}
+              onClick={() => handleDetailsClick(card.id)}
+            ></div>
           </div>
         ))}
       </div>
