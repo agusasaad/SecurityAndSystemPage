@@ -129,7 +129,7 @@ const HomePage = () => {
           duration: 1,
         }
       )
-      window.open(enlaceWhatsApp, '_blank')
+      window.location.href = enlaceWhatsApp // Cambia esto a una etiqueta <a>
       setShowSpinner(false)
     }, 1500)
   }
