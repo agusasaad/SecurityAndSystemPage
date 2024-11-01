@@ -59,7 +59,7 @@ const HomePage = () => {
     })
 
     tl.fromTo(
-      [subtitleRef.current, buttonRef.current],
+      [subtitleRef.current, buttonRef.current, '#slider-button'],
       { y: 100, opacity: 0, visibility: 'hidden' },
       {
         opacity: 1,
@@ -168,7 +168,7 @@ const HomePage = () => {
           </span>
         </button>
       </div>
-      {/* <SliderButton onComplete={handleComplete} /> */}
+      <SliderButton onComplete={handleComplete} />
     </div>
   )
 }
