@@ -33,10 +33,6 @@ const NavBar = () => {
       stagger: 0.5,
       visibility: 'visible',
     })
-
-    if (window.innerWidth < 750) {
-      setShowMenuServices(true)
-    }
   }, [])
 
   return (
