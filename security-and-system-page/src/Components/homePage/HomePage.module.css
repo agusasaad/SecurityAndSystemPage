@@ -7,6 +7,8 @@
   align-items: center;
   padding-top: 230px;
   padding-bottom: 150px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 64%);
 }
 
 .containerTitle {
@@ -18,6 +20,40 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.containerSubtitle {
+  position: relative;
+  padding: 5px 2px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.containerSubtitle .subtitle_background {
+  position: absolute;
+  inset: -1000%;
+  background-image: conic-gradient(
+    from 90deg at 50% 50%,
+    #51e4b8,
+    #21554e,
+    #51e4b8
+  );
+  animation: spin 2s linear infinite;
+  z-index: -1;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.containerSubtitle span {
+  border-radius: 30px;
+  z-index: 1;
+  padding: 4px 12px;
+  background-color: rgb(31 41 55);
 }
 
 .typeWritten h1 {
@@ -36,12 +72,12 @@
 .typeWritten:first-child h1 {
   padding-right: 10px;
   will-change: transform, opacity;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .typeWritten:nth-child(2) h1 {
   padding-right: 7px;
-  padding-bottom: 25px;
+  padding-bottom: 30px;
   will-change: transform, opacity;
 }
 
@@ -190,7 +226,6 @@
     padding-top: 170px;
     padding-bottom: 100px;
     gap: 10px;
-    backdrop-filter: blur(50px);
   }
 
   .homePage .containerTitle {

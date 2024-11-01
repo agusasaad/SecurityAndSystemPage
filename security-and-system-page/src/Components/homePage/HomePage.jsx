@@ -113,6 +113,12 @@ const HomePage = () => {
   return (
     <div className={styles.homePage}>
       <div className={styles.containerTitle}>
+        {/* <div className={styles.containerSubtitle}>
+          <div className={styles.subtitle_background}></div>
+          <span className={poppins.className}>
+            Transformamos Ideas en Realidad
+          </span>
+        </div> */}
         <div className={`${styles.typeWritten} ${poppins.className}`}>
           <h1 ref={titleRef1}>Construyendo</h1>
         </div>
