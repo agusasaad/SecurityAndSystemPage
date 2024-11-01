@@ -33,7 +33,6 @@
   object-fit: cover;
   object-position: center;
   pointer-events: none;
-  filter: grayscale(100%);
   mask-image: linear-gradient(black 80%, transparent);
 }
 
