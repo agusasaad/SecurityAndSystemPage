@@ -86,7 +86,7 @@
   line-height: 30px;
   font-size: 20px;
   font-weight: 400;
-  color: rgb(182, 182, 182);
+  color: rgb(224, 224, 224);
 }
 
 .containerButton {
@@ -97,12 +97,6 @@
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 30px;
-}
-
-.containerButton .containerSocial {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
 }
 
 .link {
@@ -137,13 +131,12 @@
   will-change: transform, opacity;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
   padding: 10px;
-  padding-right: 20px;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
-.buttonFolow span {
+.buttonFolow .arrow {
   background: white;
   display: flex;
   align-items: center;
@@ -153,8 +146,36 @@
   transition: transform 0.3s ease;
 }
 
-.buttonFolow:hover span {
+.buttonFolow:hover .arrow {
   transform: rotate(-45deg);
+}
+
+.buttonFolow .text {
+  text-wrap: nowrap;
+  overflow: hidden;
+  padding: 0px 5px 0px 10px;
+
+  will-change: opacity, transform, max-width, visibility, display;
+}
+
+.loader {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1500px) {

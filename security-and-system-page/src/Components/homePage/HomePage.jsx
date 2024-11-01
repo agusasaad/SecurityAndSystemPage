@@ -1,16 +1,17 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './HomePage.module.css'
 import { poppins } from '@/Fonts/fonts'
 import gsap from 'gsap'
-import Link from 'next/link'
 import ArrowButton from '@/svg/ArrowButton'
+import SliderButton from './buttonMobile/SliderButton'
 
 const HomePage = () => {
   const titleRef1 = useRef(null)
   const titleRef2 = useRef(null)
   const subtitleRef = useRef(null)
   const buttonRef = useRef(null)
+  const textRef = useRef(null)
 
   const numeroWhatsApp = '5491156260023'
   const mensaje = '¡Hola! Quisiera solicitar una cotización.'
@@ -19,39 +20,10 @@ const HomePage = () => {
     mensaje
   )}`
 
+  const [showSpinner, setShowSpinner] = useState(false)
+
   useEffect(() => {
     const tl = gsap.timeline()
-
-    tl.set(
-      [
-        titleRef1.current,
-        titleRef2.current,
-        subtitleRef.current,
-        buttonRef.current,
-      ],
-      {
-        y: 100,
-        opacity: 0,
-        visibility: 'hidden',
-      }
-    )
-
-    tl.to(
-      [
-        titleRef1.current,
-        titleRef2.current,
-        subtitleRef.current,
-        buttonRef.current,
-      ],
-      {
-        opacity: 1,
-        y: 0,
-        visibility: 'visible',
-        ease: 'power3.out',
-        duration: 0.8,
-        stagger: 0.3,
-      }
-    )
 
     tl.fromTo(
       titleRef1.current,
@@ -59,30 +31,23 @@ const HomePage = () => {
       {
         width: '100%',
         opacity: 1,
-        duration: 1.2,
-        ease: 'power2.inOut',
-      },
-      '-=1.5'
+        duration: 1,
+        ease: 'power2',
+      }
     )
 
-    // Desaparecer el cursor del primer texto justo después de la animación
-    tl.to(
-      titleRef1.current,
-      {
-        borderRight: 'none',
-        duration: 0,
-      },
-      '+=0.1'
-    ).fromTo(
+    tl.to(titleRef1.current, {
+      borderRight: 'none',
+      duration: 0,
+    }).fromTo(
       titleRef2.current,
       { width: '0%', border: 'none' },
       {
         width: '100%',
         borderRight: '2px solid white',
-        duration: 1.2,
-        ease: 'power2.inOut',
-      },
-      '-=0.3'
+        duration: 1,
+        ease: 'power2',
+      }
     )
 
     tl.to(titleRef2.current, {
@@ -93,32 +58,85 @@ const HomePage = () => {
       repeat: -1,
     })
 
-    tl.to(subtitleRef.current, {
-      opacity: 1,
-      y: 0,
-      visibility: 'visible',
-      ease: 'power3.out',
-      duration: 0.8,
-    })
+    tl.fromTo(
+      [subtitleRef.current, buttonRef.current],
+      { y: 100, opacity: 0, visibility: 'hidden' },
+      {
+        opacity: 1,
+        y: 0,
+        visibility: 'visible',
+        ease: 'power3.out',
+        duration: 0.8,
+        stagger: 0.3,
+      },
+      '-=0.5'
+    )
 
-    tl.to(buttonRef.current, {
-      opacity: 1,
-      y: 0,
-      visibility: 'visible',
-      ease: 'power3.out',
-      duration: 0.8,
-    })
+    tl.fromTo(
+      textRef.current,
+      {
+        opacity: 0,
+        maxWidth: 0,
+        visibility: 'hidden',
+        display: 'none',
+      },
+      {
+        opacity: 1,
+        display: 'block',
+        maxWidth: '220px',
+        visibility: 'visible',
+        ease: 'power2',
+        duration: 1,
+      }
+    )
   }, [])
+
+  const handleComplete = () => {
+    setShowSpinner(true)
+    gsap.fromTo(
+      textRef.current,
+      {
+        opacity: 1,
+        display: 'block',
+        maxWidth: '220px',
+        visibility: 'visible',
+        ease: 'power2',
+        duration: 1,
+      },
+      {
+        opacity: 0,
+        maxWidth: 0,
+        visibility: 'hidden',
+        display: 'none',
+      }
+    )
+
+    setTimeout(() => {
+      gsap.fromTo(
+        textRef.current,
+        {
+          opacity: 0,
+          maxWidth: 0,
+          visibility: 'hidden',
+          display: 'none',
+        },
+        {
+          opacity: 1,
+          display: 'block',
+          maxWidth: '220px',
+          visibility: 'visible',
+          ease: 'power2',
+          duration: 1,
+        }
+      )
+      window.open(enlaceWhatsApp, '_blank')
+      setShowSpinner(false)
+    }, 1500)
+  }
 
   return (
     <div className={styles.homePage}>
       <div className={styles.containerTitle}>
-        {/* <div className={styles.containerSubtitle}>
-          <div className={styles.subtitle_background}></div>
-          <span className={poppins.className}>
-            Transformamos Ideas en Realidad
-          </span>
-        </div> */}
         <div className={`${styles.typeWritten} ${poppins.className}`}>
           <h1 ref={titleRef1}>Construyendo</h1>
         </div>
@@ -133,15 +151,24 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
-        <Link href={enlaceWhatsApp} target='_blank' rel='noopener noreferrer'>
-          <button className={`${poppins.className} ${styles.buttonFolow}`}>
-            <span>
+        <button
+          className={`${poppins.className} ${styles.buttonFolow}`}
+          onClick={handleComplete}
+        >
+          {showSpinner ? (
+            <span className={styles.loader}></span>
+          ) : (
+            <span className={styles.arrow}>
               <ArrowButton />
             </span>
+          )}
+
+          <span className={styles.text} ref={textRef}>
             Solicitar Cotización
-          </button>
-        </Link>
+          </span>
+        </button>
       </div>
+      {/* <SliderButton onComplete={handleComplete} /> */}
     </div>
   )
 }

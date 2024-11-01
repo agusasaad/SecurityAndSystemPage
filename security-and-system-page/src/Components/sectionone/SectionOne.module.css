@@ -9,7 +9,8 @@
   background-image: url('../../../public/background.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 30%;
+  background-position: 70%;
+  padding-top: 100px;
 }
 
 .containerTitle {
