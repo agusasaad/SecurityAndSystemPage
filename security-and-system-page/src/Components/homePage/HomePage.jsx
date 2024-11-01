@@ -4,8 +4,6 @@ import styles from './HomePage.module.css'
 import { poppins } from '@/Fonts/fonts'
 import gsap from 'gsap'
 import Link from 'next/link'
-import Facebook from './redesSociales/Facebook'
-import Instagram from './redesSociales/Instagram'
 import ArrowButton from '@/svg/ArrowButton'
 
 const HomePage = () => {
@@ -137,26 +135,6 @@ const HomePage = () => {
             Solicitar Cotización
           </button>
         </Link>
-        <div className={styles.containerSocial}>
-          <Link
-            href='https://www.facebook.com/profile.php?id=61552143027658&sk=about'
-            target='_blank'
-          >
-            <Facebook />
-          </Link>
-          <Link
-            href='https://www.instagram.com/security_and_system/'
-            target='_blank'
-          >
-            <Instagram />
-          </Link>
-          {/* <Link
-            href="https://www.instagram.com/security_and_system/"
-            target="_blank"
-          >
-            <Linkedin />
-          </Link> */}
-        </div>
       </div>
     </div>
   )

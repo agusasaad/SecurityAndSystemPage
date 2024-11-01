@@ -9,9 +9,7 @@ import gsap from 'gsap'
 import Link from 'next/link'
 import Home from '@/svg/Home'
 import Servicios from '@/svg/Servicios'
-import SobreNosotros from '@/svg/SobreNosotros'
 import NuestrosProyectos from '@/svg/NuestrosProyectos'
-import OnCloseButton from '@/svg/OnCloseButton'
 import HamburgerMenu from '@/svg/HamburgerMenu'
 
 const NavBar = () => {
@@ -35,13 +33,22 @@ const NavBar = () => {
       stagger: 0.5,
       visibility: 'visible',
     })
+
+    if (window.innerWidth < 750) {
+      setShowMenuServices(true)
+    }
   }, [])
 
   return (
     <div className={styles.containerNav} ref={navBarAnimate}>
-      <div className={styles.nav}>
+      <div className={`${styles.nav} ${showMenu ? styles.show : ''}`}>
         <div className={styles.start}>
-          <Link href='/'>
+          <Link
+            href='/'
+            onClick={() => {
+              setShowMenu(false)
+            }}
+          >
             <Image
               src={logoSAS}
               alt='Logo de la empresa Security And System'
@@ -54,17 +61,12 @@ const NavBar = () => {
               src={logoSAS_Mobile}
               alt='Logo de la empresa Security And System'
               className={styles.LogoNavMobile}
-              width={150}
+              width={200}
               height={150}
             />
           </Link>
         </div>
-        <div className={`${styles.center} ${showMenu ? styles.show : ''}`}>
-          <div className={styles.onClose}>
-            <button onClick={() => setShowMenu(false)}>
-              <OnCloseButton />
-            </button>
-          </div>
+        <div className={styles.center}>
           <ul className={poppins.className}>
             <Link
               href='/'
@@ -149,6 +151,18 @@ const NavBar = () => {
                 Nuestros Proyectos
               </li>
             </Link>
+            <div className={styles.button_mobile}>
+              <Link
+                href='#contact'
+                onClick={() => {
+                  setShowMenu(false)
+                }}
+              >
+                <button className={`${poppins.className} ${styles.button}`}>
+                  Contactanos
+                </button>
+              </Link>
+            </div>
           </ul>
         </div>
         <div className={styles.end}>

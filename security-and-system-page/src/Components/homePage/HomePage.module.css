@@ -49,10 +49,10 @@
   width: 100%;
   max-width: 700px;
   text-align: center;
-  line-height: 40px;
-  font-size: 23px;
+  line-height: 30px;
+  font-size: 20px;
   font-weight: 400;
-  color: #ffffffd7;
+  color: rgb(182, 182, 182);
 }
 
 .containerButton {
