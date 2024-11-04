@@ -11,6 +11,7 @@ import Home from '@/svg/Home'
 import Servicios from '@/svg/Servicios'
 import NuestrosProyectos from '@/svg/NuestrosProyectos'
 import HamburgerMenu from '@/svg/HamburgerMenu'
+import { usePathname } from 'next/navigation'
 
 const NavBar = () => {
   const navBarAnimate = useRef(null)
@@ -18,7 +19,9 @@ const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
   const [showMenuServices, setShowMenuServices] = useState(false)
 
-  //Animaciones GSAP
+  const params = usePathname() // Obtiene la ruta actual
+
+  // Animaciones GSAP
   useEffect(() => {
     gsap.set(navBarAnimate.current, {
       y: 100,
@@ -52,7 +55,6 @@ const NavBar = () => {
               width={40}
               height={40}
             />
-
             <Image
               src={logoSAS_Mobile}
               alt='Logo de la empresa Security And System'
@@ -86,18 +88,10 @@ const NavBar = () => {
                 width={13}
                 height={13}
               >
-                <g id='SVGRepo_bgCarrier' strokeWidth={0} />
-                <g
-                  id='SVGRepo_tracerCarrier'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                <path
+                  fill='white'
+                  d='M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8 316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496z'
                 />
-                <g id='SVGRepo_iconCarrier'>
-                  <path
-                    fill='white'
-                    d='M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8 316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496z'
-                  />
-                </g>
               </svg>
             </li>
             {showMenuServices && (
@@ -137,7 +131,7 @@ const NavBar = () => {
               </ul>
             )}
             <Link
-              href={'/web_proyectos'}
+              href='/web_proyectos'
               onClick={() => {
                 setShowMenu(false), setShowMenuServices(false)
               }}
@@ -149,7 +143,7 @@ const NavBar = () => {
             </Link>
             <div className={styles.button_mobile}>
               <Link
-                href='#contact'
+                href={params === '/' ? '#contact' : '/#contact'}
                 onClick={() => {
                   setShowMenu(false)
                 }}

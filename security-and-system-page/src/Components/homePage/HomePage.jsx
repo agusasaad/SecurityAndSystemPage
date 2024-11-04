@@ -66,9 +66,9 @@ const HomePage = () => {
         opacity: 1,
         y: 0,
         visibility: 'visible',
-        ease: 'power3.out',
-        duration: 0.8,
-        stagger: 0.3,
+        ease: 'power1',
+        duration: 0.5,
+        stagger: 0.2,
       },
       '-=0.5'
     )
@@ -86,8 +86,8 @@ const HomePage = () => {
         display: 'block',
         maxWidth: '220px',
         visibility: 'visible',
-        ease: 'power2',
-        duration: 1,
+        ease: 'power1',
+        duration: 0.8,
       }
     )
   }, [])
