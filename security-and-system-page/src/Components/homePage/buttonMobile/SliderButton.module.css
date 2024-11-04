@@ -22,6 +22,9 @@
   display: none;
   margin-top: 20px;
   padding: 15px;
+  min-width: 55px;
+  min-height: 55px;
+  overflow-x: hidden;
 }
 
 .sliderText {
@@ -34,21 +37,49 @@
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
+  text-wrap: nowrap;
+  line-height: 0px;
 }
 
 .sliderHandle {
   position: absolute;
   top: 9px;
   left: 10px;
-  width: 36px;
-  height: 36px;
-  background-color: #ffffff;
-  border-radius: 50%;
   cursor: pointer;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.loader {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 750px) {

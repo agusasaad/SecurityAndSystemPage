@@ -5,6 +5,7 @@ import { poppins } from '@/Fonts/fonts'
 import gsap from 'gsap'
 import ArrowButton from '@/svg/ArrowButton'
 import SliderButton from './buttonMobile/SliderButton'
+import Link from 'next/link'
 
 const HomePage = () => {
   const titleRef1 = useRef(null)
@@ -129,7 +130,6 @@ const HomePage = () => {
           duration: 1,
         }
       )
-      window.location.href = enlaceWhatsApp // Cambia esto a una etiqueta <a>
       setShowSpinner(false)
     }, 1500)
   }
@@ -151,24 +151,27 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.containerButton} ref={buttonRef}>
-        <button
-          className={`${poppins.className} ${styles.buttonFolow}`}
-          onClick={handleComplete}
-        >
-          {showSpinner ? (
-            <span className={styles.loader}></span>
-          ) : (
-            <span className={styles.arrow}>
-              <ArrowButton />
+        <Link onClick={handleComplete} href={enlaceWhatsApp} target='_blank'>
+          <button className={`${poppins.className} ${styles.buttonFolow}`}>
+            {showSpinner ? (
+              <span className={styles.loader}></span>
+            ) : (
+              <span className={styles.arrow}>
+                <ArrowButton />
+              </span>
+            )}
+            <span className={styles.text} ref={textRef}>
+              Solicitar Cotización
             </span>
-          )}
-
-          <span className={styles.text} ref={textRef}>
-            Solicitar Cotización
-          </span>
-        </button>
+          </button>
+        </Link>
       </div>
-      <SliderButton onComplete={handleComplete} />
+      <SliderButton
+        onComplete={handleComplete}
+        enlaceWhatsApp={enlaceWhatsApp}
+        showSpinner={showSpinner}
+        setShowSpinner={setShowSpinner}
+      />
     </div>
   )
 }

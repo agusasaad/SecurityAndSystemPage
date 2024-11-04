@@ -1,18 +1,30 @@
-import { useState, useRef } from 'react'
+'use client'
+import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation' // Importa useRouter
 import styles from './SliderButton.module.css'
 import { poppins } from '@/Fonts/fonts'
 import ArrowButton from '@/svg/ArrowButton'
 import gsap from 'gsap'
 
-const SliderButton = ({ onComplete }) => {
+const SliderButton = ({ enlaceWhatsApp, showSpinner, setShowSpinner }) => {
   const [isDragging, setIsDragging] = useState(false)
-  const [isAnimating, setIsAnimating] = useState(false) // Flag para controlar la animación
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [shouldRedirect, setShouldRedirect] = useState(false) // Nuevo estado para la redirección
   const handleRef = useRef(null)
   const containerRef = useRef(null)
   const textRef = useRef(null)
+  const router = useRouter() // Inicializa useRouter
+
+  // Redirección controlada con useRouter
+  useEffect(() => {
+    if (shouldRedirect) {
+      router.push(enlaceWhatsApp)
+      setShouldRedirect(false)
+    }
+  }, [shouldRedirect, router, enlaceWhatsApp])
 
   const startDrag = (e) => {
-    if (isAnimating) return // Evita iniciar un nuevo arrastre si se está animando
+    if (isAnimating) return
     setIsDragging(true)
   }
 
@@ -32,36 +44,50 @@ const SliderButton = ({ onComplete }) => {
 
     handle.style.transform = `translateX(${offsetX}px)`
 
-    // Cambiar la opacidad del texto
     const opacity = 1 - (offsetX / (containerRect.width - handleWidth)) * 1.5
     textRef.current.style.opacity = Math.max(opacity, 0)
 
-    // Completar acción cuando el slider esté cerca del final
     if (offsetX >= containerRect.width - handleWidth - 5) {
-      onComplete() // Llama a la función pasada como prop
-      endDrag() // Termina el arrastre automáticamente
+      endDrag()
+      setShowSpinner(true)
+
+      gsap.fromTo(
+        textRef.current,
+        {
+          opacity: 1,
+          maxWidth: '220px',
+          visibility: 'visible',
+          ease: 'power2',
+          duration: 1,
+        },
+        { opacity: 0, maxWidth: 0, visibility: 'hidden', display: 'none' }
+      )
+
+      setTimeout(() => {
+        setShowSpinner(false)
+        setShouldRedirect(true) // Activa la redirección después del spinner
+      }, 1500)
     }
   }
 
   const endDrag = () => {
-    if (!isDragging) return // Evita continuar si no se está arrastrando
+    if (!isDragging) return
 
-    setIsDragging(false) // Resetea el estado de arrastre
-    setIsAnimating(true) // Inicia la animación
+    setIsDragging(false)
+    setIsAnimating(true)
 
-    // Animar el regreso del controlador con GSAP
     gsap.to(handleRef.current, {
-      transform: 'translateX(0)', // Regresa a la posición inicial
+      transform: 'translateX(0)',
       duration: 0.5,
       ease: 'power2.out',
       onComplete: () => {
         handleRef.current.style.transform = 'translateX(0)'
-        setIsAnimating(false) // Termina la animación
+        setIsAnimating(false)
       },
     })
 
     gsap.to(textRef.current, {
-      opacity: 1, // Regresa a la opacidad inicial
+      opacity: 1,
       duration: 1,
       ease: 'power1',
     })
@@ -89,7 +115,13 @@ const SliderButton = ({ onComplete }) => {
         onMouseDown={startDrag}
         onTouchStart={startDrag}
       >
-        <ArrowButton />
+        {showSpinner ? (
+          <span className={styles.loader}></span>
+        ) : (
+          <span className={styles.arrow}>
+            <ArrowButton />
+          </span>
+        )}
       </div>
     </div>
   )
