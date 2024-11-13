@@ -54,7 +54,8 @@
   background-color: rgb(31 41 55);
 }
 
-.typeWritten h1 {
+.typeWritten h1,
+.typeWritten h2 {
   overflow: hidden;
   height: max-content;
   white-space: nowrap;
@@ -67,13 +68,13 @@
   margin: 0 auto;
 }
 
-.typeWritten:first-child h1 {
+.typeWritten h1 {
   padding-right: 10px;
   will-change: transform, opacity;
   margin-bottom: 25px;
 }
 
-.typeWritten:nth-child(2) h1 {
+.typeWritten h2 {
   padding-right: 7px;
   padding-bottom: 30px;
   will-change: transform, opacity;
@@ -179,7 +180,8 @@
 }
 
 @media (max-width: 1500px) {
-  .homePage .containerTitle h1 {
+  .homePage .containerTitle h1,
+  .homePage .containerTitle h2 {
     line-height: 130px;
   }
 }
@@ -188,18 +190,19 @@
   .containerTitle {
     gap: 0px;
   }
-  .homePage .containerTitle h1 {
+  .homePage .containerTitle h1,
+  .homePage .containerTitle h2 {
     font-size: 100px;
     line-height: 120px;
     letter-spacing: -3px;
   }
 
-  .typeWritten:first-child h1 {
+  .typeWritten h1 {
     margin-bottom: 0px;
     padding: 0px;
   }
 
-  .typeWritten:nth-child(2) h1 {
+  .typeWritten h2 {
     padding: 0px;
   }
 
@@ -215,7 +218,8 @@
 }
 
 @media (max-width: 900px) {
-  .homePage .containerTitle h1 {
+  .homePage .containerTitle h1,
+  .homePage .containerTitle h2 {
     font-size: 90px;
   }
 
@@ -234,7 +238,8 @@
 }
 
 @media (max-width: 750px) {
-  .homePage .containerTitle h1 {
+  .homePage .containerTitle h1,
+  .homePage .containerTitle h2 {
     font-size: 70px;
     line-height: 90px;
   }
@@ -253,7 +258,8 @@
   .homePage .containerTitle {
     gap: 0px;
   }
-  .homePage .containerTitle h1 {
+  .homePage .containerTitle h1,
+  .homePage .containerTitle h2 {
     font-size: 50px;
     letter-spacing: -2px;
     line-height: 75px;
@@ -275,7 +281,8 @@
     padding-bottom: 190px;
     gap: 0px;
   }
-  .homePage .containerTitle h1 {
+  .homePage .containerTitle h1,
+  .homePage .containerTitle h2 {
     font-size: 45px;
     line-height: 60px;
   }
@@ -292,7 +299,8 @@
 }
 
 @media (max-width: 400px) {
-  .homePage .containerTitle h1 {
+  .homePage .containerTitle h1,
+  .homePage .containerTitle h2 {
     font-size: 40px;
     line-height: 65px;
   }

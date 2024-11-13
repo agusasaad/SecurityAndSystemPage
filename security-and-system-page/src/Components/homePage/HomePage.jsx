@@ -141,7 +141,7 @@ const HomePage = () => {
           <h1 ref={titleRef1}>Construyendo</h1>
         </div>
         <div className={`${styles.typeWritten} ${poppins.className}`}>
-          <h1 ref={titleRef2}>un Futuro Digital.</h1>
+          <h2 ref={titleRef2}>un Futuro Digital.</h2>
         </div>
         <div className={styles.containerText}>
           <p className={poppins.className} ref={subtitleRef}>
