@@ -19,7 +19,7 @@ export const metadata = {
       'Security and System - Desarrollo y Consultoría IT para Empresas Modernas',
     description:
       'Desde aplicaciones personalizadas hasta soluciones en la nube, en Security and System ayudamos a empresas a transformarse digitalmente con tecnología de última generación.',
-    images: '/image.jpg',
+    images: 'https://security-and-system-page-7rm4.vercel.app/image.jpg',
     url: 'https://security-and-system-page-7rm4.vercel.app/',
     type: 'website',
     site_name: 'Security and System',
@@ -33,7 +33,7 @@ export const metadata = {
       'Security and System - Soluciones de Tecnología para Empresas del Futuro',
     description:
       'Expertos en desarrollo web, soluciones cloud y consultoría IT. Descubre cómo optimizamos el potencial digital de tu empresa.',
-    images: '/image.jpg',
+    images: 'https://security-and-system-page-7rm4.vercel.app/image.jpg',
   },
 }
 
