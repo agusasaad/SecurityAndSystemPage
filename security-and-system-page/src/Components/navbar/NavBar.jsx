@@ -39,8 +39,8 @@ const NavBar = () => {
   }, [])
 
   return (
-    <div className={styles.containerNav} ref={navBarAnimate}>
-      <div className={`${styles.nav} ${showMenu ? styles.show : ''}`}>
+    <header className={styles.containerNav} ref={navBarAnimate}>
+      <nav className={`${styles.nav} ${showMenu ? styles.show : ''}`}>
         <div className={styles.start}>
           <Link
             href='/'
@@ -167,8 +167,8 @@ const NavBar = () => {
             <HamburgerMenu />
           </button>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   )
 }
 

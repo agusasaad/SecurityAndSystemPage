@@ -18,7 +18,7 @@ const SectionThree = () => {
   ]
 
   return (
-    <div className={styles.containerSectionThree}>
+    <section className={styles.containerSectionThree}>
       <div className={styles.containerCarrucel}>
         {copyImageCarrucel.map((image, index) => (
           <Image
@@ -26,7 +26,7 @@ const SectionThree = () => {
             src={image.src}
             width={450}
             height={450}
-            alt="imagen proyecto"
+            alt='imagen proyecto'
           ></Image>
         ))}
       </div>
@@ -40,7 +40,7 @@ const SectionThree = () => {
             src={image.src}
             width={450}
             height={450}
-            alt="imagen proyecto"
+            alt='imagen proyecto'
           ></Image>
         ))}
       </div>
@@ -51,7 +51,7 @@ const SectionThree = () => {
             src={image.src}
             width={450}
             height={450}
-            alt="imagen proyecto"
+            alt='imagen proyecto'
           ></Image>
         ))}
       </div>
@@ -67,7 +67,7 @@ const SectionThree = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

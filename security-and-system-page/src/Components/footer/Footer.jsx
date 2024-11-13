@@ -8,7 +8,7 @@ import FacebookFooter from '@/svg/FacebookFooter'
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <Image
@@ -57,7 +57,7 @@ const Footer = () => {
           <p>© 2024 Security And System. Todos los derechos reservados.</p>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

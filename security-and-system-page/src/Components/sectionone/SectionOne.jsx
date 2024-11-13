@@ -41,7 +41,7 @@ const SectionOne = () => {
   }, [])
 
   return (
-    <div className={styles.container} ref={containerRef}>
+    <section className={styles.container} ref={containerRef}>
       <div className={styles.containerTitle} ref={titleRef}>
         <h2 className={poppins.className}>
           Conocé los servicios que tenemos para ofrecerte.
@@ -54,7 +54,7 @@ const SectionOne = () => {
       <Card_two />
       <Card_three />
       <Card_four />
-    </div>
+    </section>
   )
 }
 

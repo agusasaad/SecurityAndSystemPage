@@ -68,7 +68,7 @@ const ContactUs = () => {
   }, [])
 
   return (
-    <div className={styles.container} id="contact">
+    <section className={styles.container} id='contact'>
       <div className={styles.ContactUs} ref={containerRef}>
         <div className={styles.info}>
           <div className={styles.title}>
@@ -85,8 +85,8 @@ const ContactUs = () => {
           </div>
           <div className={styles.infoContainer} ref={spanRef}>
             <Link
-              href="https://maps.app.goo.gl/GMFqPPhv4dxQHZzv7"
-              target="_blank"
+              href='https://maps.app.goo.gl/GMFqPPhv4dxQHZzv7'
+              target='_blank'
             >
               <span className={poppins.className}>
                 <Location />
@@ -94,9 +94,9 @@ const ContactUs = () => {
               </span>
             </Link>
             <Link
-              href="https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20sus%20servicios!"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://wa.me/5491156260023?text=Hola,%20estoy%20interesado%20en%20sus%20servicios!'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <span className={poppins.className}>
                 <Phone />
@@ -104,9 +104,9 @@ const ContactUs = () => {
               </span>
             </Link>
             <Link
-              href="mailto:contact@securityandsystem.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='mailto:contact@securityandsystem.com'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <span className={poppins.className}>
                 <Email className={styles.icon} />
@@ -118,24 +118,24 @@ const ContactUs = () => {
         <div className={styles.mapContainer}>
           <Link
             className={styles.gradient}
-            href="https://maps.app.goo.gl/GMFqPPhv4dxQHZzv7"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://maps.app.goo.gl/GMFqPPhv4dxQHZzv7'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             <span ref={locationRef}>
               <Image
                 src={location.src}
-                alt="map"
+                alt='map'
                 width={50}
                 height={50}
                 unoptimized={true}
               />
             </span>
           </Link>
-          <Image src={map.src} alt="map" width={500} height={500} />
+          <Image src={map.src} alt='map' width={500} height={500} />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

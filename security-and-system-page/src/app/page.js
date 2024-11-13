@@ -12,27 +12,32 @@ export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false)
 
   return (
-    <div className={styles.containerApp}>
-      <ButtonOpenModal isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
-      <header className={styles.header}>
-        <HomePage />
-        <div className={styles.bg}>
-          <video
-            src='/video.mp4'
-            loop
-            preload='auto'
-            muted
-            autoPlay
-            playsInline
-          ></video>
-        </div>
-      </header>
+    <>
       <main className={styles.main}>
-        <SectionOne />
-        <SectionThree />
-        <ContactUs />
+        <ButtonOpenModal
+          isModalOpen={isModalOpen}
+          setModalOpen={setModalOpen}
+        />
+        <div className={styles.inicio}>
+          <HomePage />
+          <div className={styles.bg}>
+            <video
+              src='/video.mp4'
+              loop
+              preload='auto'
+              muted
+              autoPlay
+              playsInline
+            ></video>
+          </div>
+        </div>
+        <div className={styles.secciones}>
+          <SectionOne />
+          <SectionThree />
+          <ContactUs />
+        </div>
+        <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
       </main>
-      <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
-    </div>
+    </>
   )
 }
