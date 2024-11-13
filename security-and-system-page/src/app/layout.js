@@ -10,7 +10,7 @@ export const metadata = {
   title:
     'Security and System - Innovación en Desarrollo Web y Soluciones Cloud',
   description:
-    'En Security and System ofrecemos soluciones tecnológicas de vanguardia para tu negocio. Desde desarrollo web y aplicaciones móviles hasta infraestructura en la nube y consultoría IT, ayudamos a transformar digitalmente a empresas con tecnología eficiente, escalable y personalizada.',
+    'En Security and System creamos soluciones digitales a medida: desarrollo web, aplicaciones móviles y servicios en la nube para impulsar tu negocio. ¡Transforma tu futuro con nuestra tecnología y consultoría IT!',
   keywords:
     'Security and System, tecnología, desarrollo web, aplicaciones móviles, infraestructura cloud, consultoría IT, servidores, innovación digital, servicios en la nube, soporte IT, soluciones personalizadas, transformación digital, servicios de tecnología empresarial, optimización de sistemas, soporte técnico, consultoría en tecnología, eficiencia tecnológica',
   author: 'Security and System',
