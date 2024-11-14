@@ -1,10 +1,10 @@
 'use client'
 import { poppins } from '@/Fonts/fonts'
 import styles from './CardOne.module.css'
-import web1 from './../../../../public/proyectos/cinq_capital_optimizada.jpeg'
+import web1 from './../../../../public/proyectos/cinq_capital_optimizada.jpg'
 import web2 from './../../../../public/proyectos/fest_club_optimizada.jpg'
 import web3 from './../../../../public/proyectos/fiestas_optimizada.jpg'
-import web4 from './../../../../public/proyectos/sdp_optimizada.jpg'
+import web4 from './../../../../public/proyectos/grupo_zurita.png'
 import { gsap } from 'gsap'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -22,7 +22,7 @@ const CardOne = () => {
   const router = useRouter()
 
   const initialCards = [
-    { id: 4, title: 'Revestimiento SDP', imageSrc: web4.src, ref: card_one },
+    { id: 4, title: 'Grupo Zurita', imageSrc: web4.src, ref: card_one },
     { id: 3, title: 'Fest Club', imageSrc: web2.src, ref: card_two },
     { id: 2, title: 'Salon Plaza', imageSrc: web3.src, ref: card_three },
     { id: 1, title: 'Cinq Capital', imageSrc: web1.src, ref: card_four },

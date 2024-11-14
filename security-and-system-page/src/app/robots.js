@@ -3,7 +3,7 @@ export default function robots() {
     rules: [
       {
         userAgent: '',
-        allow: ['/'], // Permite indexar la raíz
+        allow: ['/'],
         disallow: [
           '/buscador/',
           '/exito/',

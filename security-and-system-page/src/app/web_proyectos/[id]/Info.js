@@ -8,9 +8,9 @@ import salon_plaza_mockup_2 from './../../../../public/proyectos/detail_Salon_pl
 import fest_club_mockup_1 from './../../../../public/proyectos/detail_Fest_club/mockup_1.jpeg'
 import fest_club_mockup_2 from './../../../../public/proyectos/detail_Fest_club/mockup_2.jpeg'
 
-import sdp_revestimientos_mockup_1 from './../../../../public/proyectos/datail_sdp_revestimientos/mockup_1.jpeg'
-import sdp_revestimientos_mockup_2 from './../../../../public/proyectos/datail_sdp_revestimientos/mockup_2.jpeg'
-import sdp_revestimientos_mockup_3 from './../../../../public/proyectos/datail_sdp_revestimientos/mockup_3.jpeg'
+import grupo_zurita_mockup_1 from './../../../../public/proyectos/datail_grupo_zurita/mockup.png'
+import grupo_zurita_mockup_2 from './../../../../public/proyectos/datail_grupo_zurita/mockup_2.jpg'
+import grupo_zurita_mockup_3 from './../../../../public/proyectos/datail_grupo_zurita/mockup_3.png'
 
 import net_expertos_mockup_1 from './../../../../public/proyectos/deatil_net_expertos/mockup_1.jpeg'
 import net_expertos_mockup_2 from './../../../../public/proyectos/deatil_net_expertos/mockup_2.jpeg'
@@ -59,14 +59,14 @@ export const desarrolloWeb = [
   },
   {
     id: '4',
-    title: 'SDP Revestimientos',
+    title: 'Grupo Zurita',
     banner: 'Transformando tu hogar',
     infoText:
-      'Esta landing page ofrece servicios de revestimientos especializados, con una galería destacando proyectos anteriores y una sección detallada sobre las soluciones disponibles. Además, incluye un formulario de contacto para consultas y cotizaciones, proporcionando una experiencia clara y directa para clientes interesados en renovar sus espacios.',
+      'Esta landing page ofrece una amplia gama de servicios, especializados en aberturas de pvc, con una galería destacando proyectos anteriores y una sección detallada sobre las soluciones disponibles. Además, incluye un formulario de contacto para consultas y cotizaciones, proporcionando una experiencia clara y directa para clientes interesados en renovar sus espacios.',
     images: [
-      sdp_revestimientos_mockup_1.src,
-      sdp_revestimientos_mockup_2.src,
-      sdp_revestimientos_mockup_3.src,
+      grupo_zurita_mockup_1.src,
+      grupo_zurita_mockup_2.src,
+      grupo_zurita_mockup_3.src,
     ],
   },
   {
