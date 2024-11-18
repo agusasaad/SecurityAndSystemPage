@@ -8,7 +8,7 @@ import Checked from '@/svg/Checked'
 import DesarrolloWebImg_1 from './../../../../../public/desarrolloWeb/desarrolloWeb_1.png'
 import DesarrolloWebImg_2 from './../../../../../public/desarrolloWeb/desarrolloWeb_2.png'
 import DesarrolloWebImg_3 from './../../../../../public/desarrolloWeb/desarrolloWeb_3.png'
-import DesarrolloWebImg_4 from './../../../../../public/desarrolloWeb/desarrolloWeb_4.png'
+import DesarrolloWebImg_4 from './../../../../../public/desarrolloWeb/desarrolloWeb_4.jpg'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Carousel } from 'react-responsive-carousel'
@@ -20,7 +20,7 @@ const images = [
   { img: DesarrolloWebImg_3, name: 'Salon Plaza', url: '/web_proyectos/2' },
   {
     img: DesarrolloWebImg_4,
-    name: 'Revestimiento SDP',
+    name: 'Grupo Zurita',
     url: '/web_proyectos/4',
   },
 ]
@@ -143,6 +143,15 @@ const Card_one = () => {
             </div>
           ))}
         </Carousel>
+      </div>
+      <div className={styles.containerButton_mobile}>
+        <Link href='/desarrollo_web'>
+          <button className={styles.button}>
+            <span className={`${poppins.className} ${styles.button_content}`}>
+              Ver detalles
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   )
