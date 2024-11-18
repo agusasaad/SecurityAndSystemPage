@@ -8,7 +8,7 @@
   position: sticky;
   top: 170px;
   border-radius: 30px;
-  background-image: url("./../../../../../public/background\ 1.svg");
+  background-image: url('./../../../../../public/background\ 1.svg');
   background-size: 140%;
   background-position: center;
   background-repeat: no-repeat;
@@ -65,11 +65,15 @@
 }
 
 .containerButton {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+
+.containerButton_mobile {
+  display: none;
 }
 
 .containerButton .button_black {
@@ -109,8 +113,8 @@
     flex-direction: column;
     position: relative;
     top: 0px;
-    padding-bottom: 50px !important;
-    background-size: 200%;
+    background-size: 250% !important;
+    gap: 10px !important;
   }
 
   .containerText {
@@ -119,13 +123,62 @@
   }
 
   .containerButton {
-    position: absolute;
-    bottom: 18px;
-    left: 0;
-    width: 100%;
+    display: none;
+  }
+
+  .containerButton_mobile {
     display: flex;
+  }
+
+  .containerButton_mobile a {
+    width: 100%;
+  }
+
+  /* From Uiverse.io by Madflows */
+  .button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 15px 0px;
+    border-radius: 10px;
+    background: #3d3a4e59;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 0px;
+  }
+
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+
+  .button_content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      rgba(150, 93, 233, 1) 10.8%,
+      rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
   }
 }
 

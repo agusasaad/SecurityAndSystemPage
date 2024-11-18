@@ -142,7 +142,7 @@ const Card_four = () => {
           </p>
         </div>
         <div className={styles.containerButton}>
-          <Link href="/consultoria_it">
+          <Link href='/consultoria_it'>
             <button
               className={`${poppins.className} ${styles.button_black}`}
               ref={button_container}
@@ -230,6 +230,15 @@ const Card_four = () => {
           alt={'Consultoria IT'}
           ref={img_elevenRef}
         />
+      </div>
+      <div className={styles.containerButton_mobile}>
+        <Link href='/consultoria_it'>
+          <button className={styles.button}>
+            <span className={`${poppins.className} ${styles.button_content}`}>
+              Ver detalles
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   )

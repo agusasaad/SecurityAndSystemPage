@@ -160,6 +160,15 @@ const Card_two = () => {
           />
         </Link>
       </div>
+      <div className={styles.containerButton_mobile}>
+        <Link href='/aplicaciones_moviles'>
+          <button className={styles.button}>
+            <span className={`${poppins.className} ${styles.button_content}`}>
+              Ver detalles
+            </span>
+          </button>
+        </Link>
+      </div>
     </div>
   )
 }

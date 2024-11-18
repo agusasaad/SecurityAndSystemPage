@@ -122,7 +122,7 @@ const Card_three = () => {
           </p>
         </div>
         <div className={styles.containerButton}>
-          <Link href="/servidores_soluciones_cloud">
+          <Link href='/servidores_soluciones_cloud'>
             <button
               className={`${poppins.className} ${styles.button_black}`}
               ref={button_container}
@@ -168,6 +168,15 @@ const Card_three = () => {
           alt={'Servidores y Soluciones Cloud'}
           ref={img_fiveRef}
         />
+      </div>
+      <div className={styles.containerButton_mobile}>
+        <Link href='/servidores_soluciones_cloud'>
+          <button className={styles.button}>
+            <span className={`${poppins.className} ${styles.button_content}`}>
+              Ver detalles
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   )
