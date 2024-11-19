@@ -18,6 +18,7 @@ const Card_two = () => {
   const tip_twoRef = useRef(null)
   const tip_threeRef = useRef(null)
   const button_container = useRef(null)
+  const button_mobile = useRef(null)
   const img_oneRef = useRef(null)
   const img_twoRef = useRef(null)
   const img_threeRef = useRef(null)
@@ -34,6 +35,7 @@ const Card_two = () => {
       img_oneRef.current,
       img_twoRef.current,
       img_threeRef.current,
+      button_mobile.current,
     ]
 
     gsap.fromTo(
@@ -160,7 +162,7 @@ const Card_two = () => {
           />
         </Link>
       </div>
-      <div className={styles.containerButton_mobile}>
+      <div className={styles.containerButton_mobile} ref={button_mobile}>
         <Link href='/aplicaciones_moviles'>
           <button className={styles.button}>
             <span className={`${poppins.className} ${styles.button_content}`}>

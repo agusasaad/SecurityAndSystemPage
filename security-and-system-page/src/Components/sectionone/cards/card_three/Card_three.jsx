@@ -21,6 +21,7 @@ const Card_three = () => {
   const tip_twoRef = useRef(null)
   const tip_threeRef = useRef(null)
   const button_container = useRef(null)
+  const button_mobile = useRef(null)
   const img_oneRef = useRef(null)
   const img_twoRef = useRef(null)
   const img_threeRef = useRef(null)
@@ -41,6 +42,7 @@ const Card_three = () => {
         img_threeRef.current,
         img_fourRef.current,
         img_fiveRef.current,
+        button_mobile.current,
       ],
       {
         opacity: 0,
@@ -169,7 +171,7 @@ const Card_three = () => {
           ref={img_fiveRef}
         />
       </div>
-      <div className={styles.containerButton_mobile}>
+      <div className={styles.containerButton_mobile} ref={button_mobile}>
         <Link href='/servidores_soluciones_cloud'>
           <button className={styles.button}>
             <span className={`${poppins.className} ${styles.button_content}`}>

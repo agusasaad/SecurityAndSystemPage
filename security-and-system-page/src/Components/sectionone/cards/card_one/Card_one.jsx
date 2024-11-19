@@ -34,6 +34,7 @@ const Card_one = () => {
   const tip_threeRef = useRef(null)
   const button_container = useRef(null)
   const img_oneRef = useRef(null)
+  const button_mobile = useRef(null)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -55,6 +56,7 @@ const Card_one = () => {
           tip_twoRef.current,
           tip_threeRef.current,
           img_oneRef.current,
+          button_mobile.current,
         ],
         {
           opacity: 0,
@@ -144,7 +146,7 @@ const Card_one = () => {
           ))}
         </Carousel>
       </div>
-      <div className={styles.containerButton_mobile}>
+      <div className={styles.containerButton_mobile} ref={button_mobile}>
         <Link href='/desarrollo_web'>
           <button className={styles.button}>
             <span className={`${poppins.className} ${styles.button_content}`}>
